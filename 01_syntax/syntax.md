@@ -145,28 +145,11 @@ File naming convention: Use PascalCase matching your public class name (e.g., `S
 
 ### Exercise 1: Sequential Execution
 
-Create a file named `OrderDemo.java` and write three statements that output:
-
-```text
-Step 1: Learning Syntax
-Step 2: Understanding Statements
-Step 3: Executing Code
-
-```
 
 ### Exercise 2: Fix Syntax Errors
 
 Correct the errors in `FixMe.java`:
 
-```java
-public class FixMe {
-    public static void main(String[] args) {
-        system.out.println("Missing capitalization")
-        System.out.println("Missing semicolon")
-    }
-}
-
-```
 
 ---
 
