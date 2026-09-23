@@ -35,12 +35,12 @@ public class Main {
 }
 ```
 ### Essential Naming Rules
-**1. Exact Matching:** The name of the file must match the name of the **public class** exactly, including capitalization, followed by the **.java**
+**1. Exact Matching:** The name of the file must match the name of the `public class` exactly, including capitalization, followed by the `.java`
                        extension.
-                       - If class name is **Main** **->** File name: **Main.java**
-                       - If class name is **UserProfile** **->** File name: **UserProfile.java**
-**2. Case Sensitivity:** Java is strictly case-sensitive. **MyClass**, **myclass**, and **MYCLASS** are treated as entirely different identifiers.
-**3. PascalCase Convention:** By standard convention, class names always start with an uppercase letter(e.g.,  **CalculatorDemo**).
+                       - If class name is `Main` `->` File name: `Main.java`.
+                       - If class name is `UserProfile` `->` File name: `UserProfile.java`
+**2. Case Sensitivity:** Java is strictly case-sensitive. `MyClass`, `myclass`, and `MYCLASS` are treated as entirely different identifiers.
+**3. PascalCase Convention:** By standard convention, class names always start with an uppercase letter(e.g.,  `CalculatorDemo`).
 
 ---
 
