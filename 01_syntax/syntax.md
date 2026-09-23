@@ -8,7 +8,7 @@ Syntax is the set of rules that defines how a Java program is written, structure
 
 ## Table of Contents
 
-1. [Class and File Structure](#class-and-file-structure&utm_source=gemini)
+1. [Class and File Structure](#class-and-file-structure)
 2. [The Main Method](#the-main-method)
 3. [Console Output](#console-output)
 4. [Statements and Semicolons](#statements-and-semicolons)
