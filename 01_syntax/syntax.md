@@ -41,7 +41,6 @@ extension.
 - If class name is `UserProfile` -> File name: `UserProfile.java`
 
 **2. Case Sensitivity:** Java is strictly case-sensitive. `MyClass`, `myclass`, and `MYCLASS` are treated as entirely different identifiers.
-
 **3. PascalCase Convention:** By standard convention, class names always start with an uppercase letter(e.g.,  `CalculatorDemo`).
 
 ---
