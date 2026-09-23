@@ -7,7 +7,7 @@ Syntax is the set of rules that defines how a Java program is written, structure
 This guide covers:
 - **Class and File Structure** - Rules for naming files and declaring classes
 - **The Main Method** - The official entry point of every Java program
-- **Console Output and Input** - Printing text and reading user input
+- **Console Output** - Printing text
 - **Statements and Braces** - Code blocks, semicolons, and syntax scope
 - **Common Pitfalls** - Errors frequently made by beginners
 
@@ -17,7 +17,7 @@ This guide covers:
 
 1. [Class and File Structure](#class-and-file-structure)
 2. [The Main Method](#the-main-method)
-3. [Console Output and Input](#console-output-and-input)
+3. [Console Output](#console-output)
 4. [Statements and Syntax Rules](#statement-and-syntax-rules)
 5. [Common Pitfalls](#common-pitfalls)
 6. [Exercise](#exercise)
@@ -48,3 +48,66 @@ extension.
 ## The Main Method
 
 ### The Entry Point
+The `main()` method is the starting point execution for every standalone Java program. When you run a Java Class, the Java Virtual Machine(JVM) looks for this exact method to being running code.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Code inside main is executed sequentially
+    }
+}
+```
+### Method Keywords Breakdown
+
+| Keyword | Meaning |
+| --- | --- |
+| `public` | Accessible from anywhere in the program |
+| `static` | Belongs to the class itself (can be run without creating an instance/object) |
+| `void` | Returns no value after execution |
+| `main` | The mandatory name recognized by the Java runtime |
+| `String[] args` | Array used to accept command-line arguments |
+
+---
+
+## Console Output
+
+### Printing to the Console
+Java uses the built-in `system` class to display information on the screen:
+
+```java
+// Prints and moves the cursor to a new line
+System.out.println("Hello, World!");
+
+// Prints text on the same line without moving to a new line
+System.out.println("Loading... ");
+```
+
+## Statements and Syntax Rules
+
+### Semicolons `;`
+In Java, every individual instruction or statement **must end with a semicolon**. Omitting a semicolon will cause a compilation error.
+
+```java
+System.out.println("Hello, World!");
+```
+### Code Blocks `{}`
+Curly braces define the start and end boundaries of classes, methods, loops, and conditional statements.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+### Comments
+Comments are ignored by the complier and are used to document code.
+
+```java
+// This is a single-line comment
+
+/*
+    This is a
+    multi-line comment
+*/
+```
