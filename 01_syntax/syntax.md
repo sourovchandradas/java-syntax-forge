@@ -109,7 +109,7 @@ public class StatementOrder {
 
 ---
 
-## Console Output: `println()` vs `print()`
+## Console Output
 
 Java provides two main methods inside `System.out` to output values or text to the screen.
 
