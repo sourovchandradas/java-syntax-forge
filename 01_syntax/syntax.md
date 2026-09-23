@@ -82,12 +82,11 @@ A computer program is a list of instructions executed by a computer. In Java, th
 
 ```java
 System.out.println("Java is fun!");
-
 ```
 
 ### The Semicolon Rule
 
-* Every individual Java statement **must end with a semicolon `;**`.
+* Every individual Java statement **must end with a semicolon `;`**.
 * Think of a statement like an English sentence: just as sentences end with a period (`.`), Java statements end with a semicolon (`;`).
 * Omitting a semicolon will cause a compilation error: `error: ';' expected`.
 
