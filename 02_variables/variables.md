@@ -7,7 +7,6 @@
 - [Related Topics](#related-topics)
 - [Practice Exercises](#practice-exercises)
 - [Additional Resources](#additional-resources)
-- [Last Modified](#last-modified)
 
 ---
 
@@ -413,6 +412,7 @@ Write code to demonstrate why parentheses are needed when mixing text and number
 ## Additional Resources
 
 * [w3schools](https://www.w3schools.com/java/java_variables.asp)
+* [Oracle](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html)
 
 ---
 
