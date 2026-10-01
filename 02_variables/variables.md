@@ -412,22 +412,13 @@ Write code to demonstrate why parentheses are needed when mixing text and number
 
 ## Additional Resources
 
-- Oracle Java Tutorial: Variables
-- Java Basics Documentation
-- Beginner Java practice websites
-- Java compiler and online editors for practice
-
-Suggested official reference:
-- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html
+* [w3schools](https://www.w3schools.com/java/java_variables.asp)
 
 ---
 
-## Last Modified
+## Related Topics
 
-- October 2024
 
 ---
 
-## Summary
-
-Java variables are one of the first topics a learner must understand. They are used everywhere in Java programs, and mastering them gives a strong foundation for writing more advanced programs later.
+*Last Modified : 1st October, 2026*
