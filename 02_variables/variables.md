@@ -4,9 +4,9 @@
 - [Overview](#overview)
 - [Learning Objectives](#learning-objectives)
 - [Content](#content)
-- [Related Topics](#related-topics)
 - [Practice Exercises](#practice-exercises)
 - [Additional Resources](#additional-resources)
+- [Related Topics](#related-topics)
 
 ---
 
@@ -372,17 +372,6 @@ Result: 11
 
 ---
 
-## Related Topics
-
-After this topic, the next related Java topics are:
-- Data Type Conversion (Casting)
-- Operators in Java
-- Control Flow (`if`, `else`, `switch`)
-- Loops (`for`, `while`)
-- Methods and Functions
-- Object-Oriented Programming (OOP)
-
----
 
 ## Practice Exercises
 
