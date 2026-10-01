@@ -1,4 +1,4 @@
-# Java Variables
+# Variables in Java
 
 ## Table of Contents
 - [Overview](#overview)
