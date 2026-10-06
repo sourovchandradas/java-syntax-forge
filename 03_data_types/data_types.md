@@ -31,7 +31,7 @@ A data type in Java specifies the type of value a variable can hold and the oper
 **Easy Think:**
 Think of data type like a box. The box decides what kind of thing you can put inside. Example: If the box is for numbers, you can’t put text inside.
 
-**Syntax:**   ```dataType variableName = value;```
+**Syntax:**   `dataType variableName = value;`
 
 ### Types of Data Types
 
@@ -87,4 +87,13 @@ In Java, primitive data types are the most basic types of data. They are predefi
 | `double` | 64-bit floating point | `0.0d` | 8 bytes | `3.14159d` | ~15–16 digits precision |
 
 ---
+
+### 1.1 Boolean Data Type
+
+In Java, the boolean data type is a primitive type that can hold only two possible values:
+* `true`
+* `false`
+**Usage:** Boolean is mainly used for logical conditions and control statements like `if`, `while`, `for`.
+
+**Syntax:** `boolean booleanVar`;
 
