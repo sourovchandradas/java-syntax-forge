@@ -116,7 +116,7 @@ int a = +5; // same as 5
 
 ### 2. Unary Minus(-)
 * Negates the value(Change sign).
-* **Syntax:** `-operand`
+* **Syntax :** `-operand`
 * **For example**
 ```java
 int a = 5;
@@ -125,8 +125,8 @@ int b = -a; // b = -5
 
 ### 3.Increament(++)
 * Increase value by 1.
-* **Pre-increment:** `++a`→ increases first, then uses value.
-* **Post-increment:** `a++`→ uses value first, then increases.
+* **Pre-increment :** `++a`→ increases first, then uses value.
+* **Post-increment :** `a++`→ uses value first, then increases.
 * **For example**
 ```java
 int a = 5;
@@ -137,7 +137,7 @@ System.out.println(a++) // 6 (post-increment, then becomes 7)
 ### 4. Decrement(--)
 * Decreases value by 1.
 * **Pre-decrement :** `--a`→ decrease first, then uses value.
-* **Post-decrement:** `a--` → uses value first, then decreases.
+* **Post-decrement :** `a--` → uses value first, then decreases.
 * **For example**
 ```java
 int a = 5;
@@ -147,7 +147,7 @@ System.out.println(a--); // 4 (post-decrement, then becomes 3)
 
 ### 5. Logical NOT(!)
 * Inverts the value of a boolean operand. If the value is `true`, it turns into `false`, and vice versa.
-* **Syntax:** `!(operand)`
+* **Syntax :** `!(operand)`
 * **For example**
 ```java
 boolean flag = true;
@@ -159,15 +159,15 @@ System.out.println(!flag); // false
 * In Java, the **bitwise complement operator (~)** flips **each bit** of a number.
 * It changes `0 → 1` and `1 → 0`.
 * Works only on integer types (`byte`, `short`, `int`, `long`).
-* **Syntax:** `~(operand)`
-* **Formula:** If `x` is a number, then: `x = -(x+1)`
+* **Syntax :** `~(operand)`
+* **Formula :** If `x` is a number, then: `x = -(x+1)`
 * **For example**
 ```java
 int a = 5;        // Binary: 00000000 00000000 00000000 00000101
 int b = ~a;       // Binary: 11111111 11111111 11111111 11111010
 System.out.println(b); // Output: -6
 ```
-* **Explanation:** `a = 5` → `~a = -(5+1) = -6`
+* **Explanation :** `a = 5` → `~a = -(5+1) = -6`
 
 > **Note** Result is always negative if you start with a positive number (because of 2’s complement representation).
 >
