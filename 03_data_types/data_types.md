@@ -33,11 +33,43 @@ Think of data type like a box. The box decides what kind of thing you can put in
 
 **Syntax:**   ```dataType variableName = value;```
 
-### Types
+### Types of Data Types
 
+Java data types are broadly divided into two categories:
 
-
-
-
-
+* **Primitive Data Types:** Store simple values directly in memory.
+* **Non-primitive (Reference) Data Types:** Store memory references to objects.  
+```
++---------------------------------------------------------------------------------------+
+|                                  DATA TYPES IN JAVA                                   |
++---------------------------------------------------------------------------------------+
+                                            |
+                   +------------------------+------------------------+
+                   |                                                 |
+                   v                                                 v
++-------------------------------------+           +-------------------------------------+
+|        Primitive Data Types         |           |      Non-Primitive Data Types       |
++-------------------------------------+           +-------------------------------------+
+         |                   |                               |         |         |
+         v                   v                               v         v         v
+  +--------------+    +--------------+                  +--------+ +-------+ +---------+
+  | Boolean Type |    | Numeric Type |                  | String | | Array | | Classes |
+  +--------------+    +--------------+                  +--------+ +-------+ +---------+
+         |                   |
+         v          +--------+--------+
+  +--------------+  |                 |
+  |   boolean    |  v                 v
+  +--------------+ +---------+  +----------------+
+                   | Integer |  | Floating Point |
+                   +---------+  +----------------+
+                        |                |
+                        v                v
+                  +-----------+    +-----------+
+                  |   byte    |    |   float   |
+                  |   short   |    |  double   |
+                  |    int    |    +-----------+
+                  |   long    |
+                  |   char    |
+                  +-----------+
+```
 
