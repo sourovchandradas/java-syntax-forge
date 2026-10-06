@@ -90,9 +90,7 @@ In Java, primitive data types are the most basic types of data. They are predefi
 
 ### 1.1 boolean Data Type
 
-In Java, the boolean data type is a primitive type that can hold only two possible values:
-* `true`
-* `false`
+In Java, the boolean data type is a primitive type that can hold only two possible values `true` or `false`
 
 * **Usage:** Boolean is mainly used for logical conditions and control statements like `if`, `while`, `for`.
 * **Syntax:** `boolean booleanVar`;
@@ -121,10 +119,10 @@ Is Pizza your favorite food? false
 
 An 8-bit signed integer used to save memory in large numeric arrays.
 
-**Usage:** Mainly used when memory saving is important, especially in large arrays. It is
+* **Usage:** Mainly used when memory saving is important, especially in large arrays. It is
 also useful for working with raw binary data (like file handling, streams).
 
-**Syntax:** `byte byteVar`
+* **Syntax:** `byte byteVar`
 
 ### Implementation Example
 ```java
