@@ -55,7 +55,7 @@ In Java, **Arithmetic operators** are used to perform basic mathematical operati
 
 ### Implementation Example
 
-```
+```java
 public class Operators {
     public static void main(String[] args) {
         int a = 10;
@@ -87,7 +87,7 @@ public class Operators {
 
 ### Output
 
-```
+```text
 Addition: 13
 Subtraction: 7
 Multiplication: 30
