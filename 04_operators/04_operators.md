@@ -43,13 +43,13 @@ This guide covers:
 In Java, **Arithmetic operators** are used to perform basic mathematical operations on primitive numeric data types such as `int`, `float`, and `double`.
 
 ### List of Arithmetic Operators
-| Operator | Meaning | Example | Result|
-| --- | --- | --- | --- |
-| `+` | Addition | `5+2` | `7` |
-| `-` | Subtraction | `5-2` | `3` |
-| `*` | Multipliction | `5*2` | `10` |
-| `/` | Division | `5/2` | `2`(integer division) |
-| `%` | Modulus/Remainder | `5%2` | `1` |
+| Operator | Meaning | Syntax | Example | Result|
+| --- | --- | --- | --- | --- |
+| `+` | Addition | a + b | `5+2` | `7` |
+| `-` | Subtraction | a - b | `5-2` | `3` |
+| `*` | Multipliction | a * b | `5*2` | `10` |
+| `/` | Division | a / b | `5/2` | `2`(integer division) |
+| `%` | Modulus/Remainder | a % b | `5%2` | `1` |
 
 
 
@@ -101,53 +101,129 @@ Modulus/Remainder: 1
 
 ---
 
-## 2. Unary Operators
+## Unary Operators
 
-Unary operators require only a single operand and are used to increment, decrement, or negate numeric values.
+In Java, Unary Operators are operators that work on only one operand. They are used for simple operations like increment, decrement, negation, and logical NOT.
 
-### Increment and Decrement Behavior
+### Types of Unary Operators
 
-* **Post-increment (`a++`):** Evaluates the current value first, then increments the variable.
+### 1. Unary Plus(+)
+* Shows positive value (rarely used).
+* **For example**
+```java
+int a = +5; // same as 5
+```
 
+### 2. Unary Minus(-)
+* Negates the value(Change sign).
+* **Syntax:** `-operand`
+* **For example**
+```java
+int a = 5;
+int b = -a; // b = -5
+```
 
-* **Pre-increment (`++a`):** Increments the variable first, then evaluates the updated value.
+### 3.Increament(++)
+* Increase value by 1.
+* **Pre-increment:** `++a`→ increases first, then uses value.
+* **Post-increment:** `a++`→ uses value first, then increases.
+* **For example**
+```java
+int a = 5;
+System.out.println(++a) // 6 (pre-increment)
+System.out.println(a++) // 6 (post-increment, then becomes 7)
+```
 
+### 4. Decrement(--)**
+* **Decreases value by 1.
+* **Pre-decrement:** `--a`→ decrease first, then uses value.
+* **Post-decrement:** `a--` → uses value first, then decreases.
+* **For example**
+```java
+int a = 5;
+System.out.println(--a); // 4 (pre-decrement)
+System.out.println(a--); // 4 (post-decrement, then becomes 3)
+```
 
-* **Post-decrement (`b--`):** Evaluates the current value first, then decrements the variable.
+### 5. Logical NOT(!)
+* Inverts the value of a boolean operand. If the value is `true`, it turns into `false`, and vice versa.
+* **Syntax:** `!(operand)`
+* **For example**
+```java
+boolean flag = true;
+System.out.println(!flag); // false
+```
 
+### 6. Bitwise Complement Operator(~)
 
-* **Pre-decrement (`--b`):** Decrements the variable first, then evaluates the updated value.
+* In Java, the **bitwise complement operator (~)** flips **each bit** of a number.
+* It changes `0 → 1` and `1 → 0`.
+* Works only on integer types (`byte`, `short`, `int`, `long`).
+* **Syntax:** `~(operand)`
+* **Formula:** If `x` is a number, then: `x = -(x+1)`
+* **For example**
+```java
+int a = 5;        // Binary: 00000000 00000000 00000000 00000101
+int b = ~a;       // Binary: 11111111 11111111 11111111 11111010
+System.out.println(b); // Output: -6
+```
+* **Explanation:** `a = 5` → `~a = -(5+1) = -6`
 
+> **Note** Result is always negative if you start with a positive number (because of 2’s complement representation).
+>
+> 
 
-
-### Code Example
+### Implementation Example
 
 ```java
-import java.io.*;
-
-class Geeks {
+public class UnaryOperatorsDemo {
     public static void main(String[] args) {
-        int a = 10;
-        int b = 10;
+        int a = 5;
+        boolean flag = true;
 
-        System.out.println("Postincrement : " + (a++));
-        System.out.println("Preincrement : " + (++a));
+        // 1. Unary Plus (+)
+        System.out.println("Unary Plus: " + (+a)); // 5
 
-        System.out.println("Postdecrement : " + (b--));
-        System.out.println("Predecrement : " + (--b));
+        // 2. Unary Minus (-)
+        System.out.println("Unary Minus: " + (-a)); // -5
+
+        // 3. Pre-Increment (++a)
+        System.out.println("Pre-Increment: " + (++a)); // 6 (a becomes 6 before use)
+
+        // 4. Post-Increment (a++)
+        System.out.println("Post-Increment: " + (a++)); // 6 (use first, then a becomes 7)
+        System.out.println("Value of a after Post-Increment: " + a); // 7
+
+        // 5. Pre-Decrement (--a)
+        System.out.println("Pre-Decrement: " + (--a)); // 6 (a becomes 6 before use)
+
+        // 6. Post-Decrement (a--)
+        System.out.println("Post-Decrement: " + (a--)); // 6 (use first, then a becomes 5)
+        System.out.println("Value of a after Post-Decrement: " + a); // 5
+
+        // 7. Logical NOT (!)
+        System.out.println("Logical NOT: " + (!flag)); // false
+
+        // 8. Bitwise Complement (~)
+        int b = 10; // binary: 00001010
+        System.out.println("Bitwise Complement of 10: " + (~b)); // -11
     }
 }
-
 ```
 
 ### Output
 
 ```text
-Postincrement : 10
-Preincrement : 12
-Postdecrement : 10
-Predecrement : 8
-
+Unary Plus: 5
+Unary Minus: -5
+Pre-Increment: 6
+Post-Increment: 6
+Value of a after Post-Increment: 7
+Pre-Decrement: 6
+Post-Decrement: 6
+Value of a after Post-Decrement: 5
+Logical NOT: false
+Bitwise Complement of 10: -11
 ```
 
 ---
