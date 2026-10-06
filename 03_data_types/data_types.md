@@ -495,7 +495,7 @@ Second name: Geek2
 
 ---
 
-## Advantages of Java Data Types
+## Advantages of Data Types
 
 * **Type Safety:** Ensures variables only hold valid data, reducing runtime bugs.
 * **Memory Efficiency:** Allows precise selection of memory size (e.g., using `byte` vs `long`).
@@ -516,10 +516,23 @@ Second name: Geek2
 
 ## Exercise
 
+File naming convention: Use PascalCase matching your public class name(e.g., `DataTypeTest.java`)
+
+### Exercise 1: Primitive Declarations
+
+Create a file named `UserProfile.java` and declare variables for:
+* User ID(`int`)
+* Account Balance(`double`)
+* Gender(`char`)
+* Active Status(`boolean`)
+
+### Exercise 2: Array & String Output
+
+Create a file named `ArrayPractice.java` containing a `String[]` array of three programming languages, and print the second item in the array.
 
 ---
 
-## References
+## Quick Reference
 
 | Type | Description | Default | Size | Example | Range |
 | --- | --- | --- | --- | --- | --- |
@@ -539,8 +552,18 @@ Second name: Geek2
 
 ---
 
+
+## Why this matters
+
+
+
+---
+
+
 ## Additional Resources
 
+* [GeeksforGeeks](https://www.geeksforgeeks.org/java/java-data-types/)
+* [w3schools](https://www.w3schools.com/java/java_data_types.asp)
 
 ---
 
