@@ -136,7 +136,7 @@ System.out.println(a++) // 6 (post-increment, then becomes 7)
 
 ### 4. Decrement(--)
 * Decreases value by 1.
-* **Pre-decrement:** `--a`→ decrease first, then uses value.
+* **Pre-decrement :** `--a`→ decrease first, then uses value.
 * **Post-decrement:** `a--` → uses value first, then decreases.
 * **For example**
 ```java
