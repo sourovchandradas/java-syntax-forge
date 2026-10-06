@@ -495,16 +495,12 @@ Second name: Geek2
 
 ---
 
-## Advantage of Java Data Types
+## Advantages of Java Data Types
 
-1. a
-2. a
-3. a
-4. a
-5. a
-6. a
-7. a
-
+* **Type Safety:** Ensures variables only hold valid data, reducing runtime bugs.
+* **Memory Efficiency:** Allows precise selection of memory size (e.g., using `byte` vs `long`).
+* **Early Error Detection:** Helps the compiler identify type-mismatch errors during compilation.
+* **Performance Optimization:** Direct use of primitive types boosts execution speed.
 
 ---
 
@@ -518,6 +514,75 @@ Second name: Geek2
 
 ---
 
+## Exercise
+
+
+---
+
+## References
+
+| Type | Description | Default | Size | Example | Range |
+| --- | --- | --- | --- | --- | --- |
+| `boolean`<br> | Logical values
+
+ | `false`<br> | Not JVM-defined
+
+ | `true`, `false`<br> | `true` or `false`<br> |
+| `byte`<br> | 8-bit signed integer
+
+ | `0`<br> | 1 byte
+
+ | `10`<br> | -128 to 127
+
+ |
+| `char`<br> | 16-bit Unicode character
+
+ | `'\u0000'`<br> | 2 bytes
+
+ | `'A'`, `'\u0041'`<br> | 0 to 65,535
+
+ |
+| `short`<br> | 16-bit signed integer
+
+ | `0`<br> | 2 bytes
+
+ | `2000`<br> | -32,768 to 32,767
+
+ |
+| `int`<br> | 32-bit signed integer
+
+ | `0`<br> | 4 bytes
+
+ | `1000`, `-500`<br> | -2,147,483,648 to 2,147,483,647
+
+ |
+| `long`<br> | 64-bit signed integer
+
+ | `0L`<br> | 8 bytes
+
+ | `123456789L`<br> | ±9.22e18
+
+ |
+| `float`<br> | 32-bit floating point
+
+ | `0.0f`<br> | 4 bytes
+
+ | `3.14f`<br> | ~6–7 digits precision
+
+ |
+| `double`<br> | 64-bit floating point
+
+ | `0.0d`<br> | 8 bytes
+
+ | `3.14159d`<br> | ~15–16 digits precision
+
+ |
+
+
+
+---
+
+
 ## Related Topics
 
 ---
@@ -530,4 +595,5 @@ Second name: Geek2
 
 
 *Last updated: October 6, 2026*
+
 
