@@ -29,9 +29,7 @@ A data type in Java specifies the type of value a variable can hold and the oper
 * Each data type has a default value when not initialized
 
 **Easy Think:**
-Think of data type like a box.
-The box decides what kind of thing you can put inside.
-Example: If the box is for numbers, you can’t put text inside.
+Think of data type like a box. The box decides what kind of thing you can put inside. Example: If the box is for numbers, you can’t put text inside.
 
 **Syntax:**   ```dataType variableName = value;```
 
