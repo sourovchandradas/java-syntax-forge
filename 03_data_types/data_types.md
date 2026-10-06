@@ -523,62 +523,14 @@ Second name: Geek2
 
 | Type | Description | Default | Size | Example | Range |
 | --- | --- | --- | --- | --- | --- |
-| `boolean`<br> | Logical values
-
- | `false`<br> | Not JVM-defined
-
- | `true`, `false`<br> | `true` or `false`<br> |
-| `byte`<br> | 8-bit signed integer
-
- | `0`<br> | 1 byte
-
- | `10`<br> | -128 to 127
-
- |
-| `char`<br> | 16-bit Unicode character
-
- | `'\u0000'`<br> | 2 bytes
-
- | `'A'`, `'\u0041'`<br> | 0 to 65,535
-
- |
-| `short`<br> | 16-bit signed integer
-
- | `0`<br> | 2 bytes
-
- | `2000`<br> | -32,768 to 32,767
-
- |
-| `int`<br> | 32-bit signed integer
-
- | `0`<br> | 4 bytes
-
- | `1000`, `-500`<br> | -2,147,483,648 to 2,147,483,647
-
- |
-| `long`<br> | 64-bit signed integer
-
- | `0L`<br> | 8 bytes
-
- | `123456789L`<br> | ±9.22e18
-
- |
-| `float`<br> | 32-bit floating point
-
- | `0.0f`<br> | 4 bytes
-
- | `3.14f`<br> | ~6–7 digits precision
-
- |
-| `double`<br> | 64-bit floating point
-
- | `0.0d`<br> | 8 bytes
-
- | `3.14159d`<br> | ~15–16 digits precision
-
- |
-
-
+| `boolean` | Logical values | `false` | Not JVM-defined | `true`, `false` | `true` or `false` |
+| `byte` | 8-bit signed integer | `0` | 1 byte | `10` | -128 to 127 |
+| `char` | 16-bit Unicode character | `'\u0000'` | 2 bytes | `'A'`, `'\u0041'` | 0 to 65,535 |
+| `short` | 16-bit signed integer | `0` | 2 bytes | `2000` | -32,768 to 32,767 |
+| `int` | 32-bit signed integer | `0` | 4 bytes | `1000`, `-500` | -2,147,483,648 to 2,147,483,647 |
+| `long` | 64-bit signed integer | `0L` | 8 bytes | `123456789L` | ±9.22e18 |
+| `float` | 32-bit floating point | `0.0f` | 4 bytes | `3.14f` | ~6–7 digits precision |
+| `double` | 64-bit floating point | `0.0d` | 8 bytes | `3.14159d` | ~15–16 digits precision |
 
 ---
 
