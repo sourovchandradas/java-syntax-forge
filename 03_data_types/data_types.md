@@ -28,6 +28,7 @@ A data type in Java specifies the type of value a variable can hold and the oper
 * Operations support defines what operations can be performed on data
 * Each data type has a default value when not initialized
 
+**Syntax:**   ```dataType variableName = value;```
 
 
 
