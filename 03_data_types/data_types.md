@@ -73,3 +73,18 @@ Java data types are broadly divided into two categories:
                                       +-----------+
 ```
 
+### 1. Primitive Data Types
+In Java, primitive data types are the most basic types of data. They are predefined by the Java language and store simple values directly in memory, each with a fixed size and range. There are 8 primitive types:
+| Type | Description | Default | Size | Example | Range |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| `boolean` | Logical values | `false` | Not JVM-defined | `true`, `false` | `true` or `false` |
+| `byte` | 8-bit signed integer | `0` | 1 byte | `10` | -128 to 127 |
+| `char` | 16-bit Unicode character | `'\u0000'` | 2 bytes | `'A'`, `'\u0041'` | 0 to 65,535 |
+| `short` | 16-bit signed integer | `0` | 2 bytes | `2000` | -32,768 to 32,767 |
+| `int` | 32-bit signed integer | `0` | 4 bytes | `1000`, `-500` | -2,147,483,648 to 2,147,483,647 |
+| `long` | 64-bit signed integer | `0L` | 8 bytes | `123456789L` | ±9.22e18 |
+| `float` | 32-bit floating point | `0.0f` | 4 bytes | `3.14f` | ~6–7 digits precision |
+| `double` | 64-bit floating point | `0.0d` | 8 bytes | `3.14159d` | ~15–16 digits precision |
+
+---
+
