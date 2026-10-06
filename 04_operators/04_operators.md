@@ -48,52 +48,51 @@ In Java, **Arithmetic operators** are used to perform basic mathematical operati
 | `+` | Addition | `5+2` | `7` |
 | `-` | Subtraction | `5-2` | `3` |
 | `*` | Multipliction | `5*2` | `10` |
-| `+` | Division | `5/2` | `2`(integer division) |
-| `+` | Addition | `5%2` | `1` |
+| `/` | Division | `5/2` | `2`(integer division) |
+| `%` | Modulus/Remainder | `5%2` | `1` |
 
 
 
-### Code Example
+### Implementation Example
 
-```java
-public class GFG {
+```
+public class Operators {
     public static void main(String[] args) {
-        int a = 10, b = 3;
-        
-        // Addition
-        int sum = a + b;
-        
-        // Subtraction
-        int diff = a - b;
-        
-        // Multiplication
-        int mul = a * b;
-        
-        // Division
-        int div = a / b;
-        
-        // Modulus
-        int mod = a % b;
+        int a = 10;
+        int b = 3;
 
-        System.out.println("Sum: " + sum);
-        System.out.println("Difference: " + diff);
-        System.out.println("Multiplication: " + mul);
-        System.out.println("Division: " + div);
-        System.out.println("Modulus: " + mod);
+        // Addition
+        int addition = a + b;
+        System.out.println("Addition: " + addition);
+
+        // Subtraction
+        int subtraction = a - b;
+        System.out.println("Subtraction: " + subtraction);
+
+
+        // Multiplication
+        int multiplication = a * b;
+        System.out.println("Multiplication: " + multiplication);
+
+        // Division
+        int division = a / b;
+        System.out.println("Division: " + division);
+
+        // Modulus or Remainder
+        int modulus = a % b;
+        System.out.println("Modulus/Remainder: " + modulus);
     }
 }
-
 ```
 
 ### Output
 
-```text
-Sum: 13
-Difference: 7
+```
+Addition: 13
+Subtraction: 7
 Multiplication: 30
 Division: 3
-Modulus: 1
-
+Modulus/Remainder: 1
 ```
 
 > **Note:** Performing division between two integers (`a / b`) results in integer division, returning only the quotient (`3`) and discarding any fractional remainder.
