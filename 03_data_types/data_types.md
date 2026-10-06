@@ -316,14 +316,208 @@ Symbol: $
 
 ## 2. Non-Primitive (Reference) Data Types
 
+Non-primitive data types store references (memory addresses) rather than actual values. They are created by users and include types like String, Class, Object, Interface, and Array.
 
+**Easy Think**
+Think of non‑primitive types like big boxes that point to other boxes.
+* They don’t hold the value directly, they hold the address of the object.
+* They are more powerful than primitive types because they can store complex data.
+
+The main kinds of non‑primitive data types are:
+
+### 2.1 String
+
+In Java, **String** is a **non‑primitive (reference) data type** that represents a sequence of characters.
+
+* **Class:** [String](../../08_string/string.md) is a class in `java.lang` package.
+* **Immutable:** Once created, a String cannot be changed. Any modification creates a new String object.
+* **Default value:** `null`
+* **Usage:** Used to store text such as words, sentences, or any sequence of characters.
+* **Syntax:** `String str = "Hello!";`
+
+### Implementation Example
+```java
+public class data_types {
+    public static void main(String[] args){
+        String name = "Sourov";
+        String message = "Welcomme to Java";
+        System.out.println("Name: " + name);
+        System.out.println("Message: " + message);
+    }
+}
+```
+**Output**
+```java
+Name: Sourov
+Message: Welcomme to Java
+```
+
+**Explanation:** The example creates two String objects, name and message, and stores text values in them. The println() statements display these values on the console.
+
+**Note**
+```
+String cannot be modified after creation.
+```
+
+---
+
+
+### 2.2 Class
+
+
+
+### Implementation Example
+```java
+class Car {
+    String model;
+    int year;
+
+    Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    void display() {
+        System.out.println(model + " " + year);
+    }
+}
+
+public class Geeks {
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", 2020);
+        myCar.display(); 
+    }
+}
+```
+
+
+**Output**
+```
+Mercedes-Benz 2019
+```
+
+---
+
+### 2.3 Object
+
+
+
+### Implementation Example
+```
+class Car {
+    String model;
+    int year;
+
+    Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+}
+
+public class Geeks {
+    public static void main(String[] args) {
+        Car myCar = new Car("Honda", 2021);
+        System.out.println("Model: " + myCar.model);
+        System.out.println("Year: " + myCar.year);
+    }
+}
+```
+
+**Output**
+```
+Car Model: Honda
+Car Year: 2021
+```
+
+---
+
+### 2.4 Interface
+
+
+### Implementation Example
+```
+interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Woof");
+    }
+}
+
+public class Geeks {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound();
+    }
+}
+```
+
+**Output**
+```
+Woof
+```
+
+---
+
+### 2.5 Array
+
+
+
+### Implementation Example
+```
+public class Geeks {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        String[] names = {"Geek1", "Geek2", "Geek3"};
+        System.out.println("First number: " + numbers[0]);
+        System.out.println("Second name: " + names[1]);
+    }
+}
+```
+
+**Output**
+```
+First number: 1
+Second name: Geek2
+```
+
+---
+
+## Advantage of Java Data Types
+
+1. a
+2. a
+3. a
+4. a
+5. a
+6. a
+7. a
+
+
+---
+
+## Common Mistakes
+
+1. a
+2. a
+3. a
+4. a
+5. a
+
+---
+
+## Related Topics
+
+---
+
+## Additional Resources
 
 
 ---
 
 
 
-
-
-
+*Last updated: October 6, 2026*
 
