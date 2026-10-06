@@ -2,19 +2,29 @@
 
 ## Overview
 
+Java data types define the type of data a variable can store in a program. They help the compiler allocate memory efficiently and ensure type safety. Java provides two main categories of data types: primitive and non-primitive.
 
+This guide covers:
 
-
+* **Data Types Hierarchy** - A visual structural tree of Java data types
+* **Primitive Data Types** - 8 built-in types for simple values   
+* **Non-Primitive (Reference) Data Types** - User-defined or built-in reference objects   
+* **Key Advantages & Practices** - Memory efficiency and type safety benefits   
 
 ---
 
 ## Table of Contents
 
-1. []()
-2. []()
-3. []()
-4. []()
-5. []()
+1. [Java Data Types](#java-data-types)
+2. [Primitive Data Types](#primitive-data-types)
+3. [Non-Primimtive Data Types](#none-primitive-data-types)
+4. [Advantages of Data Types](#advantages-of-data-types)
+5. [Common Mistakes and Errors](#common-mistakes-and-errors)
+6. [Exercise](#exercise)
+7. [Quick Reference](#quick-reference)
+8. [Related Topics](#related-topic)
+9. [Why this matters](#why-this-matters)
+10. [Additional Resources](#additional-resources)
 
 ---
 
@@ -73,7 +83,7 @@ Java data types are broadly divided into two categories:
                                       +-----------+
 ```
 
-### 1. Primitive Data Types
+## 1. Primitive Data Types
 In Java, primitive data types are the most basic types of data. They are predefined by the Java language and store simple values directly in memory, each with a fixed size and range. There are 8 primitive types:
 | Type | Description | Default | Size | Example | Range |
 | :--- | :--- | :---: | :---: | :--- | :--- |
