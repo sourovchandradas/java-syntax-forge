@@ -52,7 +52,6 @@ In Java, **Arithmetic operators** are used to perform basic mathematical operati
 | `%` | Modulus/Remainder | a % b | `5%2` | `1` |
 
 
-
 ### Implementation Example
 
 ```java
@@ -275,6 +274,43 @@ a = b;   // value of b (10) is stored in a
 System.out.println(a); // prints 10
 ```
 * **Working Process:** Right side is **calculated first**. Result is taken. That result is stored in the **left side variable**.
+
+### 2. (+=) operator
+* **Definition:** `+=` is a compound assignment operator. It combines **addition (+)** and **assignment(=)**. It adds the right‑side value to the left‑side variable and stores the result back in the left‑side variable.
+* **Syntax:**
+```java
+num1 += num2; // same as: num1 = num1 + num2;
+```
+* **For example:**
+```java
+class Assignment {
+    public static void main(String[] args) {
+        int num1 = 10, num2 = 20;
+
+        System.out.println("num1 = " + num1); // num1 = 10
+        System.out.println("num2 = " + num2); // num2 = 20
+
+        // Adding & Assigning values
+        num1 += num2;
+
+        // Displaying the assigned values
+        System.out.println("num1 = " + num1); // num1 = 30
+    }
+}
+```
+
+* **Special Note**
+```java
+int x = 5;
+// x = x + 4.5;   // ❌ compile error (double → int not allowed)
+x += 4.5;         // ✅ works, result = 9 (auto cast to int)
+```
+> **Key Points:** `+=` = shortcut for **add + assign**. Saves time and reduces code length. Safer than `x = x + value` when dealing with type casting. 
+
+
+
+
+
 ### Code Example
 
 ```java
