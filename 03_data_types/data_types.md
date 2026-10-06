@@ -83,7 +83,7 @@ Java data types are broadly divided into two categories:
                                       +-----------+
 ```
 
-## 1. Primitive Data Types
+## Primitive Data Types
 In Java, primitive data types are the most basic types of data. They are predefined by the Java language and store simple values directly in memory, each with a fixed size and range. There are 8 primitive types:
 | Type | Description | Default | Size | Example | Range |
 | :--- | :--- | :---: | :---: | :--- | :--- |
@@ -98,7 +98,7 @@ In Java, primitive data types are the most basic types of data. They are predefi
 
 ---
 
-### 1.1 boolean Data Type
+### 1. boolean Data Type
 
 In Java, the boolean data type is a primitive type that can hold only two possible values `true` or `false`
 
@@ -125,7 +125,7 @@ Is Pizza your favorite food? false
 
 ---
 
-### 1.2 byte Date Type
+### 2. byte Date Type
 
 An 8-bit signed integer used to save memory in large numeric arrays.
 
@@ -154,7 +154,7 @@ Temperature: -3
 
 ---
 
-### 1.3 short Data Type
+### 3. short Data Type
 
 A 16-bit signed integer often used when memory is limited and values are moderate in size.
 
@@ -183,7 +183,7 @@ Temperature: -273
 
 ---
 
-### 1.4 int Data types
+### 4. int Data types
 
 A 32-bit signed integer and the most commonly used numeric data type.
 
@@ -211,7 +211,7 @@ Distance: 130000000
 
 ---
 
-### 1.5 long Data Type
+### 5. long Data Type
 
 In Java, the long data type is a primitive integer type used to store very large whole numbers.
 
@@ -239,7 +239,7 @@ Light Year Distance: 9460730472580800
 
 ---
 
-### 1.6 float Data Type
+### 6. float Data Type
 
 In Java, the float data type is a primitive type used to store decimal numbers (floating‑point values).
 
@@ -267,7 +267,7 @@ Gravity: 9.81
 
 ---
 
-### double Data Type
+### 7. double Data Type
 
 In Java, the double data type is a primitive type used to store decimal numbers with higher precision than float.
 
@@ -295,7 +295,7 @@ Avogadro's Number: 6.02214076E23
 
 ---
 
-### 1.8 char Data Type
+### 8. char Data Type
 
 A 16-bit Unicode character used to store single symbols or letters.
 
@@ -324,7 +324,7 @@ Symbol: $
 ---
 
 
-## 2. Non-Primitive (Reference) Data Types
+## Non-Primitive (Reference) Data Types
 
 Non-primitive data types store references (memory addresses) rather than actual values. They are created by users and include types like String, Class, Object, Interface, and Array.
 
@@ -335,7 +335,7 @@ Think of non‑primitive types like big boxes that point to other boxes.
 
 The main kinds of non‑primitive data types are:
 
-### 2.1 String
+### 1. String
 
 In Java, **String** is a **non‑primitive (reference) data type** that represents a sequence of characters.
 
@@ -372,7 +372,7 @@ String cannot be modified after creation.
 ---
 
 
-### 2.2 Class
+### 2. Class
 
 
 
@@ -408,7 +408,7 @@ Mercedes-Benz 2019
 
 ---
 
-### 2.3 Object
+### 3. Object
 
 
 
@@ -441,7 +441,7 @@ Car Year: 2021
 
 ---
 
-### 2.4 Interface
+### 4. Interface
 
 
 ### Implementation Example
@@ -471,7 +471,7 @@ Woof
 
 ---
 
-### 2.5 Array
+### 5. Array
 
 
 
