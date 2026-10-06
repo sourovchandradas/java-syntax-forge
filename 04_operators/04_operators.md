@@ -160,7 +160,7 @@ System.out.println(!flag); // false
 * It changes `0 → 1` and `1 → 0`.
 * Works only on integer types (`byte`, `short`, `int`, `long`).
 * **Syntax :** `~(operand)`
-* **Formula :** If `x` is a number, then: `x = -(x+1)`
+* **Formula :** If `x` is a number, then : `x = -(x+1)`
 * **For example**
 ```java
 int a = 5;        // Binary: 00000000 00000000 00000000 00000101
@@ -228,12 +228,53 @@ Bitwise Complement of 10: -11
 
 ---
 
-## 3. Assignment Operators
+## Assignment Operators
+Assignment operators in Java are used to assign values to variables and simplify expressions. They include both simple (=) and compound operators (like +=, -=), which combine operations with assignment. These operators help write cleaner and more concise code while handling value updates efficiently.
 
-Assignment operators evaluate expressions on the right-hand side and store the resulting value into a variable on the left-hand side. Because assignment exhibits right-to-left associativity, the right-hand value must be a constant or an evaluated expression.
+* Supports both simple (=) and compound (+=, -=, *=, /=, %=) assignments.
+* Compound operators perform implicit type casting in some cases.
+* Reduces code length by combining operation and assignment in one step.
 
-Compound assignment operators (e.g., `+=`, `-=`, `*=`, `/=`, `%=`) execute the arithmetic operation and assignment concurrently.
+### Types of Assignment Operators in Java
+The Assignment Operator is generally of two types. They are -
 
+### 1. Simple Assignment Operators
+
+* Assignment operators put the right‑side value into the left‑side variable.
+* They follow right‑to‑left associativity → right side is calculated first, then stored in left side.
+* The right side must be a constant or an evaluated expression.
+* **Example:**
+```java
+int x;
+x = 5 + 3;   // right side (8) is calculated first, then stored in x
+```
+
+### 2. Compound Assignment Operators
+
+* These combine operation + assignment in one step.
+* Examples: `+=`, `-=`, `*=`, `/=`, `%=`
+* They make code shorter and cleaner.
+* Sometimes they do implicit type casting automatically.
+
+### Below is an explanation of each assignment operator and its working
+
+### 1. (=) operator
+* **Definition:** `=` is the **basic assignment operator** in Java. It **stores the value on the right side into the variable on the left side**.
+* **Syntax:** 
+```java
+num1 = num2;
+```
+> Here, the value of `num2` goes into `num`.
+>
+> 
+* **For example:**
+```java
+int a;
+int b = 10;
+a = b;   // value of b (10) is stored in a
+System.out.println(a); // prints 10
+```
+* **Working Process:** Right side is **calculated first**. Result is taken. That result is stored in the **left side variable**.
 ### Code Example
 
 ```java
