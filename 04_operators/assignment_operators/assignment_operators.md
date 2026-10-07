@@ -687,7 +687,7 @@ public class Solution2 {
 ## 21. Additional Resources
 
 * [GeeksforGeeks](https://www.geeksforgeeks.org/java/java-assignment-operator-with-examples/)
-* [w3schools](https://www.w3schools.com/java/java_operators.asp)
+* [w3schools](https://www.w3schools.com/java/java_operators_assign.asp)
 
 ---
 
