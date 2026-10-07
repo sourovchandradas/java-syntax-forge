@@ -129,7 +129,7 @@ b++; // ✅ Compiles cleanly (Implicitly performs: b = (byte)(b + 1))
 
 ---
 
-## Decrement Operators (`--`)
+## Decrement Operators
 
 ### Definition
 
