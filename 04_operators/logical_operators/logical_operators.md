@@ -46,10 +46,11 @@ result = condition1 && condition2;
 
 | Operand 1 (`A`) | Operand 2 (`B`) | Result (`A && B`) |
 | --- | --- | --- |
-| `true` | `true` | `true` |
-| `true` | `false` | `false` |
-| `false` | `true` | `false` |
 | `false` | `false` | `false` |
+| `false` | `true` | `false` |
+| `true` | `false` | `false` |
+| `true` | `true` | `true` |
+
 
 ### Code Example
 
@@ -80,10 +81,11 @@ result = condition1 || condition2;
 
 | Operand 1 (`A`) | Operand 2 (`B`) | Result (`A || B`) |
 | --- | --- | --- |
-| `true` | `true` | `true` |
-| `true` | `false` | `true` |
-| `false` | `true` | `true` |
 | `false` | `false` | `false` |
+| `false` | `true` | `true` |
+| `true` | `false` | `true` |
+| `true` | `true` | `true` |
+
 
 ### Code Example
 
