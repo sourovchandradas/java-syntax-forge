@@ -14,7 +14,7 @@ In Java, arithmetic operators are categorized as:
 ## Table of Contents
 
 1. [Addition Operator (+)](#addition-operator-)
-2. [Subtraction Operator (-)](#subtraction-operator-)
+2. [Subtraction Operator (-)](#subtraction-operator--)
 3. [Multiplication Operator (*)](#multiplication-operator-)
 4. [Division Operator (/)](#division-operator-)
 5. [Modulus Operator (%)](#modulus-operator-)
