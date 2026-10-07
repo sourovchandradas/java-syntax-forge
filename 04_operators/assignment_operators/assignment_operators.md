@@ -696,3 +696,9 @@ public class Solution2 {
 ## Key Takeaways
 
 Assignment operators simplify state mutations and variable maintenance in Java applications. Compound operators combine operation and assignment into clean, concise steps while performing implicit narrowing casts automatically. Mastery of arithmetic, bitwise, and bit-shift compound operators enables clean control flow, robust state management, and optimized bit manipulation.
+
+---
+
+*Last Updated : October 7, 2026*
+
+---
