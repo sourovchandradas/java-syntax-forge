@@ -450,9 +450,3 @@ Arithmetic operators enable core numerical operations and arithmetic expressions
 ---
 
 *Last Modified: October 7, 2026*
-
----
-
----
-
-*Last Updated : October 7, 2026*
