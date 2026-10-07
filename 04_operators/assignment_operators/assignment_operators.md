@@ -19,7 +19,7 @@ In Java, assignment operators include:
 1. [Simple Assignment Operator (=)](#1-simple-assignment-operator-)
 2. [Compound Assignment Operators](#2-compound-assignment-operators)
 3. [+= Operator](#3--operator)
-4. [-= Operator](#4--operator)
+4. [-= Operator](#4---operator)
 5. [*= Operator](#5--operator)
 6. [/= Operator](#6--operator)
 7. [%= Operator](#7--operator)
