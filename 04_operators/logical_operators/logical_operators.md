@@ -15,7 +15,7 @@ Java provides three primary logical operators:
 ## Table of Contents
 
 1. [Logical AND Operator (&&)](#logical-and-operator-)
-2. [Logical OR Operator (||)](#logical-or-operator-)
+2. [Logical OR Operator (||)](#logical-or-operator--)
 3. [Logical NOT Operator (!)](#logical-not-operator-)
 4. [Short-Circuit Evaluation Mechanics](#short-circuit-evaluation-mechanics)
 5. [Operator Precedence and Associativity](#operator-precedence-and-associativity)
