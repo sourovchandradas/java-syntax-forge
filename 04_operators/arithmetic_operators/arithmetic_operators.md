@@ -41,7 +41,6 @@ The `+` operator adds two numeric values together. When used with a `String`, it
 
 ```java
 result = operand1 + operand2;
-
 ```
 
 ### Example
@@ -51,7 +50,6 @@ int a = 15;
 int b = 10;
 int sum = a + b;
 System.out.println(sum); // Output: 25
-
 ```
 
 ### String Concatenation Behavior
@@ -61,7 +59,6 @@ int score = 100;
 System.out.println("Score: " + score); // Output: Score: 100
 System.out.println(5 + 5 + " Text");   // Output: 10 Text (Addition first, then concatenation)
 System.out.println("Text " + 5 + 5);   // Output: Text 55 (String concatenation evaluated left-to-right)
-
 ```
 
 ---
@@ -77,7 +74,6 @@ The binary `-` operator subtracts the right-hand operand from the left-hand oper
 ```java
 result = operand1 - operand2; // Binary subtraction
 negatedValue = -operand;     // Unary negation
-
 ```
 
 ### Example
@@ -91,7 +87,6 @@ System.out.println(difference); // Output: 12
 int positiveNum = 5;
 int negativeNum = -positiveNum;
 System.out.println(negativeNum); // Output: -5
-
 ```
 
 ---
@@ -106,7 +101,6 @@ The `*` operator multiplies two numeric values.
 
 ```java
 result = operand1 * operand2;
-
 ```
 
 ### Example
@@ -116,7 +110,6 @@ int length = 6;
 int width = 4;
 int area = length * width;
 System.out.println(area); // Output: 24
-
 ```
 
 ### Automatic Type Promotion
@@ -128,7 +121,6 @@ int count = 4;
 double price = 12.5;
 double total = count * price; // count is promoted to double (4.0 * 12.5)
 System.out.println(total);   // Output: 50.0
-
 ```
 
 ---
@@ -143,7 +135,6 @@ The `/` operator divides the left-hand operand by the right-hand operand.
 
 ```java
 result = dividend / divisor;
-
 ```
 
 ### Integer Division vs. Floating-Point Division
@@ -157,7 +148,6 @@ System.out.println(intResult); // Output: 2 (Fractional part .5 is truncated)
 
 double doubleResult = 5.0 / 2;
 System.out.println(doubleResult); // Output: 2.5
-
 ```
 
 > **Warning:** Dividing an integer by zero (`x / 0`) throws an `ArithmeticException` at runtime. Dividing a floating-point number by zero (`x / 0.0`) produces `Infinity` or `NaN` without throwing an exception.
@@ -326,14 +316,12 @@ Understanding arithmetic operators is fundamental across essential software engi
 int totalRecords = 53;
 int pageSize = 10;
 int totalPages = (totalRecords + pageSize - 1) / pageSize; // Calculates 6 pages
-
 ```
 
 
 2. **Cyclic Operations:** Modulus (`%`) keeps counters within specific bounds (e.g., circular buffer indexing, game turns, clock cycles).
 ```java
 int currentHour = (hour + hoursPassed) % 12; // Wraps clock hours within 0-11
-
 ```
 
 
@@ -351,7 +339,6 @@ double avg = 5 / 2;
 
 // ✅ Correct: Cast at least one operand to double
 double correctAvg = (double) 5 / 2; // Result: 2.5
-
 ```
 
 
@@ -363,7 +350,6 @@ System.out.println("Total: " + 5 + 10); // Output: "Total: 510"
 
 // ✅ Correct
 System.out.println("Total: " + (5 + 10)); // Output: "Total: 15"
-
 ```
 
 
@@ -376,7 +362,6 @@ if (divisor != 0) {
 } else {
     System.out.println("Cannot divide by zero.");
 }
-
 ```
 
 
@@ -386,7 +371,6 @@ Modifying and reading a variable multiple times in a single line leads to unread
 // ❌ Avoid complex inline updates
 int x = 2;
 int val = x++ + ++x * x++; // Unclear and error-prone
-
 ```
 
 
@@ -408,7 +392,6 @@ public class TemperatureConverter {
         System.out.println(fahrenheit + "°F = " + celsius + "°C");
     }
 }
-
 ```
 
 ### Exercise 2: Odd/Even Checker via Modulus
@@ -426,7 +409,6 @@ public class EvenOddCheck {
         }
     }
 }
-
 ```
 
 ---
