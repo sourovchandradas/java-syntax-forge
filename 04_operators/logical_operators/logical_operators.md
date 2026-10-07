@@ -34,7 +34,7 @@ Java provides three primary logical operators:
 
 ### Definition
 
-The binary **Logical AND** operator (`&&`) evaluates two boolean conditions and returns `true` **only if both operands evaluate to `true**`. If at least one condition is `false`, the overall result is `false`.
+The binary **Logical AND** operator (`&&`) evaluates two boolean conditions and returns `true` **only if both operands evaluate to `true`**. If at least one condition is `false`, the overall result is `false`.
 
 ### Syntax
 
@@ -69,7 +69,7 @@ System.out.println("Allowed entry: " + canEnterClub); // Output: true
 
 ### Definition
 
-The binary **Logical OR** operator (`||`) evaluates two boolean conditions and returns `true` **if at least one operand evaluates to `true**`. It returns `false` only when both conditions are `false`.
+The binary **Logical OR** operator (`||`) evaluates two boolean conditions and returns `true` **if at least one operand evaluates to `true`**. It returns `false` only when both conditions are `false`.
 
 ### Syntax
 
@@ -79,7 +79,9 @@ result = condition1 || condition2;
 
 ### Truth Table
 
-| Operand 1 (`A`) | Operand 2 (`B`) | Result (`A || B`) |
+### Truth Table
+
+| Operand 1 (`A`) | Operand 2 (`B`) | Result (`A \|\| B`) |
 | --- | --- | --- |
 | `false` | `false` | `false` |
 | `false` | `true` | `true` |
@@ -365,7 +367,7 @@ System.out.println("test: " + test + ", x: " + x);
 | Operator | Meaning | Syntax | Example | Result |
 | --- | --- | --- | --- | --- |
 | `&&` | Logical AND | `a && b` | `true && false` | `false` (Requires both `true`) |
-| `||` | Logical OR | `a || b` | `true || false` | `true` (Requires at least one `true`) |
+| `\|\|` | Logical OR | `a \|\| b` | `true \|\| false` | `true` (Requires at least one `true`) |
 | `!` | Logical NOT | `!a` | `!false` | `true` (Inverts boolean value) |
 
 ---
