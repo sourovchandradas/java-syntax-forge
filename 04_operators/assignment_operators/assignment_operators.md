@@ -35,7 +35,7 @@ In Java, assignment operators include:
 19. [Quick Summary Table](#19-quick-summary-table)
 20. [Related Topics](#20-related-topics)
 21. [Additional Resources](#21-additional-resources)
-22. [Key Takeaways](#22-key-takeaways)
+22. [Key Takeaways](#key-takeaways)
 
 ---
 
