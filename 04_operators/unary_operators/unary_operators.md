@@ -17,7 +17,7 @@ In Java, unary operators are categorized into:
 
 1. [Unary Plus Operator (+)](#unary-plus-operator-)
 2. [Unary Minus Operator (-)](#unary-minus-operator--)
-3. [Increment Operators (++)](#increment-operators---)
+3. [Increment Operators (++)](#increment-operators)
 4. [Decrement Operators (--)](https://www.google.com/search?q=%234-decrement-operators---)
 5. [Logical NOT Operator (!)](#logical-not-operator-)
 6. [Bitwise Complement Operator (~)](#bitwise-complement-operator-)
