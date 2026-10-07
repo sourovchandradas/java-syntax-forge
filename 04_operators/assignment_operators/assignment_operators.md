@@ -688,8 +688,8 @@ public class Solution2 {
 
 ## 21. Additional Resources
 
-* [Oracle Java Documentation: Assignment Operators](https://www.google.com/search?q=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op1.html)
-* [The Java Language Specification (JLS): Compound Assignment Operators](https://www.google.com/search?q=https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html%23jls-15.26.2)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/java/java-assignment-operator-with-examples/)
+* [w3schools](https://www.w3schools.com/java/java_operators.asp)
 
 ---
 
