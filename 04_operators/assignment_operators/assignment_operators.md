@@ -14,8 +14,6 @@ In Java, assignment operators include:
 
 ## Table of Contents
 
-## Table of Contents
-
 1. [Simple Assignment Operator (=)](#1-simple-assignment-operator-)
 2. [Compound Assignment Operators](#2-compound-assignment-operators)
 3. [+= Operator](#3--operator)
@@ -669,7 +667,7 @@ public class Solution2 {
 | `/=` | Divide and Assign | `a /= 2` | `a = (type)(a / 2)` |
 | `%=` | Modulus and Assign | `a %= 3` | `a = (type)(a % 3)` |
 | `&=` | Bitwise AND and Assign | `a &= b` | `a = (type)(a & b)` |
-| ` | =` | Bitwise OR and Assign | `a |
+| `\|= ` | Bitwise OR and Assign | `a \|= b` | `a = (type)(a \| b)` |
 | `^=` | Bitwise XOR and Assign | `a ^= b` | `a = (type)(a ^ b)` |
 | `<<=` | Left Shift and Assign | `a <<= 2` | `a = (type)(a << 2)` |
 | `>>=` | Signed Right Shift and Assign | `a >>= 2` | `a = (type)(a >> 2)` |
