@@ -14,7 +14,7 @@ In Java, assignment operators include:
 
 ## Table of Contents
 
-1. [Simple Assignment Operator (`=`)](#sec-1)
+1. [Simple Assignment Operator (`=`)](#1-simple-assignment-operator-)
 2. [Compound Assignment Operators](https://www.google.com/search?q=%232-compound-assignment-operators)
 3. [`+=` Operator](https://www.google.com/search?q=%233--operator)
 4. [`-=` Operator](https://www.google.com/search?q=%234--operator)
