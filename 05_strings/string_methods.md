@@ -632,14 +632,14 @@ System.out.println(firstWord.toUpperCase());
 
 ---
 
-## 9. Additional Resources
+## Additional Resources
 
 * [GeeksfoGeeks](https://www.geeksforgeeks.org/java/java-string-methods/)
 * [w3schools](https://www.w3schools.com/java/java_ref_string.asp)
 
 ---
 
-## 10. Key Takeaways
+## Key Takeaways
 
 Java's `String` class offers a rich API for text manipulation, searching, inspection, and comparison. Because `String` objects are immutable, every transformation method (like `toLowerCase()`, `trim()`, or `replace()`) returns a brand-new `String` object without altering the original. Always re-assign the returned string or store it in a new variable to preserve changes.
 
