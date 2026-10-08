@@ -21,7 +21,7 @@ Understanding Strings requires mastering how the Java Virtual Machine (JVM) allo
 ## Table of Contents
 
 1. [What is a String in Java?](#what-is-a-string-in-java)
-2. [Ways of Creating a Java String](ways-of-creating-a-java-string)
+2. [Ways of Creating a Java String](#ways-of-creating-a-java-string)
 3. [Interfaces and Classes in Strings](#interfaces-and-classes-in-strings)
 4. [Immutable String Concept](#immutable-string-concept)
 5. [How Strings are Stored in Java Memory](#how-strings-are-stored-in-java-memory)
