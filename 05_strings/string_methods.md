@@ -1,4 +1,4 @@
-# Java String Methods (`string_methods.md`)
+# String Methods in Java
 
 ## Overview
 
@@ -17,9 +17,9 @@ Java String methods are built-in functions provided by the `java.lang.String` cl
 
 ## Table of Contents
 
-1. [1. Overview of Java String Methods](#overview-of-java-string-methods)
-2. [2. Detailed Breakdown of Common String Methods](#detailed-breakdown-of-common-string-methods)
-* [Method 1: int length()](#-int-length)
+1. [1. Overview of Java String Methods](#-overview-of-java-string-methods)
+2. [2. Detailed Breakdown of Common String Methods](#-detailed-breakdown-of-common-string-methods)
+* [Method 1: int length()](#-int-length-)
 * [Method 2: char charAt(int i)](#-char-charatint-i)
 * [Method 3: String substring(int i)](#-string-substringint-i)
 * [Method 4: String substring(int i, int j)](https://www.google.com/search?q=%234-string-substringint-i-int-j)
@@ -38,8 +38,6 @@ Java String methods are built-in functions provided by the `java.lang.String` cl
 * [Method 17: boolean contains(CharSequence sequence)](https://www.google.com/search?q=%2317-boolean-containscharsequence-sequence)
 * [Method 18: char[] toCharArray()](https://www.google.com/search?q=%2318-char-tochararray)
 * [Method 19: boolean startsWith(String prefix)](https://www.google.com/search?q=%2319-boolean-startswithstring-prefix)
-
-
 3. [3. Full Implementation Example](https://www.google.com/search?q=%233-full-implementation-example)
 4. [4. Why This Matters](https://www.google.com/search?q=%234-why-this-matters)
 5. [5. Common Mistakes to Avoid](https://www.google.com/search?q=%235-common-mistakes-to-avoid)
