@@ -20,25 +20,25 @@ Understanding Strings requires mastering how the Java Virtual Machine (JVM) allo
 
 ## Table of Contents
 
-1. [1. What is a String in Java?](#what-is-a-string-in-java)
-2. [2. Ways of Creating a Java String](ways-of-creating-a-java-string)
-3. [3. Interfaces and Classes in Strings](#interfaces-and-classes-in-strings)
-4. [4. Immutable String Concept](#immutable-string-concept)
-5. [5. How Strings are Stored in Java Memory](#how-strings-are-stored-in-java-memory)
-6. [6. Difference Between == Operator and .equals() Method](#difference-between--operator-and-equals-method)
-7. [7. Deep Dive: Equality Operator (==) Mechanics](#deep-dive-equality-operator--mechanics)
-8. [8. Deep Dive: .equals() Method Mechanics](#deep-dive-equals-method-mechanics)
-9. [9. Why This Matters](#why-this-matters)
-10. [10. Common Mistakes to Avoid](#common-mistakes-to-avoid)
-11. [11. Practice Exercises](#practice-exercises)
-12. [12. Quick Summary Table](#quick-summary-table)
-13. [13. Related Topics](#related-topics)
-14. [14. Additional Resources](#additional-resources)
-15. [15. Key Takeaways](#key-takeaways)
+1. [What is a String in Java?](#what-is-a-string-in-java)
+2. [Ways of Creating a Java String](ways-of-creating-a-java-string)
+3. [Interfaces and Classes in Strings](#interfaces-and-classes-in-strings)
+4. [Immutable String Concept](#immutable-string-concept)
+5. [How Strings are Stored in Java Memory](#how-strings-are-stored-in-java-memory)
+6. [Difference Between == Operator and .equals() Method](#difference-between--operator-and-equals-method)
+7. [Deep Dive: Equality Operator (==) Mechanics](#deep-dive-equality-operator--mechanics)
+8. [Deep Dive: .equals() Method Mechanics](#deep-dive-equals-method-mechanics)
+9. [Why This Matters](#why-this-matters)
+10. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+11. [Practice Exercises](#practice-exercises)
+12. [Quick Summary Table](#quick-summary-table)
+13. [Related Topics](#related-topics)
+14. [Additional Resources](#additional-resources)
+15. [Key Takeaways](#key-takeaways)
 
 ---
 
-## 1. What is a String in Java?
+## What is a String in Java?
 
 In Java, a String is an object that encapsulates a sequence of characters.
 
@@ -79,7 +79,7 @@ Geeks
 
 ---
 
-## 2. Ways of Creating a Java String
+## Ways of Creating a Java String
 
 There are two primary ways to create a string in Java:
 
@@ -105,7 +105,7 @@ String str = new String("GeeksforGeeks");
 
 ---
 
-## 3. Interfaces and Classes in Strings
+## Interfaces and Classes in Strings
 
 ### CharSequence Interface
 
@@ -119,7 +119,7 @@ Common classes that implement `CharSequence` include:
 
 ---
 
-## 4. Immutable String Concept
+## Immutable String Concept
 
 In Java, string objects are immutable. **Immutable** simply means unmodifiable or unchangeable. Once a string object is created, its data or state cannot be changed, but a new string object is created when a modification is performed.
 
@@ -149,7 +149,7 @@ Hello
 
 ---
 
-## 5. How Strings are Stored in Java Memory
+## How Strings are Stored in Java Memory
 
 ### String Literal Storage
 
@@ -231,7 +231,7 @@ TAT
 
 ---
 
-## 6. Difference Between `==` Operator and `equals()` Method
+## Difference Between `==` Operator and `equals()` Method
 
 In Java, the `equals()` method and the `==` operator are used to compare objects. The main difference is that the string `equals()` method compares the **content equality** of two strings, while the `==` operator compares the **reference or memory location** of objects in heap/pool.
 
@@ -266,7 +266,7 @@ true
 
 ---
 
-## 7. Deep Dive: Equality Operator (`==`) Mechanics
+## Deep Dive: Equality Operator (`==`) Mechanics
 
 The `==` operator is used to compare primitive values and object references.
 
@@ -332,7 +332,7 @@ false
 
 ---
 
-## 8. Deep Dive: `.equals()` Method Mechanics
+## Deep Dive: `.equals()` Method Mechanics
 
 The `equals()` method is defined in the `Object` class and is used to compare the **logical equality** of two objects. Many Java classes such as `String`, `Integer`, and `ArrayList` override this method to compare object contents instead of memory references.
 
@@ -375,7 +375,7 @@ true
 
 ---
 
-## 9. Why This Matters
+## Why This Matters
 
 1. **Memory Optimization:** Reusing string literals via the String Constant Pool saves substantial heap memory in large applications.
 2. **Avoiding Logic Bugs:** Using `==` instead of `.equals()` when validating strings (such as user credentials or configuration values) can lead to unexpected runtime bugs when strings originate from heap allocations or user input.
@@ -383,7 +383,7 @@ true
 
 ---
 
-## 10. Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 1. **Expecting Unassigned String Modifications to Mutate:**
 Forgetting that `String` methods like `.concat()`, `.replace()`, or `.toUpperCase()` return new String objects and do not alter the existing string in place.
@@ -394,7 +394,7 @@ Attempting to use `==` between two distinct object types that share no parent-ch
 
 ---
 
-## 11. Practice Exercises
+## Practice Exercises
 
 ### Exercise 1: Tracing Concatenation Output
 
@@ -450,7 +450,7 @@ true
 
 ---
 
-## 12. Quick Summary Table
+## Quick Summary Table
 
 | Feature | `==` Operator | `equals()` Method |
 | --- | --- | --- |
@@ -467,7 +467,7 @@ true
 
 ---
 
-## 13. Related Topics
+## Related Topics
 
 * **`StringBuffer` & `StringBuilder`:** Mutable character sequences for single-threaded or synchronized string operations.
 * **String Constant Pool (SCP):** JVM internal memory organization and interning details.
@@ -475,7 +475,7 @@ true
 
 ---
 
-## 14. Additional Resources
+## Additional Resources
 
 * [GeeksforGeeks-01](https://www.geeksforgeeks.org/java/strings-in-java/)
 * [GeeksforGeeks-02](https://www.geeksforgeeks.org/java/difference-between-and-equals-method-in-java/)
@@ -483,7 +483,7 @@ true
 
 ---
 
-## 15. Key Takeaways
+## Key Takeaways
 
 Strings in Java are immutable reference objects stored using UTF-16 encoding. String literals are stored in the String Constant Pool (SCP) to conserve memory, whereas the `new` keyword allocates separate objects on the heap. Always use `.equals()` to compare string character content, as `==` only checks whether two reference variables point to the exact same memory address.
 
