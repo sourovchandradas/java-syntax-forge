@@ -1,3 +1,4 @@
+// Exercise 02: Trace Type Promotion and Value
 public class Exercise2 {
     public static void main(String[] args) {
         int a = 10;
