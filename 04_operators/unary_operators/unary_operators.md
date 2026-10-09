@@ -394,7 +394,7 @@ Button On: true, Clicks: 1
 Button On: false, Clicks: 2
 ```
 
-**Solution:** [Exercise 1: State Inversion and Counter Logic](labs/exercise_01.java)
+**Solution:** [Exercise 1: State Inversion and Counter Logic](labs/exercise_01.state_inversion_and_counter_logic.java)
 
 ### Exercise 2: Tracing Expression Evaluation
 
@@ -405,7 +405,7 @@ int a = 10;
 int b = ++a + a-- - --a;
 ```
 
-**Solution:** [Exercise 2: Tracing Expression Evuluation](labs/exercise_02.java)
+**Solution:** [Exercise 2: Tracing Expression Evuluation](labs/exercise_02.tracing_expression_evaluation.java)
 
 ---
 
