@@ -20,29 +20,28 @@ Unlike `if-else` statements, which are control flow *statements*, the ternary op
 
 ## Table of Contents
 
-1. [1. Syntax and Core Mechanics](https://www.google.com/search?q=%231-syntax-and-core-mechanics)
-2. [2. Return Types and Type Promotion](https://www.google.com/search?q=%232-return-types-and-type-promotion)
-3. [3. Ternary Operator vs if-else](https://www.google.com/search?q=%233-ternary-operator-vs-if-else)
-4. [4. Chaining and Nested Ternary Expressions](https://www.google.com/search?q=%234-chaining-and-nested-ternary-expressions)
-5. [5. Operator Precedence and Evaluation Order](https://www.google.com/search?q=%235-operator-precedence-and-evaluation-order)
-6. [6. Full Implementation Example](https://www.google.com/search?q=%236-full-implementation-example)
-7. [7. Why This Matters](https://www.google.com/search?q=%237-why-this-matters)
-8. [8. Common Mistakes to Avoid](https://www.google.com/search?q=%238-common-mistakes-to-avoid)
-9. [9. Practice Exercises](https://www.google.com/search?q=%239-practice-exercises)
-10. [10. Quick Summary Table](https://www.google.com/search?q=%2310-quick-summary-table)
-11. [11. Related Topics](https://www.google.com/search?q=%2311-related-topics)
-12. [12. Additional Resources](https://www.google.com/search?q=%2312-additional-resources)
-13. [13. Key Takeaways](https://www.google.com/search?q=%2313-key-takeaways)
+1. [Syntax and Core Mechanics](#syntax-and-core-mechanics)
+2. [Return Types and Type Promotion](#return-types-and-type-promotion)
+3. [Ternary Operator vs if-else](#ternary-operator-vs-if-else)
+4. [Chaining and Nested Ternary Expressions](#chaining-and-nested-ternary-expressions)
+5. [Operator Precedence and Evaluation Order](#operator-precedence-and-evaluation-order)
+6. [Full Implementation Example](#full-implementation-example)
+7. [Why This Matters](#why-this-matters)
+8. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+9. [Practice Exercises](#practice-exercises)
+10. [Quick Summary Table](#quick-summary-table)
+11. [Related Topics](#related-topics)
+12. [Additional Resources](#additional-resources)
+13. [Key Takeaways](#key-takeaways)
 
 ---
 
-## 1. Syntax and Core Mechanics
+## Syntax and Core Mechanics
 
 ### Syntax
 
 ```java
 variable = (booleanCondition) ? expressionIfTrue : expressionIfFalse;
-
 ```
 
 ### How It Works
@@ -56,13 +55,16 @@ variable = (booleanCondition) ? expressionIfTrue : expressionIfFalse;
 ### Code Example
 
 ```java
-int a = 15;
-int b = 20;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int a = 15;
+        int b = 20;
 
-// Find the maximum of two numbers
-int max = (a > b) ? a : b;
-System.out.println("Maximum: " + max); // Output: Maximum: 20
-
+        // Find the maximum of two numbers
+        int max = (a > b) ? a : b;
+        System.out.println("Maximum: " + max); // Output: Maximum: 20
+    }
+}
 ```
 
 ### Short-Circuit Execution
@@ -70,19 +72,23 @@ System.out.println("Maximum: " + max); // Output: Maximum: 20
 Just like logical short-circuit operators (`&&`, `||`), the ternary operator evaluates **only one** of the result expressions. The unselected branch is completely skipped at runtime and will not produce side effects.
 
 ```java
-int x = 5;
-int y = 10;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 10;
 
-// ++x runs because condition is true; ++y is NEVER evaluated!
-int result = (x < y) ? ++x : ++y;
+        // ++x runs because condition is true; ++y is NEVER evaluated!
+        int result = (x < y) ? ++x : ++y;
+        System.out.println(result);
 
-System.out.println("x: " + x + ", y: " + y); // Output: x: 6, y: 10
-
+        System.out.println("x: " + x + ", y: " + y); // Output: x: 6, y: 10
+    }
+}
 ```
 
 ---
 
-## 2. Return Types and Type Promotion
+## Return Types and Type Promotion
 
 Because the ternary operator is an **expression**, Java must determine a unified result type for both the second and third operands at compile time.
 
@@ -91,13 +97,16 @@ Because the ternary operator is an **expression**, Java must determine a unified
 If the two result expressions produce different numeric primitive types, Java automatically promotes the expression result to the larger or wider type.
 
 ```java
-int intVal = 10;
-double doubleVal = 20.5;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int intVal = 10;
+        double doubleVal = 20.5;
 
-// Result is promoted to double because doubleVal is double
-double result = (intVal > 5) ? intVal : doubleVal;
-System.out.println("Result: " + result); // Output: 10.0 (Promoted to double!)
-
+        // Result is promoted to double because doubleVal is double
+        double result = (intVal > 5) ? intVal : doubleVal;
+        System.out.println("Result: " + result); // Output: 10.0 (Promoted to double!)
+    }
+}
 ```
 
 ### Wrapper Types and Unboxing Pitfalls
@@ -105,19 +114,24 @@ System.out.println("Result: " + result); // Output: 10.0 (Promoted to double!)
 When mixing boxed wrapper types (such as `Integer`, `Double`) with primitives or `null`, Java performs automatic unboxing. If a wrapper object is `null`, unboxing throws a `NullPointerException`.
 
 ```java
-Integer number = null;
-boolean flag = false;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        Integer number = null;
+        boolean flag = false;
 
-// ❌ Throws NullPointerException! Java tries to unbox 'number' to match primitive int 0
-int value = flag ? 0 : number; 
-
+        // ❌ Throws NullPointerException! Java tries to unbox 'number' to match
+        // primitive int 0
+        int value = flag ? 0 : number;
+        System.out.println(value);
+    }
+}
 ```
 
 > **Rule:** Always ensure that both branches return compatible or non-null types to avoid unexpected type promotion or runtime unboxing exceptions.
 
 ---
 
-## 3. Ternary Operator vs if-else
+## Ternary Operator vs if-else
 
 While both construct conditional logic, they serve fundamentally different language roles in Java.
 
@@ -133,20 +147,30 @@ While both construct conditional logic, they serve fundamentally different langu
 #### Using `if-else`:
 
 ```java
-String status;
-if (score >= 50) {
-    status = "PASS";
-} else {
-    status = "FAIL";
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int score = 62;
+        String status;
+        if (score >= 50) {
+            status = "PASS";
+        } else {
+            status = "FAIL";
+        }
+        System.out.println(status);
+    }
 }
-
 ```
 
 #### Using Ternary Operator:
 
 ```java
-String status = (score >= 50) ? "PASS" : "FAIL";
-
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int score = 62;
+        String status = (score >= 50) ? "PASS" : "FAIL";
+        System.out.println(status);
+    }
+}
 ```
 
 ### The `void` Method Restriction
@@ -154,23 +178,26 @@ String status = (score >= 50) ? "PASS" : "FAIL";
 Because a ternary expression must resolve to a value, you **cannot** call methods that return `void` inside a ternary operator:
 
 ```java
-boolean isError = true;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        boolean isError = true;
 
-// ❌ Compile Error: System.out.println returns void
-// (isError) ? System.out.println("Error") : System.out.println("OK"); 
+        // ❌ Compile Error: System.out.println returns void
+        // (isError) ? System.out.println("Error") : System.out.println("OK");
 
-// ✅ Correct Approach: Use if-else for void side-effects
-if (isError) {
-    System.out.println("Error");
-} else {
-    System.out.println("OK");
+        // ✅ Correct Approach: Use if-else for void side-effects
+        if (isError) {
+            System.out.println("Error");
+        } else {
+            System.out.println("OK");
+        }
+    }
 }
-
 ```
 
 ---
 
-## 4. Chaining and Nested Ternary Expressions
+## Chaining and Nested Ternary Expressions
 
 Ternary operators can be nested to handle multiple conditions sequentially.
 
@@ -181,29 +208,31 @@ variable = (condition1) ? value1
          : (condition2) ? value2 
          : (condition3) ? value3 
          : defaultValue;
-
 ```
 
 ### Code Example: Letter Grading
 
 ```java
-int score = 85;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int score = 85;
 
-String grade = (score >= 90) ? "A"
-             : (score >= 80) ? "B"
-             : (score >= 70) ? "C"
-             : (score >= 60) ? "D"
-             : "F";
+        String grade = (score >= 90) ? "A"
+                : (score >= 80) ? "B"
+                        : (score >= 70) ? "C"
+                                : (score >= 60) ? "D"
+                                        : "F";
 
-System.out.println("Grade: " + grade); // Output: Grade: B
-
+        System.out.println("Grade: " + grade); // Output: Grade: B
+    }
+}
 ```
 
 > **Best Practice:** Keep nested ternary expressions properly formatted on multiple lines. If the logic exceeds 2-3 conditions, use an `if-else` block or a `switch` statement instead to maintain code readability.
 
 ---
 
-## 5. Operator Precedence and Evaluation Order
+## Operator Precedence and Evaluation Order
 
 The ternary operator has **very low precedence**, ranking just above assignment operators (`=`, `+=`, etc.).
 
@@ -222,12 +251,11 @@ The ternary operator evaluates from **Right to Left**.
 ```java
 a ? b : c ? d : e
 // Evaluated as: a ? b : (c ? d : e)
-
 ```
 
 ---
 
-## 6. Full Implementation Example
+## Full Implementation Example
 
 ```java
 public class TernaryOperatorDemo {
@@ -263,7 +291,6 @@ public class TernaryOperatorDemo {
         System.out.println("Hello, " + displayName + "!"); // Hello, Guest!
     }
 }
-
 ```
 
 ### Console Output
@@ -284,32 +311,28 @@ Weather: Pleasant
 
 --- 5. Null-Safe Default Value ---
 Hello, Guest!
-
 ```
 
 ---
 
-## 7. Why This Matters
+## Why This Matters
 
 1. **Cleaner Code:** Replaces verbose 5-line `if-else` blocks with a single clean line when assigning values conditionally.
 2. **`final` Variable Initialization:** Allows assigning values to `final` constants conditionally during declaration:
 ```java
 final String CONFIG_PATH = isProduction ? "/etc/app/prod.conf" : "/etc/app/dev.conf";
-
 ```
-
 
 3. **Null-Safe Default Assignments:** Provides an easy way to assign fallback default values when dealing with potentially `null` variables.
 
 ---
 
-## 8. Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 1. **Using `void` Method Calls Inside Ternary Branches:**
 ```java
 // ❌ Syntax Error: Methods inside ternary must return a value!
 // (isSuccess) ? printSuccess() : printFailure();
-
 ```
 
 
@@ -319,7 +342,6 @@ Mixing a `null` wrapper object with a primitive value causes implicit unboxing a
 Integer score = null;
 // ❌ Throws NullPointerException when unboxing score!
 int finalScore = (score != null) ? score : getFallbackScore(); 
-
 ```
 
 
@@ -333,54 +355,27 @@ Unlike `if-else`, the ternary operator does nothing on its own unless its result
 
 // ✅ Valid Statement
 int max = (x > y) ? x : y;
-
 ```
-
-
 
 ---
 
-## 9. Practice Exercises
+## Practice Exercises
 
-### Exercise 1: Even or Odd and Positive Checker
+### Exercise 01: Even or Odd and Positive Checker
 
 Write a Java program using a ternary operator to check if a given integer is positive and even. Return `"Positive Even"` if true, otherwise return `"Other"`.
 
-```java
-public class EvenPositiveCheck {
-    public static void main(String[] args) {
-        int number = 14;
+**Solution:** [Exercise 01: Even or Odd and Positive Checker](labs/exercise-01.even_or_odd_and_positive_checker.java)
 
-        String result = (number > 0 && number % 2 == 0) ? "Positive Even" : "Other";
-        System.out.println("Result: " + result); // Output: Positive Even
-    }
-}
-
-```
-
-### Exercise 2: Tracing Type Promotion and Value
+### Exercise 02: Tracing Type Promotion and Value
 
 Predict the exact output and type of `val` in the code snippet below without running it:
 
-```java
-int a = 10;
-double b = 20.0;
-boolean check = false;
-
-var val = check ? a : b;
-System.out.println(val);
-
-```
-
-**Step-by-Step Breakdown:**
-
-1. `check` is `false`, so the third operand `b` (`20.0`) is selected.
-2. The overall expression type resolves to `double` due to numeric type promotion between `int` and `double`.
-3. Output: **`20.0`**
+**Solution:** [Exercise 2: Tracing Type Promotion and Value](labs/exercise-02.tracing_type_promotion_and_value.java)
 
 ---
 
-## 10. Quick Summary Table
+## Quick Summary Table
 
 | Syntax Structure | Evaluated Condition | Returned Branch | Common Usage |
 | --- | --- | --- | --- |
@@ -390,18 +385,18 @@ System.out.println(val);
 
 ---
 
-## 11. Related Topics
+## Related Topics
 
-* **Java Relational Operators:** Forming comparison predicates (`>`, `<`, `==`, `!=`).
-* **Java Logical Operators:** Combining conditions (`&&`, `||`, `!`).
-* **Java Control Flow:** `if-else` statements and `switch` expressions.
+* [Relational Operators](../relational_operators/relational_operators.md)
+* [Logical Operators](../logical_operators/logical_operators.md)
+* [if Statements]()
 
 ---
 
-## 12. Additional Resources
+## Additional Resources
 
-* [Oracle Java Documentation: Conditional Operators](https://www.google.com/search?q=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html)
-* [Java Language Specification (JLS): Conditional Operator ? :](https://www.google.com/search?q=https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html%23jls-15.25)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/java/java-ternary-operator/)
+* [w3schools](https://www.w3schools.com/java/java_conditions_shorthand.asp)
 
 ---
 
@@ -411,4 +406,4 @@ The ternary operator (`? :`) is an efficient expression for inline conditional v
 
 ---
 
-*Last Updated : October 7, 2026*
+*Last Updated : October 9, 2026*
