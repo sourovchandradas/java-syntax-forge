@@ -48,8 +48,12 @@ The unary plus operator (`+`) explicitly indicates a positive numeric value. Bec
 ### Example
 
 ```java
-int a = +5; // Equivalent to int a = 5;
-System.out.println(a); // Output: 5
+public class string {
+    public static void main(String[] args) {
+        int a = +5; // Equivalent to int a = 5;
+        System.out.println(a); // Output: 5
+    }
+}
 ```
 
 ### Unary Numeric Promotion
@@ -57,9 +61,14 @@ System.out.println(a); // Output: 5
 Applying the unary `+` operator to sub-integer types (`byte`, `short`, `char`) automatically promotes the result to `int`.
 
 ```java
-byte b = 10;
-// byte result = +b; // ❌ Compile error: Unary plus promotes byte to int
-int result = +b;     // ✅ Compiles cleanly
+public class string {
+    public static void main(String[] args) {
+        byte b = 10;
+        // byte result = +b; // ❌ Compile error: Unary plus promotes byte to int
+        int result = +b; // ✅ Compiles cleanly
+        System.out.println(result);
+    }
+}
 ```
 
 ---
@@ -79,12 +88,16 @@ The unary minus operator (`-`) negates the sign of a numeric operand, converting
 ### Example
 
 ```java
-int a = 10;
-int negated = -a;
-System.out.println(negated); // Output: -10
+public class string {
+    public static void main(String[] args) {
+        int a = 10;
+        int negated = -a;
+        System.out.println(negated); // Output: -10
 
-int negativeVal = -15;
-System.out.println(-negativeVal); // Output: 15 (Negating negative yields positive)
+        int negativeVal = -15;
+        System.out.println(-negativeVal); // Output: 15 (Negating negative yields positive)
+    }
+}
 ```
 
 > **Note:** Similar to unary plus, applying unary minus to a `byte`, `short`, or `char` promotes the value to an `int`.
@@ -100,22 +113,24 @@ The increment operator (`++`) increases the value of an integer or floating-poin
 ### Syntax
 
 ```java
-++variable; // Prefix
-variable++; // Postfix
+++variable; // Prefix increment
+variable++; // Postfix increment
 ```
 
 ### Example
 
 ```java
-int count = 5;
-
-// Prefix increment
-int prefixVal = ++count; // count becomes 6, then prefixVal is assigned 6
-System.out.println("count: " + count + ", prefixVal: " + prefixVal); // Output: count: 6, prefixVal: 6
-
-// Postfix increment
-int postfixVal = count++; // postfixVal is assigned 6, then count becomes 7
-System.out.println("count: " + count + ", postfixVal: " + postfixVal); // Output: count: 7, postfixVal: 6
+public class string {
+    public static void main(String[] args) {
+        int count = 5;
+        // Prefix increment
+        int prefixVal = ++count; // count becomes 6, then prefixVal is assigned 6
+        System.out.println("count: " + count + ", prefixVal: " + prefixVal); // Output: count: 6, prefixVal: 6
+        // Postfix increment
+        int postfixVal = count++; // postfixVal is assigned 6, then count becomes 7
+        System.out.println("count: " + count + ", postfixVal: " + postfixVal); // Output: count: 7, postfixVal:
+    }
+}
 ```
 
 ### Built-in Implicit Casting
@@ -138,18 +153,21 @@ The decrement operator (`--`) decreases the value of a variable by `1`. Like the
 ### Syntax
 
 ```java
---variable; // Prefix
-variable--; // Postfix
+--variable; // Prefix decrement
+variable--; // Postfix decrement
 ```
 
 ### Example
 
 ```java
-int value = 10;
-
-System.out.println(--value); // Output: 9  (Pre-decrement: reduces value before printing)
-System.out.println(value--); // Output: 9  (Post-decrement: prints value, then reduces to 8)
-System.out.println(value);   // Output: 8
+public class string {
+    public static void main(String[] args){
+        int value = 10;
+        System.out.println(--value); // Output: 9  (Pre-decrement: reduces value before printing)
+        System.out.println(value--); // Output: 9  (Post-decrement: prints value, then reduces to 8)
+        System.out.println(value);   // Output: 8
+    }
+}
 ```
 
 ---
@@ -176,10 +194,14 @@ The logical NOT operator (`!`) inverts the boolean state of its operand. If appl
 ### Example
 
 ```java
-boolean isLoggedIn = false;
+public class string {
+    public static void main(String[] args) {
+        boolean isLoggedIn = false;
 
-if (!isLoggedIn) {
-    System.out.println("User must log in first."); // Executes because !false is true
+        if (!isLoggedIn) {
+            System.out.println("User must log in first."); // Executes because !false is true
+        }
+    }
 }
 ```
 
@@ -208,9 +230,13 @@ $$\sim x = -(x + 1)$$
 ### Step-by-Step Binary Example (`int a = 5`)
 
 ```java
-int a = 5;     // Decimal 5 in 32-bit binary: 00000000 00000000 00000000 00000101
-int b = ~a;   // Inverted binary bits:        11111111 11111111 11111111 11111010
-System.out.println(b); // Output: -6
+public class string {
+    public static void main(String[] args) {
+        int a = 5; // Decimal 5 in 32-bit binary: 00000000 00000000 00000000 00000101
+        int b = ~a; // Inverted binary bits: 11111111 11111111 11111111 11111010
+        System.out.println(b); // Output: -6
+    }
+}
 ```
 
 Explanation using the formula: $~5 = -(5 + 1) = -6$.
@@ -233,12 +259,16 @@ Understanding how prefix and postfix unary operators evaluate inside expressions
 ### Expression Tracing Example
 
 ```java
-int x = 3;
-int y = x++ + ++x;
-// Step 1: x++ evaluates to 3 (x becomes 4 in memory)
-// Step 2: ++x increments x from 4 to 5, then evaluates to 5
-// Step 3: y = 3 + 5 = 8
-System.out.println("x: " + x + ", y: " + y); // Output: x: 5, y: 8
+public class string {
+    public static void main(String[] args) {
+        int x = 3;
+        int y = x++ + ++x;
+        // Step 1: x++ evaluates to 3 (x becomes 4 in memory)
+        // Step 2: ++x increments x from 4 to 5, then evaluates to 5
+        // Step 3: y = 3 + 5 = 8
+        System.out.println("x: " + x + ", y: " + y); // Output: x: 5, y: 8
+    }
+}
 ```
 
 ---
@@ -275,7 +305,6 @@ public class UnaryOperatorsDemo {
         System.out.println("Bitwise Complement (~10): " + (~bitValue)); // Output: -11
     }
 }
-
 ```
 
 ### Console Output
@@ -359,24 +388,13 @@ Combining multiple prefix/postfix modifications in a single line harms code read
 
 Write a Java program that simulates a button toggle. Start with `boolean isOn = false` and `int clickCount = 0`. Toggle `isOn` using `!`, increment `clickCount` using post-increment, and print both values.
 
+**Expected Output:**
 ```java
-public class ButtonToggle {
-    public static void main(String[] args) {
-        boolean isOn = false;
-        int clickCount = 0;
-
-        // First click
-        isOn = !isOn;
-        clickCount++;
-        System.out.println("Button On: " + isOn + ", Clicks: " + clickCount); // true, 1
-
-        // Second click
-        isOn = !isOn;
-        clickCount++;
-        System.out.println("Button On: " + isOn + ", Clicks: " + clickCount); // false, 2
-    }
-}
+Button On: true, Clicks: 1
+Button On: false, Clicks: 2
 ```
+
+**Solution:** [Exercise 1: State Inversion and Counter Logic]()
 
 ### Exercise 2: Tracing Expression Evaluation
 
@@ -387,14 +405,7 @@ int a = 10;
 int b = ++a + a-- - --a;
 ```
 
-**Step-by-Step Breakdown:**
-
-1. Initial state: `a = 10`
-2. `++a`: Increments `a` to `11`, evaluates to `11`.
-3. `a--`: Evaluates to `11`, then decrements `a` to `10`.
-4. `--a`: Decrements `a` from `10` to `9`, evaluates to `9`.
-5. Expression computation: `11 + 11 - 9 = 13`
-6. Final values: **`a = 9`**, **`b = 13`**
+**Solution:** [Exercise 2: Tracing Expression Evuluation]()
 
 ---
 
@@ -415,10 +426,9 @@ int b = ++a + a-- - --a;
 
 ## Related Topics
 
-* **Java Arithmetic Operators:** Binary operators (`+`, `-`, `*`, `/`, `%`) operating on two operands.
-* **Java Bitwise & Bit Shift Operators:** Low-level bitwise operations (`&`, `|`, `^`, `<<`, `>>`, `>>>`).
-* **Java Two's Complement System:** How Java stores signed negative integers in memory.
-* **Operator Precedence in Java:** Rules determining precedence between unary and binary operators.
+* [Relational Operators](../relational_operators/relational_operators.md)
+* [Logical Operators](../logical_operators/logical_operators.md)
+* [arithmetic Operators](../arithmetic_operators/arithmetic_operators.md)
 
 ---
 
@@ -434,4 +444,4 @@ Unary operators operate on a single variable or literal to perform mathematical 
 
 ---
 
-*Last Modified : October 7, 2026*
+*Last Modified : October 9, 2026*
