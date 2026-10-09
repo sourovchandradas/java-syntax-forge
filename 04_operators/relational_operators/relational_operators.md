@@ -25,23 +25,23 @@ Java provides six standard relational operators:
 
 ## Table of Contents
 
-1. [1. Equality and Inequality Operators (==, !=)](https://www.google.com/search?q=%231-equality-and-inequality-operators---)
-2. [2. Comparison Operators (>, <, >=, <=)](https://www.google.com/search?q=%232-comparison-operators---)
-3. [3. Comparing Primitives vs. Reference Types](https://www.google.com/search?q=%233-comparing-primitives-vs-reference-types)
-4. [4. Floating-Point Comparison Pitfalls](https://www.google.com/search?q=%234-floating-point-comparison-pitfalls)
-5. [5. Operator Precedence and Associativity](https://www.google.com/search?q=%235-operator-precedence-and-associativity)
-6. [6. Full Implementation Example](https://www.google.com/search?q=%236-full-implementation-example)
-7. [7. Why This Matters](https://www.google.com/search?q=%237-why-this-matters)
-8. [8. Common Mistakes to Avoid](https://www.google.com/search?q=%238-common-mistakes-to-avoid)
-9. [9. Practice Exercises](https://www.google.com/search?q=%239-practice-exercises)
-10. [10. Quick Summary Table](https://www.google.com/search?q=%2310-quick-summary-table)
-11. [11. Related Topics](https://www.google.com/search?q=%2311-related-topics)
-12. [12. Additional Resources](https://www.google.com/search?q=%2312-additional-resources)
-13. [13. Key Takeaways](https://www.google.com/search?q=%2313-key-takeaways)
+1. [Equality and Inequality Operators (==, !=)](#equality-and-inequality-operators---)
+2. [Comparison Operators (>, <, >=, <=)](#comparison-operators---)
+3. [Comparing Primitives vs. Reference Types](#comparing-primitives-vs-reference-types)
+4. [Floating-Point Comparison Pitfalls](#floating-point-comparison-pitfalls)
+5. [Operator Precedence and Associativity](#operator-precedence-and-associativity)
+6. [Full Implementation Example](#full-implementation-example)
+7. [Why This Matters](#why-this-matters)
+8. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+9. [Practice Exercises](#practice-exercises)
+10. [Quick Summary Table](#quick-summary-table)
+11. [Related Topics](#related-topics)
+12. [Additional Resources](#additional-resources)
+13. [Key Takeaways](#key-takeaways)
 
 ---
 
-## 1. Equality and Inequality Operators (`==`, `!=`)
+## Equality and Inequality Operators (`==`, `!=`)
 
 ### Definition
 
@@ -52,7 +52,6 @@ The **Equal To** (`==`) operator checks if two operands are equal. The **Not Equ
 ```java
 boolean isEqual = (a == b);
 boolean isNotEqual = (a != b);
-
 ```
 
 ### Operation on Primitives
@@ -62,19 +61,22 @@ When used on primitive numeric types (`byte`, `short`, `char`, `int`, `long`, `f
 ### Code Example
 
 ```java
-int x = 10;
-int y = 10;
-int z = 20;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 10;
+        int z = 20;
 
-System.out.println(x == y); // Output: true
-System.out.println(x != z); // Output: true
-System.out.println(x == z); // Output: false
-
+        System.out.println(x == y); // Output: true
+        System.out.println(x != z); // Output: true
+        System.out.println(x == z); // Output: false
+    }
+}
 ```
 
 ---
 
-## 2. Comparison Operators (`>`, `<`, `>=`, `<=`)
+## Comparison Operators (`>`, `<`, `>=`, `<=`)
 
 ### Definition
 
@@ -88,30 +90,33 @@ Comparison operators compare the relative values of two numeric operands.
 ### Syntax
 
 ```java
-boolean res1 = (a > b);
-boolean res2 = (a < b);
-boolean res3 = (a >= b);
-boolean res4 = (a <= b);
-
+boolean result_01 = (a > b);
+boolean ressult_02 = (a < b);
+boolean ressult_03 = (a >= b);
+boolean ressult_04 = (a <= b);
 ```
 
 ### Code Example
 
 ```java
-int score = 85;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int score = 83;
 
-boolean isPassing = score >= 50;  // true
-boolean isHonors = score > 90;   // false
-boolean needsHelp = score < 50;  // false
+        boolean isPassing = score >= 50; // true
+        boolean isHonors = score > 90; // false
+        boolean needsHelp = score < 50; // false
 
-System.out.println("Passing: " + isPassing);
-System.out.println("Honors: " + isHonors);
-
+        System.out.println("Passing: " + isPassing);
+        System.out.println("Honors: " + isHonors);
+        System.out.println("Neeeds Help: " + needsHelp);
+    }
+}
 ```
 
 ---
 
-## 3. Comparing Primitives vs. Reference Types
+## Comparing Primitives vs. Reference Types
 
 One of the most critical concepts in Java is understanding how the `==` operator behaves differently for primitive data types versus object references.
 
@@ -120,10 +125,13 @@ One of the most critical concepts in Java is understanding how the `==` operator
 For primitive types (`int`, `double`, `char`, etc.), `==` compares their **actual values**:
 
 ```java
-int a = 5;
-int b = 5;
-System.out.println(a == b); // true (values are identical)
-
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 5;
+        System.out.println(a == b); // true (values are identical)
+    }
+}
 ```
 
 ### Reference Types (Objects & Strings)
@@ -131,34 +139,40 @@ System.out.println(a == b); // true (values are identical)
 For object reference types (such as `String`, `Integer`, or custom classes), `==` compares **memory addresses (references)**, NOT object content!
 
 ```java
-String s1 = new String("Java");
-String s2 = new String("Java");
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        String s1 = new String("Java");
+        String s2 = new String("Java");
 
-// ❌ Compares memory locations, NOT text content!
-System.out.println(s1 == s2);      // Output: false (Different memory objects)
+        // ❌ Compares memory locations, NOT text content!
+        System.out.println(s1 == s2); // Output: false (Different memory objects)
 
-// ✅ Compares actual text content using .equals()
-System.out.println(s1.equals(s2)); // Output: true
-
+        // ✅ Compares actual text content using .equals()
+        System.out.println(s1.equals(s2)); // Output: true
+    }
+}
 ```
 
 > **Key Rule:** Always use `.equals()` to compare the values of objects (including `String`), and reserve `==` for primitive value checks or verifying if two references point to the exact same memory instance.
 
 ---
 
-## 4. Floating-Point Comparison Pitfalls
+## Floating-Point Comparison Pitfalls
 
 Comparing floating-point numbers (`float`, `double`) directly using `==` or `!=` is hazardous due to how floating-point numbers are represented in IEEE 754 binary format.
 
-### The Problem
+### The Problem Example
 
 ```java
-double a = 0.1 + 0.2;
-double b = 0.3;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        double a = 0.1 + 0.2;
+        double b = 0.3;
 
-System.out.println("a = " + a); // Output: 0.30000000000000004
-System.out.println(a == b);     // Output: false ❌
-
+        System.out.println("a = " + a); // Output: 0.30000000000000004
+        System.out.println(a == b); // Output: false ❌
+    }
+}
 ```
 
 ### The Solution: Epsilon Comparison
@@ -168,18 +182,21 @@ To reliably compare floating-point numbers, check if the absolute difference bet
 $$\vert{}a - b\vert{} < \epsilon$$
 
 ```java
-double a = 0.1 + 0.2;
-double b = 0.3;
-double epsilon = 0.000001;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        double a = 0.1 + 0.2;
+        double b = 0.3;
+        double epsilon = 0.000001;
 
-boolean isEqual = Math.abs(a - b) < epsilon;
-System.out.println("Safely Equal: " + isEqual); // Output: true ✅
-
+        boolean isEqual = Math.abs(a - b) < epsilon;
+        System.out.println("Safely Equal: " + isEqual); // Output: true ✅
+    }
+}
 ```
 
 ---
 
-## 5. Operator Precedence and Associativity
+## Operator Precedence and Associativity
 
 Relational operators have lower precedence than arithmetic operators but higher precedence than logical and assignment operators.
 
@@ -198,18 +215,21 @@ All binary relational operators evaluate from **Left to Right**.
 ### Precedence Example
 
 ```java
-int a = 10, b = 5, c = 2;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int a = 10, b = 5, c = 2;
 
-boolean result = a + b > c * 6;
-// Step 1: Evaluate arithmetic -> (10 + 5) = 15, (2 * 6) = 12
-// Step 2: Evaluate relational -> 15 > 12 = true
-System.out.println(result); // Output: true
-
+        boolean result = a + b > c * 6;
+        // Step 1: Evaluate arithmetic -> (10 + 5) = 15, (2 * 6) = 12
+        // Step 2: Evaluate relational -> 15 > 12 = true
+        System.out.println(result); // Output: true
+    }
+}
 ```
 
 ---
 
-## 6. Full Implementation Example
+## Full Implementation Example
 
 ```java
 public class RelationalOperatorsDemo {
@@ -246,7 +266,6 @@ public class RelationalOperatorsDemo {
         }
     }
 }
-
 ```
 
 ### Console Output
@@ -268,12 +287,11 @@ Epsilon comparison: true
 
 --- 4. Combining with Control Flow ---
 Dean's List Eligible!
-
 ```
 
 ---
 
-## 7. Why This Matters
+## Why This Matters
 
 1. **Conditional Branching:** Relational operators form the predicates that drive `if-else` execution paths.
 2. **Loop Continuation Conditions:** Iteration constructs depend on relational evaluations to terminate loop execution safely:
@@ -281,7 +299,6 @@ Dean's List Eligible!
 for (int i = 0; i < array.length; i++) {
     // Loop continues while i < length
 }
-
 ```
 
 
@@ -289,7 +306,7 @@ for (int i = 0; i < array.length; i++) {
 
 ---
 
-## 8. Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 1. **Confusing Assignment (`=`) with Equality (`==`):**
 Using `=` instead of `==` inside conditions is a syntax error in Java for non-boolean types, but can cause logic bugs when boolean variables are involved.
@@ -299,7 +316,6 @@ boolean isReady = false;
 if (isReady = true) { 
     System.out.println("Always executes!"); 
 }
-
 ```
 
 
@@ -312,7 +328,6 @@ int x = 15;
 
 // ✅ Correct Syntax using Logical AND
 if (10 < x && x < 20) { }
-
 ```
 
 
@@ -321,7 +336,7 @@ Comparing strings with `==` checks reference equality, not string text equality.
 
 ---
 
-## 9. Practice Exercises
+## Practice Exercises
 
 ### Exercise 1: Range Checker
 
@@ -336,7 +351,6 @@ public class GradeChecker {
         System.out.println("Is Grade B: " + isBGrade); // Output: true
     }
 }
-
 ```
 
 ### Exercise 2: Object vs. Primitive Comparison Tracing
@@ -353,14 +367,7 @@ String s3 = new String("Java");
 System.out.println(a == b);
 System.out.println(s1 == s2);
 System.out.println(s1 == s3);
-
 ```
-
-**Step-by-Step Breakdown:**
-
-1. `a == b`: Compares primitive values `100 == 100` -> **`true`**.
-2. `s1 == s2`: `"Java"` literals are pooled in the String Constant Pool, so `s1` and `s2` reference the same object -> **`true`**.
-3. `s1 == s3`: `new String("Java")` creates a new distinct object on the heap -> **`false`**.
 
 ---
 
@@ -377,18 +384,18 @@ System.out.println(s1 == s3);
 
 ---
 
-## 11. Related Topics
+## Related Topics
 
-* **Java Logical Operators:** Combining multiple relational conditions using `&&`, `||`, and `!`.
-* **Java Control Flow:** Implementing decisions via `if-else`, `switch`, and loops.
-* **Java String Handling:** Deep dive into String Constant Pool and `.equals()` vs `.compareTo()`.
+* [Logical Operators](../logical_operators/logical_operators.md)
+* [Ternary Operators](../ternary_operators/ternary_operators.md)
+* [String Introduction](../../05_strings/string_introduction/string_introduction.md) Deep dive into String Constant Pool and `.equals()` vs `==`
 
 ---
 
-## 12. Additional Resources
+## Additional Resources
 
-* [Oracle Java Documentation: Equality, Relational, and Conditional Operators](https://www.google.com/search?q=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html)
-* [Java Language Specification (JLS): Relational Operators](https://www.google.com/search?q=https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html%23jls-15.20)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/java/java-relational-operators-with-examples/)
+* [w3schools](https://www.w3schools.com/java/java_operators_comparison.asp)
 
 ---
 
@@ -398,4 +405,4 @@ Relational operators evaluate relative values and return boolean results used in
 
 ---
 
-*Last Updated : October 7, 2026*
+*Last Updated : October 9, 2026*
