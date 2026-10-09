@@ -1,3 +1,4 @@
+// Exercise 01: Even or Odd and Positive Checker
 public class EvenPositiveCheck {
     public static void main(String[] args) {
         int number = 14;
