@@ -36,7 +36,7 @@ The `instanceof` operator plays a critical role in object-oriented programming (
 
 ---
 
-## 1. Syntax and Core Mechanics
+## Syntax and Core Mechanics
 
 ### Syntax
 
@@ -79,7 +79,7 @@ System.out.println(myPet instanceof Object); // true (All classes inherit from O
 
 ---
 
-## 2. Pattern Matching for `instanceof` (Java 14+)
+## Pattern Matching for `instanceof` (Java 14+)
 
 Starting in Java 14 (preview) and standardized in **Java 16**, Java introduced **Pattern Matching for `instanceof**`. This feature eliminates the boilerplate code of testing an object's type and then manually casting it.
 
@@ -123,7 +123,7 @@ if (obj instanceof String s && s.length() > 5) {
 
 ---
 
-## 3. Class vs Interface Checking
+## Class vs Interface Checking
 
 The `instanceof` operator works seamlessly with concrete classes, abstract classes, and interfaces.
 
@@ -157,7 +157,7 @@ System.out.println(names instanceof Object);   // true
 
 ---
 
-## 4. Compile-Time Restrictions and Inconvertible Types
+## Compile-Time Restrictions and Inconvertible Types
 
 The Java compiler enforces type checks on `instanceof` expressions. If there is **no possible subclass/superclass relationship** between the reference's declared type and the target type, a **compile-time error** occurs.
 
@@ -179,7 +179,7 @@ The compiler knows at compile-time that `String` and `Integer` belong to complet
 
 ---
 
-## 5. Operator Precedence and Associativity
+## Operator Precedence and Associativity
 
 The `instanceof` operator has the **same precedence as relational operators** (`<`, `>`, `<=`, `>=`).
 
@@ -205,7 +205,7 @@ boolean check = (obj instanceof String) == true;
 
 ---
 
-## 6. Full Implementation Example
+## Full Implementation Example
 
 ```java
 public class InstanceofOperatorDemo {
@@ -278,7 +278,7 @@ numbers is Object[]: true
 
 ---
 
-## 7. Why This Matters
+## Why This Matters
 
 1. **Safe Downcasting:** Prevents runtime `ClassCastException` by validating type hierarchy before casting.
 2. **Overriding `equals(Object obj)`:** Essential pattern in Java for object equality comparison:
@@ -297,7 +297,7 @@ public boolean equals(Object obj) {
 
 ---
 
-## 8. Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 1. **Redundant Null Checks Before `instanceof`:**
 Checking `obj != null` before `instanceof` is unnecessary because `instanceof` implicitly handles `null`.
@@ -328,7 +328,7 @@ Writing long chains of `if (obj instanceof X) ... else if (obj instanceof Y)` vi
 
 ---
 
-## 9. Practice Exercises
+## Practice Exercises
 
 ### Exercise 1: Safe Equality Implementation
 
@@ -384,7 +384,7 @@ if (data instanceof String s && s.contains("Pattern")) {
 
 ---
 
-## 10. Quick Summary Table
+## Quick Summary Table
 
 | Expression | Condition / Input | Result | Explanation |
 | --- | --- | --- | --- |
@@ -396,7 +396,7 @@ if (data instanceof String s && s.contains("Pattern")) {
 
 ---
 
-## 11. Related Topics
+## Related Topics
 
 * **Java Type Casting:** Widening (implicit) and Narrowing (explicit) reference casting.
 * **Polymorphism & Method Overriding:** Resolving method execution dynamically at runtime.
@@ -404,7 +404,7 @@ if (data instanceof String s && s.contains("Pattern")) {
 
 ---
 
-## 12. Additional Resources
+## Additional Resources
 
 * [Oracle Java Documentation: Type Comparison Operator instanceof](https://www.google.com/search?q=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html)
 * [Java Language Specification (JLS): The instanceof Operator](https://www.google.com/search?q=https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html%23jls-15.20.2)
