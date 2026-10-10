@@ -1,12 +1,10 @@
 // Exercise 01: Fahrenheit to Celsius Converter
 
-public class EvenOddCheck {
+public class TemperatureConverter {
     public static void main(String[] args) {
-        int num = 27;
-        if (num % 2 == 0) {
-            System.out.println(num + " is Even");
-        } else {
-            System.out.println(num + " is Odd");
-        }
+        double fahrenheit = 98.6;
+        // Using 5.0 / 9.0 prevents integer division truncation
+        double celsius = (5.0 / 9.0) * (fahrenheit - 32); 
+        System.out.println(fahrenheit + "°F = " + celsius + "°C");
     }
 }
