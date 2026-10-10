@@ -46,19 +46,27 @@ result = operand1 + operand2;
 ### Example
 
 ```java
-int a = 15;
-int b = 10;
-int sum = a + b;
-System.out.println(sum); // Output: 25
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int a = 15;
+        int b = 10;
+        int sum = a + b;
+        System.out.println(sum); // Output: 25
+    }
+}
 ```
 
 ### String Concatenation Behavior
 
 ```java
-int score = 100;
-System.out.println("Score: " + score); // Output: Score: 100
-System.out.println(5 + 5 + " Text");   // Output: 10 Text (Addition first, then concatenation)
-System.out.println("Text " + 5 + 5);   // Output: Text 55 (String concatenation evaluated left-to-right)
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int score = 100;
+        System.out.println("Score: " + score); // Output: Score: 100
+        System.out.println(5 + 5 + " Text"); // Output: 10 Text (Addition first, then concatenation)
+        System.out.println("Text " + 5 + 5); // Output: Text 55 (String concatenation evaluated left-to-right)
+    }
+}
 ```
 
 ---
@@ -79,14 +87,18 @@ negatedValue = -operand;     // Unary negation
 ### Example
 
 ```java
-int a = 20;
-int b = 8;
-int difference = a - b;
-System.out.println(difference); // Output: 12
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int a = 20;
+        int b = 8;
+        int difference = a - b;
+        System.out.println(difference); // Output: 12
 
-int positiveNum = 5;
-int negativeNum = -positiveNum;
-System.out.println(negativeNum); // Output: -5
+        int positiveNum = 5;
+        int negativeNum = -positiveNum;
+        System.out.println(negativeNum); // Output: -5
+    }
+}
 ```
 
 ---
@@ -106,10 +118,14 @@ result = operand1 * operand2;
 ### Example
 
 ```java
-int length = 6;
-int width = 4;
-int area = length * width;
-System.out.println(area); // Output: 24
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int length = 6;
+        int width = 4;
+        int area = length * width;
+        System.out.println(area); // Output: 24
+    }
+}
 ```
 
 ### Automatic Type Promotion
@@ -117,10 +133,14 @@ System.out.println(area); // Output: 24
 When multiplying two operands of different numeric types, Java promotes the smaller type to the larger type before performing multiplication.
 
 ```java
-int count = 4;
-double price = 12.5;
-double total = count * price; // count is promoted to double (4.0 * 12.5)
-System.out.println(total);   // Output: 50.0
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int count = 4;
+        double price = 12.5;
+        double total = count * price; // count is promoted to double (4.0 * 12.5)
+        System.out.println(total); // Output: 50.0
+    }
+}
 ```
 
 ---
@@ -143,11 +163,15 @@ result = dividend / divisor;
 * **Floating-Point Division:** If at least one operand is a floating-point type (`float` or `double`), Java performs exact floating-point division.
 
 ```java
-int intResult = 5 / 2;
-System.out.println(intResult); // Output: 2 (Fractional part .5 is truncated)
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int intResult = 5 / 2;
+        System.out.println(intResult); // Output: 2 (Fractional part .5 is truncated)
 
-double doubleResult = 5.0 / 2;
-System.out.println(doubleResult); // Output: 2.5
+        double doubleResult = 5.0 / 2;
+        System.out.println(doubleResult); // Output: 2.5
+    }
+}
 ```
 
 > **Warning:** Dividing an integer by zero (`x / 0`) throws an `ArithmeticException` at runtime. Dividing a floating-point number by zero (`x / 0.0`) produces `Infinity` or `NaN` without throwing an exception.
@@ -169,10 +193,14 @@ remainder = dividend % divisor;
 ### Example
 
 ```java
-int totalItems = 17;
-int itemsPerGroup = 5;
-int leftover = totalItems % itemsPerGroup;
-System.out.println(leftover); // Output: 2
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int totalItems = 17;
+        int itemsPerGroup = 5;
+        int leftover = totalItems % itemsPerGroup;
+        System.out.println(leftover); // Output: 2
+    }
+}
 ```
 
 ### Modulus with Negative Numbers
@@ -180,9 +208,13 @@ System.out.println(leftover); // Output: 2
 In Java, the sign of the result matches the sign of the dividend (the left operand).
 
 ```java
-System.out.println(-7 % 3);  // Output: -1
-System.out.println(7 % -3);  // Output: 1
-System.out.println(-7 % -3); // Output: -1
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        System.out.println(-7 % 3); // Output: -1
+        System.out.println(7 % -3); // Output: 1
+        System.out.println(-7 % -3); // Output: -1
+    }
+}
 ```
 
 ---
@@ -205,13 +237,17 @@ These unary operators increase (`++`) or decrease (`--`) a variable's value by `
 ### Example
 
 ```java
-int x = 5;
-int prefixResult = ++x; // x becomes 6, then prefixResult is assigned 6
-System.out.println("x: " + x + ", prefixResult: " + prefixResult); // Output: x: 6, prefixResult: 6
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int x = 5;
+        int prefixResult = ++x; // x becomes 6, then prefixResult is assigned 6
+        System.out.println("x: " + x + ", prefixResult: " + prefixResult); // Output: x: 6, prefixResult: 6
 
-int y = 5;
-int postfixResult = y++; // postfixResult is assigned 5, then y becomes 6
-System.out.println("y: " + y + ", postfixResult: " + postfixResult); // Output: y: 6, postfixResult: 5
+        int y = 5;
+        int postfixResult = y++; // postfixResult is assigned 5, then y becomes 6
+        System.out.println("y: " + y + ", postfixResult: " + postfixResult); // Output: y: 6, postfixResult: 5
+    }
+}
 ```
 
 ---
@@ -232,12 +268,16 @@ When multiple arithmetic operators appear in a single expression, Java evaluates
 All binary arithmetic operators evaluate from **Left to Right**. Unary operators evaluate from **Right to Left**.
 
 ```java
-int result = 10 + 5 * 2 - 8 / 4;
-// 1. Multiplication: 5 * 2 = 10 -> Expression: 10 + 10 - 8 / 4
-// 2. Division: 8 / 4 = 2        -> Expression: 10 + 10 - 2
-// 3. Addition: 10 + 10 = 20     -> Expression: 20 - 2
-// 4. Subtraction: 20 - 2 = 18
-System.out.println(result); // Output: 18
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        int result = 10 + 5 * 2 - 8 / 4;
+        // 1. Multiplication: 5 * 2 = 10 -> Expression: 10 + 10 - 8 / 4
+        // 2. Division: 8 / 4 = 2 -> Expression: 10 + 10 - 2
+        // 3. Addition: 10 + 10 = 20 -> Expression: 20 - 2
+        // 4. Subtraction: 20 - 2 = 18
+        System.out.println(result); // Output: 18
+    }
+}
 ```
 
 Parentheses `()` override standard precedence rules.
@@ -373,8 +413,6 @@ int x = 2;
 int val = x++ + ++x * x++; // Unclear and error-prone
 ```
 
-
-
 ---
 
 ## Practice Exercises
@@ -383,33 +421,13 @@ int val = x++ + ++x * x++; // Unclear and error-prone
 
 Write a Java program that converts a temperature from Fahrenheit to Celsius using the formula $C = \frac{5}{9} \times (F - 32)$. Ensure floating-point precision is preserved.
 
-```java
-public class TemperatureConverter {
-    public static void main(String[] args) {
-        double fahrenheit = 98.6;
-        // Using 5.0 / 9.0 prevents integer division truncation
-        double celsius = (5.0 / 9.0) * (fahrenheit - 32); 
-        System.out.println(fahrenheit + "°F = " + celsius + "°C");
-    }
-}
-```
+* **Solution:** [Exercise 1: Fahrenheit to Celsius Converter](labs/exercise-01.fahrenheit_to_celsius_converter.java)
 
 ### Exercise 2: Odd/Even Checker via Modulus
 
 Write a code snippet that checks whether an integer `num = 27` is even or odd using the `%` operator.
 
-```java
-public class EvenOddCheck {
-    public static void main(String[] args) {
-        int num = 27;
-        if (num % 2 == 0) {
-            System.out.println(num + " is Even");
-        } else {
-            System.out.println(num + " is Odd");
-        }
-    }
-}
-```
+* **Solution:** [Exercise 2: Odd or Even Checker via Modulus](labs/exercise-02.odd_or_even_checker_via_modulus.java)
 
 ---
 
@@ -429,10 +447,9 @@ public class EvenOddCheck {
 
 ## Related Topics
 
-* **Java Assignment Operators:** Compound assignments combining arithmetic (`+=`, `-=`, `*=`, `/=`, `%=`).
-* **Java Relational Operators:** Comparing numeric outputs (`==`, `!=`, `>`, `<`, `>=`, `<=`).
-* **Java Math Class Methods:** Advanced mathematical operations (`Math.pow()`, `Math.sqrt()`, `Math.abs()`).
-* **Primitive Data Types & Type Promotion:** Automatic widening and explicit narrowing conversions during evaluation.
+* [Relational Operators](../relational_operators/relational_operators.md)
+* [Unary Operators](../unary_operators/unary_operators.md)
+* [Data Types](../../data_types/data_types.md)
 
 ---
 
@@ -449,4 +466,4 @@ Arithmetic operators enable core numerical operations and arithmetic expressions
 
 ---
 
-*Last Modified: October 7, 2026*
+*Last Modified: October 10, 2026*
