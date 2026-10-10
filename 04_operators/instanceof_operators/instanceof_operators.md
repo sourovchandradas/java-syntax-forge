@@ -91,30 +91,37 @@ public class EvenPositiveCheck {
 
 ## Pattern Matching for `instanceof` (Java 14+)
 
-Starting in Java 14 (preview) and standardized in **Java 16**, Java introduced **Pattern Matching for `instanceof**`. This feature eliminates the boilerplate code of testing an object's type and then manually casting it.
+Starting in Java 14 (preview) and standardized in **Java 16**, Java introduced **Pattern Matching for `instanceof`**. This feature eliminates the boilerplate code of testing an object's type and then manually casting it.
 
 ### Traditional Approach (Before Java 14)
 
 ```java
-Object obj = "Hello Java";
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        Object obj = "Hello Java";
 
-if (obj instanceof String) {
-    String s = (String) obj; // Explicit downcasting required!
-    System.out.println(s.toUpperCase());
+        if (obj instanceof String) {
+            String s = (String) obj; // Explicit downcasting required!
+            System.out.println(s.toUpperCase());
+        }
+    }
 }
-
 ```
 
 ### Modern Approach (Java 14/16+)
 
 ```java
-Object obj = "Hello Java";
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        Object obj = "Hello Java";
 
-// Type check AND binding variable creation in one step
-if (obj instanceof String s) {
-    System.out.println(s.toUpperCase()); // 's' is automatically cast and in scope
+        // Type check AND binding variable creation in one step
+        if (obj instanceof String s) {
+            System.out.println(s.toUpperCase()); // 's' is automatically cast and in scope
+        }
+
+    }
 }
-
 ```
 
 ### Conditional Scope & Short-Circuiting
@@ -122,13 +129,17 @@ if (obj instanceof String s) {
 The binding variable (`s`) is only in scope where the `instanceof` condition evaluates to `true`. This allows binding variables to be used directly in logical expressions:
 
 ```java
-Object obj = "Hello World";
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        Object obj = "Hello World";
 
-// Safe: 's.length()' is evaluated ONLY if 'obj instanceof String' is true
-if (obj instanceof String s && s.length() > 5) {
-    System.out.println("Long String: " + s);
+        // Safe: 's.length()' is evaluated ONLY if 'obj instanceof String' is true
+        if (obj instanceof String s && s.length() > 5) {
+            System.out.println("Long String: " + s);
+        }
+
+    }
 }
-
 ```
 
 ---
@@ -408,16 +419,16 @@ if (data instanceof String s && s.contains("Pattern")) {
 
 ## Related Topics
 
-* **Java Type Casting:** Widening (implicit) and Narrowing (explicit) reference casting.
-* **Polymorphism & Method Overriding:** Resolving method execution dynamically at runtime.
-* **Java Sealed Classes (Java 17+):** Restricting inheritance hierarchies for pattern matching.
+* [Unary Operator](../unary_operators/unary_operators.md)
+* [Bitwise Operator](../bitwise_operators/bitwise_operators.md)
+* [Assignment Operator](../assginment_operators/assignment_operators.md)
 
 ---
 
 ## Additional Resources
 
-* [Oracle Java Documentation: Type Comparison Operator instanceof](https://www.google.com/search?q=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html)
-* [Java Language Specification (JLS): The instanceof Operator](https://www.google.com/search?q=https://docs.oracle.com/javase/specs/jls/se21/html/jls-15.html%23jls-15.20.2)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/java/instanceof-keyword-in-java/)
+* [w3schools](https://www.w3schools.com/java/ref_keyword_instanceof.asp)
 
 ---
 
@@ -427,4 +438,4 @@ The `instanceof` operator verifies the dynamic runtime type of an object referen
 
 ---
 
-*Last Updated : October 7, 2026*
+*Last Modified : October 10, 2026*
