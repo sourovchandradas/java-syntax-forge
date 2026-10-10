@@ -421,7 +421,7 @@ if (data instanceof String s && s.contains("Pattern")) {
 
 * [Unary Operator](../unary_operators/unary_operators.md)
 * [Bitwise Operator](../bitwise_operators/bitwise_operators.md)
-* [Assignment Operator](../assginment_operators/assignment_operators.md)
+* [Assignment Operator](../assignment_operators/assignment_operators.md)
 
 ---
 
