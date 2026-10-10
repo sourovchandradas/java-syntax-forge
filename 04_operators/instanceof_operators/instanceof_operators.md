@@ -360,51 +360,13 @@ Writing long chains of `if (obj instanceof X) ... else if (obj instanceof Y)` vi
 
 Implement a `Book` class with `title` (String) and `isbn` (int). Override the `equals(Object obj)` method using `instanceof` with pattern matching.
 
-```java
-public class Book {
-    private String title;
-    private int isbn;
-
-    public Book(String title, int isbn) {
-        this.title = title;
-        this.isbn = isbn;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Book other)) return false;
-        return this.isbn == other.isbn;
-    }
-
-    public static void main(String[] args) {
-        Book b1 = new Book("Java Guide", 101);
-        Book b2 = new Book("Java Guide", 101);
-        System.out.println("Books Equal: " + b1.equals(b2)); // Output: true
-    }
-}
-```
+* **Solution:** [Exercise 1: Safe Equality Implementation](labs/exercise-01.safe_equality_implementation)
 
 ### Exercise 2: Tracing Pattern Variable Scope
 
 Predict the output of the following Java snippet:
 
-```java
-Object data = "Pattern Matching";
-
-if (data instanceof String s && s.contains("Pattern")) {
-    System.out.println("Matched: " + s.length());
-} else {
-    System.out.println("No Match");
-}
-```
-
-**Step-by-Step Breakdown:**
-
-1. `data instanceof String s` evaluates to `true` and binds `"Pattern Matching"` to `s`.
-2. `s.contains("Pattern")` evaluates to `true`.
-3. The `if` block executes: `"Pattern Matching".length()` is `16`.
-4. Output: **`Matched: 16`**
+* **Solution:** [Exercise 2: Tracing Pattern Variable Scope](labs/exercise-02.tracing_pattern_variable_scope.java)
 
 ---
 
