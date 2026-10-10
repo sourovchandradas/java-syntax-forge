@@ -153,14 +153,22 @@ The `instanceof` operator works seamlessly with concrete classes, abstract class
 An object is an `instanceof` an interface if its class (or any superclass) implements that interface.
 
 ```java
-interface Flyable {}
-class Bird implements Flyable {}
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
 
-Bird eagle = new Bird();
-Object obj = eagle;
+        interface Flyable {
+        }
 
-System.out.println(obj instanceof Flyable); // Output: true
+        class Bird implements Flyable {
+        }
 
+        Bird eagle = new Bird();
+        Object obj = eagle;
+
+        System.out.println(obj instanceof Flyable); // Output: true
+
+    }
+}
 ```
 
 ### Polymorphic Arrays
@@ -168,12 +176,16 @@ System.out.println(obj instanceof Flyable); // Output: true
 Array objects in Java are object references and can also be checked with `instanceof`.
 
 ```java
-String[] names = {"Alice", "Bob"};
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        String[] names = { "Alice", "Bob" };
 
-System.out.println(names instanceof String[]); // true
-System.out.println(names instanceof Object[]); // true
-System.out.println(names instanceof Object);   // true
+        System.out.println(names instanceof String[]); // true
+        System.out.println(names instanceof Object[]); // true
+        System.out.println(names instanceof Object); // true
 
+    }
+}
 ```
 
 ---
@@ -189,7 +201,6 @@ String message = "Java";
 
 // ❌ Compile Error: Inconvertible types; cannot cast java.lang.String to java.Integer
 // boolean check = message instanceof Integer; 
-
 ```
 
 ### Reason for Compiler Error
@@ -221,7 +232,6 @@ Binary `instanceof` evaluates from **Left to Right**.
 ```java
 // Parentheses added for clarity when mixing relational operators
 boolean check = (obj instanceof String) == true;
-
 ```
 
 ---
@@ -274,7 +284,6 @@ public class InstanceofOperatorDemo {
         }
     }
 }
-
 ```
 
 ### Console Output
@@ -294,7 +303,6 @@ Note: Helmets recommended!
 --- 3. Array Instance Checking ---
 numbers is Integer[]: true
 numbers is Object[]: true
-
 ```
 
 ---
@@ -310,7 +318,6 @@ public boolean equals(Object obj) {
     if (!(obj instanceof Person person)) return false;
     return this.id == person.id;
 }
-
 ```
 
 
@@ -330,7 +337,6 @@ if (str != null && str instanceof String) { }
 
 // ✅ Clean & Idiomatic
 if (str instanceof String) { }
-
 ```
 
 
@@ -340,7 +346,6 @@ Casting objects blindly without `instanceof` checks leads to `ClassCastException
 Object obj = "Hello";
 // ❌ Dangerous: Throws ClassCastException if obj is not an Integer!
 Integer num = (Integer) obj; 
-
 ```
 
 
@@ -378,7 +383,6 @@ public class Book {
         System.out.println("Books Equal: " + b1.equals(b2)); // Output: true
     }
 }
-
 ```
 
 ### Exercise 2: Tracing Pattern Variable Scope
@@ -393,7 +397,6 @@ if (data instanceof String s && s.contains("Pattern")) {
 } else {
     System.out.println("No Match");
 }
-
 ```
 
 **Step-by-Step Breakdown:**
