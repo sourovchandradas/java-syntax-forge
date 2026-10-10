@@ -360,7 +360,7 @@ Writing long chains of `if (obj instanceof X) ... else if (obj instanceof Y)` vi
 
 Implement a `Book` class with `title` (String) and `isbn` (int). Override the `equals(Object obj)` method using `instanceof` with pattern matching.
 
-* **Solution:** [Exercise 1: Safe Equality Implementation](labs/exercise-01.safe_equality_implementation)
+* **Solution:** [Exercise 1: Safe Equality Implementation](labs/exercise-01.safe_equality_implementation.java)
 
 ### Exercise 2: Tracing Pattern Variable Scope
 
