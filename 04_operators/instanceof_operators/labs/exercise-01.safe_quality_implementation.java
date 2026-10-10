@@ -1,4 +1,5 @@
 // Exercise 01: Safe Equality Implementation
+
 public class Book {
     private String title;
     private int isbn;
