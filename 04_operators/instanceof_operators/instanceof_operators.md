@@ -20,19 +20,19 @@ The `instanceof` operator plays a critical role in object-oriented programming (
 
 ## Table of Contents
 
-1. [1. Syntax and Core Mechanics](https://www.google.com/search?q=%231-syntax-and-core-mechanics)
-2. [2. Pattern Matching for instanceof (Java 14+)](https://www.google.com/search?q=%232-pattern-matching-for-instanceof-java-14)
-3. [3. Class vs Interface Checking](https://www.google.com/search?q=%233-class-vs-interface-checking)
-4. [4. Compile-Time Restrictions and Inconvertible Types](https://www.google.com/search?q=%234-compile-time-restrictions-and-inconvertible-types)
-5. [5. Operator Precedence and Evaluation Order](https://www.google.com/search?q=%235-operator-precedence-and-evaluation-order)
-6. [6. Full Implementation Example](https://www.google.com/search?q=%236-full-implementation-example)
-7. [7. Why This Matters](https://www.google.com/search?q=%237-why-this-matters)
-8. [8. Common Mistakes to Avoid](https://www.google.com/search?q=%238-common-mistakes-to-avoid)
-9. [9. Practice Exercises](https://www.google.com/search?q=%239-practice-exercises)
-10. [10. Quick Summary Table](https://www.google.com/search?q=%2310-quick-summary-table)
-11. [11. Related Topics](https://www.google.com/search?q=%2311-related-topics)
-12. [12. Additional Resources](https://www.google.com/search?q=%2312-additional-resources)
-13. [13. Key Takeaways](https://www.google.com/search?q=%2313-key-takeaways)
+1. [Syntax and Core Mechanics](#syntax-and-core-mechanics)
+2. [Pattern Matching for instanceof (Java 14+)](#pattern-matching-for-instanceof-java-14)
+3. [Class vs Interface Checking](#class-vs-interface-checking)
+4. [Compile-Time Restrictions and Inconvertible Types](#compile-time-restrictions-and-inconvertible-types)
+5. [Operator Precedence and Evaluation Order](#operator-precedence-and-evaluation-order)
+6. [Full Implementation Example](#full-implementation-example)
+7. [Why This Matters](#why-this-matters)
+8. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+9. [Practice Exercises](#practice-exercises)
+10. [Quick Summary Table](#quick-summary-table)
+11. [Related Topics](#related-topics)
+12. [Additional Resources](#additional-resources)
+13. [Key Takeaways](#key-takeaways)
 
 ---
 
@@ -42,7 +42,6 @@ The `instanceof` operator plays a critical role in object-oriented programming (
 
 ```java
 boolean result = objectReference instanceof TargetType;
-
 ```
 
 ### How It Works
