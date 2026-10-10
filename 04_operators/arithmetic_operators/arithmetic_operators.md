@@ -427,7 +427,7 @@ Write a Java program that converts a temperature from Fahrenheit to Celsius usin
 
 Write a code snippet that checks whether an integer `num = 27` is even or odd using the `%` operator.
 
-* **Solution:** [Exercise 2: Odd or Even Checker via Modulus](labs/exercise-02.odd_or_even_checker_via_modulus.java)
+* **Solution:** [Exercise 2: Odd or Even Checker via Modulus](labs/exercise-02.odd_or_even_cheker_via_modulus.java)
 
 ---
 
