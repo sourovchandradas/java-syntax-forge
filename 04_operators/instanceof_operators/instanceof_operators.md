@@ -52,29 +52,39 @@ boolean result = objectReference instanceof TargetType;
 
 ### The `null` Handling Rule
 
-If `objectReference` is `null`, the `instanceof` operator **always returns `false**`. It does **NOT** throw a `NullPointerException`.
+If `objectReference` is `null`, the `instanceof` operator **always returns `false`**. It does **NOT** throw a `NullPointerException`.
 
 ```java
-String text = null;
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
+        String text = null;
 
-// Safe evaluation: returns false without throwing NullPointerException
-boolean isString = text instanceof String; 
-System.out.println("Is String: " + isString); // Output: false
+        // Safe evaluation: returns false without throwing NullPointerException
+        boolean isString = text instanceof String;
+        System.out.println("Is String: " + isString); // Output: false
 
+    }
+}
 ```
 
 ### Basic Inheritance Example
 
 ```java
-class Animal {}
-class Dog extends Animal {}
+public class EvenPositiveCheck {
+    public static void main(String[] args) {
 
-Animal myPet = new Dog();
+        class Animal {
+        }
+        class Dog extends Animal {
+        }
 
-System.out.println(myPet instanceof Dog);    // true (Actual object is Dog)
-System.out.println(myPet instanceof Animal); // true (Dog inherits from Animal)
-System.out.println(myPet instanceof Object); // true (All classes inherit from Object)
+        Animal myPet = new Dog();
 
+        System.out.println(myPet instanceof Dog); // true (Actual object is Dog)
+        System.out.println(myPet instanceof Animal); // true (Dog inherits from Animal)
+        System.out.println(myPet instanceof Object); // true (All classes inherit from Object)
+    }
+}
 ```
 
 ---
