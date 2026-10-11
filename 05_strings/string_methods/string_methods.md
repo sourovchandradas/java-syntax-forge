@@ -22,7 +22,7 @@ Java String methods are built-in functions provided by the `java.lang.String` cl
 * [int length()](#-int-length-)
 * [char charAt(int i)](#-char-charatint-i)
 * [String substring(int i)](#-string-substringint-i)
-* [String substring(int i, int j)](https://www.google.com/search?q=%234-string-substringint-i-int-j)
+* [String substring(int i, int j)](#string-substringint-i-int-j)
 * [String concat(String str)](https://www.google.com/search?q=%235-string-concatstring-str)
 * [int indexOf(String s)](https://www.google.com/search?q=%236-int-indexofstring-s)
 * [int indexOf(String s, int i)](https://www.google.com/search?q=%237-int-indexofstring-s-int-i)
@@ -77,9 +77,9 @@ Substring: eksf
 
 ---
 
-## 2. Detailed Breakdown of Common String Methods
+## Detailed Breakdown of Common String Methods
 
-### 1. `int length()`
+### `int length()`
 
 Provides the total count of characters in the string.
 
@@ -100,7 +100,7 @@ public class Geeks {
 
 ---
 
-### 2. `char charAt(int i)`
+### `char charAt(int i)`
 
 Returns the character at the specified $i^{th}$ index (0-based indexing).
 
@@ -121,7 +121,7 @@ W
 
 ---
 
-### 3. `String substring(int i)`
+### `String substring(int i)`
 
 Returns the substring starting from the $i^{th}$ index character to the end of the string.
 
@@ -142,7 +142,7 @@ World!
 
 ---
 
-### 4. `String substring(int i, int j)`
+### `String substring(int i, int j)`
 
 Returns the substring starting from index $i$ up to index $j-1$ (index $j$ is excluded).
 
@@ -163,7 +163,7 @@ World
 
 ---
 
-### 5. `String concat(String str)`
+### `String concat(String str)`
 
 Appends the specified string to the end of the current string.
 
@@ -184,7 +184,7 @@ Hello, World!!!!
 
 ---
 
-### 6. `int indexOf(String s)`
+### `int indexOf(String s)`
 
 Returns the index within the string of the first occurrence of the specified substring. If the specified string `s` is not found, it returns `-1` by default.
 
@@ -205,7 +205,7 @@ public class Geeks {
 
 ---
 
-### 7. `int indexOf(String s, int i)`
+### `int indexOf(String s, int i)`
 
 Returns the index within the string of the first occurrence of the specified substring, starting the search at the specified index $i$.
 
@@ -226,7 +226,7 @@ public class Geeks {
 
 ---
 
-### 8. `int lastIndexOf(String s)`
+### `int lastIndexOf(String s)`
 
 Returns the index within the string of the last occurrence of the specified substring. If not found, it returns `-1` by default.
 
@@ -247,7 +247,7 @@ public class Geeks {
 
 ---
 
-### 9. `boolean equals(Object otherObj)`
+### `boolean equals(Object otherObj)`
 
 Compares this string to the specified object to check if their contents are identical.
 
@@ -268,7 +268,7 @@ true
 
 ---
 
-### 10. `boolean equalsIgnoreCase(String anotherString)`
+### `boolean equalsIgnoreCase(String anotherString)`
 
 Checks if two strings are equal, ignoring letter case (uppercase vs. lowercase).
 
@@ -289,7 +289,7 @@ true
 
 ---
 
-### 11. `int compareTo(String anotherString)`
+### `int compareTo(String anotherString)`
 
 Compares two strings lexicographically based on the Unicode value of each character. Returns `0` if equal, a negative integer if this string precedes `anotherString`, or a positive integer if it follows it.
 
@@ -310,7 +310,7 @@ public class Geeks {
 
 ---
 
-### 12. `int compareToIgnoreCase(String anotherString)`
+### `int compareToIgnoreCase(String anotherString)`
 
 Compares two strings lexicographically, ignoring case differences.
 
@@ -331,7 +331,7 @@ public class Geeks {
 
 ---
 
-### 13. `String toLowerCase()`
+### `String toLowerCase()`
 
 Converts all characters in the string to lowercase.
 
@@ -352,7 +352,7 @@ hello, world!
 
 ---
 
-### 14. `String toUpperCase()`
+### `String toUpperCase()`
 
 Converts all characters in the string to uppercase.
 
@@ -373,7 +373,7 @@ HELLO, WORLD!
 
 ---
 
-### 15. `String trim()`
+### `String trim()`
 
 Returns a copy of the string with whitespace removed from both leading and trailing ends. Whitespace characters inside the string remain unchanged.
 
@@ -394,7 +394,7 @@ public class Geeks {
 
 ---
 
-### 16. `String replace(char oldChar, char newChar)`
+### `String replace(char oldChar, char newChar)`
 
 Returns a new string where every instance of `oldChar` is replaced with `newChar`.
 
@@ -415,7 +415,7 @@ Hexxo, Worxd!
 
 ---
 
-### 17. `boolean contains(CharSequence sequence)`
+### `boolean contains(CharSequence sequence)`
 
 Returns `true` if the string contains the specified character sequence.
 
@@ -436,7 +436,7 @@ true
 
 ---
 
-### 18. `char[] toCharArray()`
+### `char[] toCharArray()`
 
 Converts the string into a new character array.
 
@@ -460,7 +460,7 @@ H e l l o
 
 ---
 
-### 19. `boolean startsWith(String prefix)`
+### `boolean startsWith(String prefix)`
 
 Returns `true` if the string begins with the specified prefix.
 
@@ -645,4 +645,4 @@ Java's `String` class offers a rich API for text manipulation, searching, inspec
 
 ---
 
-*Last Modified: October 8, 2026*
+*Last Modified: October 11, 2026*
