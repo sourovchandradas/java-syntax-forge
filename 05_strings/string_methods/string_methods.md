@@ -19,9 +19,9 @@ Java String methods are built-in functions provided by the `java.lang.String` cl
 
 1. [Overview of Java String Methods](#-overview-of-java-string-methods)
 2. [Detailed Breakdown of Common String Methods](#-detailed-breakdown-of-common-string-methods)
-* [int length()](#-int-length--)
-* [char charAt(int i)](#-char-charatint-i)
-* [String substring(int i)](#-string-substringint-i)
+* [int length()](#-int-length)
+* [char charAt(int i)](#char-charatint-i)
+* [String substring(int i)](#string-substringint-i)
 * [String substring(int i, int j)](#string-substringint-i-int-j)
 * [String concat(String str)](#string-concatstring-str)
 * [int indexOf(String s)](#int-indexofstring-s)
