@@ -100,4 +100,19 @@ This statement runs regardless of if condition.
 
 ---
 
+## Execution Flow Mechanics
+
+### Step-by-Step Control Flow
+
+When Java encounters an `if` statement during program execution, it processes the code in the following order:
+1. **Control Arrival:** Execution reaches the `if` statement.
+2. **Condition Evaluation:** The boolean expression inside `()` is evaluated.
+3. **True Condition Branch:** If `true`, control enters the body and executes all statements inside.
+4. **False Condition Branch:** If `false`, the program skips the body completely.
+5. **Resume Execution:** Program flow resumes at the next statement following the `if` construct.
+
+---
+
+
+
 
