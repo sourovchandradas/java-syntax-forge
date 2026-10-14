@@ -94,7 +94,7 @@ This statement runs regardless of if condition.
 * Only the first statement (`System.out.println("14 is a even number.";`) belongs to the `if` construct.
 * The second statement is entirely independent and executes in all cases.
 
-> **Note** *While curly braces are optional for single-line statements, using them consistently is considered a software engineering best practice to prevent subtle bugs during code updates.*
+> **Note:** *While curly braces are optional for single-line statements, using them consistently is considered a software engineering best practice to prevent subtle bugs during code updates.*
 >
 > 
 
