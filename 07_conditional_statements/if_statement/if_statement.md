@@ -21,7 +21,7 @@ This guide covers:
 8. [Related Topics](#related-topics)
 9. [Why This Matters](#why-this-matters)
 10. [Additional Resources](#additional-resources)
-11. [Key Takeways](#key-takeways)
+11. [Key Takeaways](#key-takeaways)
 
 ---
 
