@@ -113,6 +113,116 @@ When Java encounters an `if` statement during program execution, it processes th
 
 ---
 
+## Common Mistakes and Errors
 
+### Mistake 1: Using Non-Boolean Condtions
+
+Unlike languages like **C or C++**, Java does not convert integers(e.g., `0` or `1`)
+to boolean values. Placing a non-boolean expression inside an if statement causes a compilation error.
+
+```java
+// Incorrect: Using an integer instead of a boolean
+int x = 1;
+if (x) {
+    System.out.println("This will not compile");
+}
+```
+
+### Error Output
+```text
+Error: incompatible types: int cannot be converted to boolean
+```
+
+### Mistake 2: Accidental Semicolon Placement
+Placing a semicolon immediately after the `if` condition terminates the statement prematurely, causing the intended block to always execute.
+
+```java
+int i = 0;
+
+// Incorrect: Semicolon after condition
+if (i > 5); 
+{
+    System.out.println("i is greater than 5"); // Executes unexpectedly!
+}
+```
+
+### Mistake 3: Misleading Indentation Without Braces
+
+Relying on indentation rather than curly braces when writing multiple lines leads to logical errors.
+
+```java
+int score = 40;
+
+// Incorrect: Only the first line is conditional
+if (score >= 50)
+    System.out.println("You passed!");
+    System.out.println("Congratulations!"); // Executes even if score < 50
+```
+
+---
+
+## Exercises
+File naming convention: Use descriptive, PascalCase class names (for example,
+`NumberCheck.java`).
+
+### Exercise 01: Positive Number Check
+Write a class called `PositiveCheck` that declares an integer variable `number`. Use an `if` statement to print `"The  number is positive."` only if the value is greater than zero.
+
+* **Solution:** [Exercise 01: Positive Number Check](labs/exercise-01.positive_number_check.java)
+
+### Exercise 02: Voting Eligibility
+Write a class called `VotingCheck` with an integer variable `age`. Use an `if` statement with curly braces to print both `"Eligible to vote."` and `"Please register at your local precinct."` if age is 18 or greater.
+
+* **Solution:** [Exercise 02: Voting Eligibility](labs/exercise-02.voting_eligibility.java)
+
+### Exercise 03: Temperature Alert
+Write a class called `TemperatureAlert` with a double variable `tempInCelsius`. If the temperature exceeds `37.5`, print a single warning sentence without using curly braces around the `if` body.
+
+* **Solution:** [Exercise 03: Temperature Alert](labs/exercise-03.temperature.java)
+
+---
+
+## Quick Reference
+
+| Concept | Syntax / Pattern | Description |
+| --- | --- | --- |
+| Standard `if` | `if (condition) { ... }` | Executes a block of statements if condition evaluates to `true` |
+| Single-Statement `if` | `if (condition) statement;` | Omits `{}`; applies strictly to the next single statement |
+| Boolean Condition | `if (i < 15)` | Requirement that condition evaluates strictly to `true` or `false` |
+| Semicolon Pitfall | `if (condition);` | Prematurely terminates the `if` statement logic |
+
+---
+
+## Related Topics
+
+* [Java if-else Statement](https://www.google.com/search?q=../if_else_statement/if_else_statement.md)
+* [Java Switch Statement](https://www.google.com/search?q=../../04_control_flow/switch_statement/switch_statement.md)
+* [Java Relational and Logical Operators](https://www.google.com/search?q=../../02_operators/relational_logical/relational_logical.md)
+
+---
+
+## Why This Matters
+
+Conditional execution is the cornerstone of control flow in programming. Mastering the simple `if` statement enables your applications to dynamically evaluate data, validate user inputs, and branch execution pathways safely. Understanding syntax rules—such as strict boolean enforcement and scope management—prevents logic errors and maintains readable code.
+
+---
+
+## Additional Resources
+
+* [Oracle Java Documentation: The if-then Statement](https://www.google.com/search?q=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)
+* [GeeksforGeeks: Java if Statement](https://www.google.com/search?q=https://www.geeksforgeeks.org/java-if-statement-with-examples/)
+
+---
+
+## Key Takeaways
+
+* The `if` statement evaluates a condition that must return a boolean `true` or `false`.
+* Omitting curly braces `{}` restricts the `if` scope strictly to the single statement immediately following it.
+* Non-boolean types (like integers) cannot be used as conditions in Java.
+* Statements outside the `if` block execute sequentially regardless of whether the condition was met.
+
+---
+
+*Last Modified : October 14, 2025*
 
 
