@@ -209,8 +209,7 @@ Conditional execution is the cornerstone of control flow in programming. Masteri
 
 ## Additional Resources
 
-* [Oracle Java Documentation: The if-then Statement](https://www.google.com/search?q=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)
-* [GeeksforGeeks: Java if Statement](https://www.google.com/search?q=https://www.geeksforgeeks.org/java-if-statement-with-examples/)
+* [GeeksforGeeks: Java if Statement](https://www.geeksforgeeks.org/java/java-if-statement-with-examples/)
 
 ---
 
