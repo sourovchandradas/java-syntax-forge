@@ -13,8 +13,8 @@ This guide covers:
 ## Table of Contents
 1. [Basic Syntax and Working](#basic-syntax-and-working)
 2. [Implementation with Curly Braces](#implementation-with-curly-braces)
-3. 
-
+3. [Single-Statement if(Omitting Braces)](#single--statment-ifomitting-braces)
+4. [Execution Flow Mechanics](#execution-flow-mechanics)
 
 ---
 
@@ -57,5 +57,47 @@ public class if_statements {
 14 is a even number.
 Outside if-block.
 ```
+
+### Explanation
+* The condition `a % 2 == 0` evaluates to `true`(since `14` is divided into `2`), so Java executes the statement inside the `if` block.
+* The second `System.out.println()` lies outside the block and executes regardless of the condition.
+
+---
+
+## Single-Statement if(Omitting Braces)
+
+### Omitting Curly Braces
+In Java, if curly braces `{}` are omitted after the `if` condition, **only the immediately following statement** is considered part of the `if` body.
+
+### Implementation Example
+```java
+public class if_statements {
+    public static void main(String[] args) {
+        int a = 14;
+        
+        // Using if statement without curly braces
+        if (a % 2 == 0)
+            System.out.println("14 is a even number.");
+
+        System.out.println("This statement runs regardless of if condition.");
+    }
+}
+```
+
+### Output
+```text
+14 is a even number.
+This statement runs regardless of if condition.
+```
+
+### Explanation
+* Only the first statement (`System.out.println("14 is a even number.";`) belongs to the `if` construct.
+* The second statement is entirely independent and executes in all cases.
+
+> **Note** *While curly braces are optional for single-line statements, using them consistently is considered a software engineering best practice to prevent subtle bugs during code updates.*
+>
+> 
+
+---
 
 
