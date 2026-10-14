@@ -15,6 +15,13 @@ This guide covers:
 2. [Implementation with Curly Braces](#implementation-with-curly-braces)
 3. [Single-Statement if(Omitting Braces)](#single--statment-ifomitting-braces)
 4. [Execution Flow Mechanics](#execution-flow-mechanics)
+5. [Common Mistakes and Errors](#common-mistakes-and-errors)
+6. [Exercises](#exercises)
+7. [Quick Reference](#quick-reference)
+8. [Related Topics](#related-topics)
+9. [Why This Matters](#why-this-matters)
+10. [Additional Resources](#additional-resources)
+11. [Key Takeways](#key-takeways)
 
 ---
 
