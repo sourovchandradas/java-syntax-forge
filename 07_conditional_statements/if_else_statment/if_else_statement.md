@@ -214,17 +214,23 @@ Error: 'else' without 'if'
 
 File naming convention: Use descriptive, PascalCase class names (for example, `EvenOddCheck.java`).
 
-### Exercise 1: Even or Odd Number
+### Exercise 01: Even or Odd Number
 
-Write a class called `EvenOddCheck` with an integer variable `num`. Use an `if-else` statement to print `"The number is even."` if `num % 2 == 0`, and `"The number is odd."` otherwise.
+Write a class called `EvenOddCheck` with an integer variable `number`. Use an `if-else` statement to print `"The number is even."` if `num % 2 == 0`, and `"The number is odd."` otherwise.
+
+* **Solution:** [Exercise 01 Even or Odd Number](labs/exercise-01.even_or_odd_number.java)
 
 ### Exercise 2: Exam Pass/Fail Verification
 
 Write a class called `GradeCheck` with an integer variable `score`. Use an `if-else` statement to print `"Passed"` if `score` is `50` or greater, and `"Failed"` if it is under `50`.
 
-### Exercise 3: Blood Donation Criteria
+* **Solution:** [Exercise 02: Exam Pass/Fail Verification](labs/exercise-02.exam_pass_fail_verification.java)
+
+### Exercise 03: Blood Donation Criteria
 
 Write a class called `BloodDonationCheck` with `age` and `weight` variables. Use nested `if-else` statements to print specific error messages if age is under `18` or weight is under `50.0` kg, and print `"Eligible to donate."` if both conditions are satisfied.
+
+* **Solution:** [Exercise 03: Blood Donation Criteria](labs/exercise-03.blood_donation_check.java)
 
 ---
 
