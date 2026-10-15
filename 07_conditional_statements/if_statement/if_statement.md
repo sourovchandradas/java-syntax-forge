@@ -185,7 +185,7 @@ Write a class called `VotingCheck` with an integer variable `age`. Use an `if` s
 ### Exercise 03: Temperature Alert
 Write a class called `TemperatureAlert` with a double variable `tempInCelsius`. If the temperature exceeds `37.5`, print a single warning sentence without using curly braces around the `if` body.
 
-* **Solution:** [Exercise 03: Temperature Alert](exercise-03.temperature_alert.java)
+* **Solution:** [Exercise 03: Temperature Alert](labs/exercise-03.temperature_alert.java)
 
 ---
 
