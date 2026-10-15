@@ -1,6 +1,6 @@
 // Exercise 01: Even or Odd Number
 
-public class exercise_01 {
+public class EvenOddCheck {
     public static void main(String[] args) {
         int number = 83;
 
