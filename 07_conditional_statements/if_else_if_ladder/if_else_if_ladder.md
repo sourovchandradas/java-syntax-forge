@@ -249,7 +249,7 @@ Write a class called `AgeCategorizer` with an `int` variable `age`. Classify the
 
 - [if Statement](../if_statement/if_statement.md)
 - [if-else Statement](../if_else_statement/if_else_statement.md)
-- [Switch Statement](../switch_statements/switch_statements.md)
+- [Switch Statement](../switch_statement/switch_statement.md)
 
 ---
 
