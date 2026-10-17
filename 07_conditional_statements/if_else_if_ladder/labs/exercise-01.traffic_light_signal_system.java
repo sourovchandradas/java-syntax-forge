@@ -1,5 +1,4 @@
 // Exercise 01: Traffic Light Signal System
-
 public class TrafficLightController {
     public static void main(String[] args) {
         String color = "YELLOW";
