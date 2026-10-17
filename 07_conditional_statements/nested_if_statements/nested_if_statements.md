@@ -1,209 +1,95 @@
-# Java Decision Making: The switch Statement
+# Nested if Statements in Java
 
 ## Overview
 
-The `switch` statement in Java is a multi-way decision-making structure that executes a specific block of code based on the value of an expression. It provides a cleaner, more readable, and structured alternative to long `if-else-if` ladders when evaluating a single variable against multiple discrete constant values.
+A **nested `if` statement** in Java is a conditional construct where an `if` or `if-else` block is embedded inside the execution body of another `if` or `else` block. This hierarchical arrangement enables programs to evaluate multi-stage dependencies sequentially, enforcing fine-grained control flow where inner conditions are evaluated only if all preceding outer conditions evaluate to `true`.
 
 This guide covers:
 
-- **Basic syntax and supported data types** - handling primitives, wrappers, strings, and enums
-- **Fall-through behavior and case grouping** - controlling execution flow with `break`
-- **Nested switch structures** - embedding decision trees within outer cases
-- **Enum and wrapper class integration** - leveraging type safety and auto-unboxing
-- **Case label mechanics** - enforcing compile-time constant requirements
-- **Common mistakes and interview pitfalls** - avoiding compilation errors and unexpected fall-throughs
+- **Hierarchical conditional logic** - structuring dependent decision trees
+- **Enterprise implementation patterns** - multi-tier authorization and fraud detection
+- **Execution mechanics & branch prediction** - CPU pipeline behavior with nested conditionals
+- **Scope resolution & the dangling else problem** - AST parsing rules and explicit block scoping
+- **Refactoring techniques & modern alternatives** - guard clauses, functional `Optional` chains, and pattern matching
+- **Common mistakes and code smells** - eliminating the "Arrow Anti-Pattern"
+- **Technical interview Q&A** - deep-dive questions for mid-to-senior backend roles
 
 ---
 
 ## Table of Contents
 
-1. [Basic Syntax and Supported Data Types](#basic-syntax-and-supported-data-types)
-2. [Implementation Examples](#implementation-examples)
-3. [Fall-Through Behavior and Case Grouping](#fall-through-behavior-and-case-grouping)
-4. [Nested switch Statements](#nested-switch-statements)
-5. [Switch with Enums and Wrapper Classes](#switch-with-enums-and-wrapper-classes)
-6. [Default Case Placement and Evaluation](#default-case-placement-and-evaluation)
-7. [Case Label Rules and Constant Expressions](#case-label-rules-and-constant-expressions)
-8. [Common Mistakes and Errors](#common-mistakes-and-errors)
-9. [Exercises](#exercises)
-10. [Quick Reference](#quick-reference)
-11. [Related Topics](#related-topics)
-12. [Why This Matters](#why-this-matters)
-13. [Additional Resources](#additional-resources)
+1. [Basic Syntax and Structural Hierarchy](#basic-syntax-and-structural-hierarchy)
+2. [Enterprise Implementation Examples](#enterprise-implementation-examples)
+3. [Execution Flow Mechanics & Branch Prediction](#execution-flow-mechanics--branch-prediction)
+4. [Scope Resolution and the Dangling Else Problem](#scope-resolution-and-the-dangling-else-problem)
+5. [Refactoring Nested Logic & Modern Java Alternatives](#refactoring-nested-logic--modern-java-alternatives)
+6. [Common Mistakes and Code Smells](#common-mistakes-and-code-smells)
+7. [Technical Interview Questions & Answers](#technical-interview-questions--answers)
+8. [Exercises and Complete Solutions](#exercises-and-complete-solutions)
+9. [Quick Reference](#quick-reference)
+10. [Related Topics](#related-topics)
+11. [Why This Matters](#why-this-matters)
+12. [Additional Resources](#additional-resources)
 
 ---
 
-## Basic Syntax and Supported Data Types
+## Basic Syntax and Structural Hierarchy
 
-### What is a switch Statement?
+### What is a Nested if Statement?
 
-A `switch` statement evaluates a single expression and compares its resulting value against a series of `case` labels. When a match is found, the code block associated with that case is executed until a `break` statement or the end of the `switch` block is reached.
-
-### Supported Data Types
-
-The selector expression in a traditional Java `switch` statement must evaluate to one of the following:
-
-- **Primitive Integral Types:** `byte`, `short`, `char`, `int` *(Note: `long`, `float`, `double`, and `boolean` primitives are **not** supported)*
-- **Wrapper Classes:** `Byte`, `Short`, `Character`, `Integer`
-- **Enumerations:** `enum` types
-- **String Class:** `String` (supported starting from Java 7)
+In Java, conditional statements can be nested to arbitrary depths. An inner `if` condition is evaluated **strictly conditionally**: Java skips evaluating the inner boolean expression entirely if the outer `if` condition evaluates to `false`.
 
 ### Syntax
 
 ```java
-switch (expression) {
-    case value1:
-        // Code executed if expression == value1
-        break; // Optional control flow exit
-    case value2:
-        // Code executed if expression == value2
-        break;
-    default:
-        // Code executed if no cases match
-}
-```
-
----
-
-## Implementation Examples
-
-### Basic Integer Evaluation
-
-```java
-public class SizeEvaluator {
-    public static void main(String[] args) {
-        int size = 2;
-
-        switch (size) {
-            case 1:
-                System.out.println("Extra Small");
-                break;
-            case 2:
-                System.out.println("Small");
-                break;
-            case 3:
-                System.out.println("Medium");
-                break;
-            case 4:
-                System.out.println("Large");
-                break;
-            case 5:
-                System.out.println("Extra Large");
-                break;
-            default:
-                System.out.println("Invalid size number");
-        }
+if (outerCondition) {
+    // Executes when outerCondition is true
+    
+    if (innerCondition1) {
+        // Executes ONLY when BOTH outerCondition AND innerCondition1 are true
+    } else {
+        // Executes when outerCondition is true BUT innerCondition1 is false
     }
+} else {
+    // Executes when outerCondition is false
 }
-```
-
-### Output
-
-```text
-Small
-```
-
-### Explanation
-
-- The `switch` expression evaluates the integer variable `size` (`2`).
-- Java jumps directly to `case 2:`, executing `System.out.println("Small");`.
-- The `break` statement immediately terminates the `switch` block, bypassing all subsequent cases.
-
----
-
-## Fall-Through Behavior and Case Grouping
-
-### Understanding Fall-Through
-
-In Java, `switch` execution falls through from one `case` to the next unless explicitly halted by a `break`, `return`, or thrown exception. If a `break` statement is omitted, execution continues sequentially into subsequent cases regardless of whether their labels match the selector expression.
-
-### Intentional Case Grouping Example
-
-Developers can leverage fall-through behavior intentionally to map multiple matching values to a single outcome block.
-
-```java
-public class DayTypeEvaluator {
-    public static void main(String[] args) {
-        int day = 2;
-        String dayString;
-        String dayType;
-
-        // Standard switch mapping number to day name
-        switch (day) {
-            case 1: dayString = "Monday"; break;
-            case 2: dayString = "Tuesday"; break;
-            case 3: dayString = "Wednesday"; break;
-            case 4: dayString = "Thursday"; break;
-            case 5: dayString = "Friday"; break;
-            case 6: dayString = "Saturday"; break;
-            case 7: dayString = "Sunday"; break;
-            default: dayString = "Invalid day";
-        }
-
-        // Switch leveraging fall-through to group days
-        switch (day) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                dayType = "Weekday";
-                break;
-            case 6:
-            case 7:
-                dayType = "Weekend";
-                break;
-            default:
-                dayType = "Invalid daytype";
-        }
-
-        System.out.println(dayString + " is a " + dayType);
-    }
-}
-```
-
-### Output
-
-```text
-Tuesday is a Weekday
 ```
 
 ---
 
-## Nested switch Statements
+## Enterprise Implementation Examples
 
-### Structural Hierarchy
+### Example 1: Enterprise Role-Based Access Control (RBAC) Pipeline
 
-A `switch` block can be placed inside a `case` of an outer `switch` statement. Because each `switch` block maintains its own independent scope, label constants in inner structures do not conflict with outer case labels.
-
-### Implementation Example
+In backend microservices, nested conditionals frequently handle multi-layer authorization checks (e.g., verifying user authentication, session validity, and role permissions).
 
 ```java
-public class CourseSelector {
-    public static void main(String[] args) {
-        String branch = "CSE";
-        int year = 2;
+public class SecurityAuthorizationPipeline {
 
-        switch (year) {
-            case 1:
-                System.out.println("Elective courses: Advanced English, Algebra");
-                break;
-            case 2:
-                // Nested switch evaluating department branch
-                switch (branch) {
-                    case "CSE":
-                    case "CCE":
-                        System.out.println("Elective courses: Machine Learning, Big Data");
-                        break;
-                    case "ECE":
-                        System.out.println("Elective courses: Antenna Engineering");
-                        break;
-                    default:
-                        System.out.println("Elective courses: Optimization");
+    public enum UserRole { ADMIN, MANAGER, USER, GUEST }
+
+    public static void main(String[] args) {
+        boolean isAuthenticated = true;
+        boolean isTokenExpired = false;
+        UserRole role = UserRole.ADMIN;
+
+        // Outer Layer: Authentication Verification
+        if (isAuthenticated) {
+            // Second Layer: Token Freshness Verification
+            if (!isTokenExpired) {
+                // Third Layer: Role Privilege Verification
+                if (role == UserRole.ADMIN) {
+                    System.out.println("HTTP 200 OK: Access granted to Admin Control Panel.");
+                } else if (role == UserRole.MANAGER) {
+                    System.out.println("HTTP 200 OK: Access granted to Management Reports.");
+                } else {
+                    System.out.println("HTTP 403 Forbidden: Insufficient role permissions.");
                 }
-                break;
-            default:
-                System.out.println("Invalid academic year");
+            } else {
+                System.out.println("HTTP 401 Unauthorized: Session token expired.");
+            }
+        } else {
+            System.out.println("HTTP 401 Unauthorized: User not authenticated.");
         }
     }
 }
@@ -212,90 +98,38 @@ public class CourseSelector {
 ### Output
 
 ```text
-Elective courses: Machine Learning, Big Data
+HTTP 200 OK: Access granted to Admin Control Panel.
 ```
 
 ---
 
-## Switch with Enums and Wrapper Classes
-
-### Enumeration Type Safety
-
-Using Java `enum` types in `switch` statements enhances type safety. When switching over an enum, case labels must use the simple constant names without qualifying them with the enum class name.
+### Example 2: Financial Transaction Fraud Detection Engine
 
 ```java
-public class EnumSwitchExample {
-    public enum Day { Sun, Mon, Tue, Wed, Thu, Fri, Sat }
+public class FinancialTransactionEngine {
 
     public static void main(String[] args) {
-        Day today = Day.Fri;
+        double transactionAmount = 12500.00;
+        boolean isHighRiskCountry = false;
+        boolean isDeviceRecognized = true;
 
-        switch (today) {
-            case Sun:
-                System.out.println("Sunday");
-                break;
-            case Mon:
-                System.out.println("Monday");
-                break;
-            case Fri:
-                System.out.println("Friday");
-                break;
-            default:
-                System.out.println("Other day");
-        }
-    }
-}
-```
+        // Outer Layer: High-value transaction threshold
+        if (transactionAmount > 10000.00) {
+            System.out.println("Flagged: High-value transaction detected ($" + transactionAmount + ").");
 
-### Wrapper Classes and Unboxing
-
-Java automatically unboxes wrapper objects (`Integer`, `Character`, `Byte`, `Short`) to their corresponding primitive values when evaluated within a `switch` condition.
-
-```java
-public class WrapperSwitchExample {
-    public static void main(String[] args) {
-        Character ch = 'c'; // Wrapper object Character
-
-        switch (ch) { // Auto-unboxed to primitive char
-            case 'a':
-                System.out.println("Selected option A");
-                break;
-            case 'c':
-                System.out.println("Selected option C");
-                break;
-            default:
-                System.out.println("Option not recognized");
-        }
-    }
-}
-```
-
----
-
-## Default Case Placement and Evaluation
-
-### Default Case Placement Mechanics
-
-The `default` clause executes when none of the defined `case` values match the expression. While typically placed at the end of a `switch` block, `default` can legally appear anywhere within the structure.
-
-> **Note:** Regardless of where `default` is placed positionally, Java evaluates all explicit `case` labels **first**. The `default` block is only entered if no explicit case matches. However, if `default` lacks a `break` statement, execution will fall through into whatever case physically follows it.
-
-### Placement Example (Default at Beginning)
-
-```java
-public class DefaultPlacementExample {
-    public static void main(String[] args) {
-        int i = 5;
-
-        switch (i) {
-            default:
-                System.out.println("Default");
-            case 1:
-                System.out.println(1);
-                break;
-            case 2:
-                System.out.println(2);
-                break;
+            // Nested Check: Origin location risk assessment
+            if (isHighRiskCountry) {
+                System.out.println("Action Required: Transaction blocked due to high-risk location.");
+            } else {
+                // Nested Check: Device fingerprint verification
+                if (isDeviceRecognized) {
+                    System.out.println("Action Approved: Step-up 2FA SMS sent to primary phone.");
+                } else {
+                    System.out.println("Action Required: Transaction held for manual fraud review.");
+                }
+            }
+        } else {
+            System.out.println("Action Approved: Transaction processed normally.");
         }
     }
 }
@@ -304,180 +138,391 @@ public class DefaultPlacementExample {
 ### Output
 
 ```text
-Default
-1
+Flagged: High-value transaction detected ($12500.0).
+Action Approved: Step-up 2FA SMS sent to primary phone.
 ```
-
-### Explanation
-
-- Java checks `case 1` and `case 2` first. Because $i = 5$, neither matches.
-- Control jumps to `default:`, printing `"Default"`.
-- Because `default` lacks a `break` statement, execution **falls through** to `case 1:`, printing `1` before hitting the `break`.
 
 ---
 
-## Case Label Rules and Constant Expressions
+## Execution Flow Mechanics & Branch Prediction
 
-### Compile-Time Constant Requirement
+### Control Flow Decision Tree
 
-Every `case` label in a `switch` statement must resolve to a **compile-time constant expression** or literal. Case expressions must match the data type of the `switch` selector.
+```text
+                        [Outer Condition]
+                           /         \
+                     (true)           (false)
+                       /                 \
+             [Inner Condition 1]     [Outer Else Block]
+                /          \
+          (true)            (false)
+            /                  \
+  [Inner Condition 2]     [Inner Else Block]
+     /          \
+(true)          (false)
+  /                \
+[Action A]     [Action B]
+```
+
+### Hardware Impact: CPU Branch Prediction
+
+At the machine level, nested `if` statements compile into conditional jump instructions (such as `ifeq`, `ifne`, `if_icmpge` in Java Bytecode). Modern CPUs utilize **Branch Prediction Units (BPUs)** to speculatively pipeline execution pathways.
+
+* **Deep Nesting Mispredictions:** When deeply nested conditions evaluate unpredictably (e.g., highly volatile data), CPU branch mispredictions force pipeline flushes.
+* **Pipeline Flush Cost:** A single branch misprediction can cost 15 to 20 CPU cycles of latency.
+* **Optimization:** Flatter, predictable execution paths allow the hardware branch predictor to maintain high accuracy (>95%).
+
+---
+
+## Scope Resolution and the Dangling Else Problem
+
+### Syntactic Ambiguity
+
+The **dangling else problem** occurs when nested `if` statements omit explicit curly braces `{}`.
 
 ```java
-public class ConstantExpressionExample {
-    public static void main(String[] args) {
-        int x = 2;
-        switch (x + 1) { // Valid: Variable expression in switch condition
-            case 1:
-                System.out.println(1);
-                break;
-            case 1 + 1: // Valid: Compile-time constant expression (evaluates to 2)
-                System.out.println(2);
-                break;
-            case 2 + 1: // Valid: Compile-time constant expression (evaluates to 3)
-                System.out.println(3);
-                break;
+// Problematic Code: Indentation suggests the 'else' pairs with 'age >= 18'
+int age = 20;
+boolean hasID = false;
+
+if (age >= 18)
+    if (hasID)
+        System.out.println("Entry Granted");
+else
+    System.out.println("Entry Denied: Underage"); // Misleading Indentation!
+```
+
+### Java Language Specification (JLS) Resolution Rule
+
+According to **JLS §14.5**, an `else` clause **always binds to the nearest unmatched `if` statement** within the same syntactic block.
+
+In the ambiguous code above:
+
+1. Java binds the `else` to `if (hasID)`, **not** `if (age >= 18)`.
+2. When `age = 20` and `hasID = false`, the program prints: `Entry Denied: Underage` — creating a logical bug because the user *is* 18 or older.
+
+### Absolute Resolution: Explicit Scope Braces
+
+```java
+// Corrected with explicit block scope
+if (age >= 18) {
+    if (hasID) {
+        System.out.println("Entry Granted");
+    }
+} else {
+    System.out.println("Entry Denied: Underage");
+}
+```
+
+---
+
+## Refactoring Nested Logic & Modern Java Alternatives
+
+### Pattern 1: Guard Clauses (Early Return Pattern)
+
+Guard clauses exit the execution method as soon as an invalid or boundary condition is encountered, flattening horizontal code creep.
+
+#### Legacy Deeply Nested Code:
+
+```java
+public void processPayment(Account account, double amount) {
+    if (account != null) {
+        if (account.isActive()) {
+            if (account.getBalance() >= amount) {
+                account.deduct(amount);
+                System.out.println("Payment successful.");
+            } else {
+                System.out.println("Insufficient funds.");
+            }
+        } else {
+            System.out.println("Account inactive.");
         }
+    } else {
+        System.out.println("Invalid account.");
+    }
+}
+```
+
+#### Refactored with Guard Clauses:
+
+```java
+public void processPayment(Account account, double amount) {
+    if (account == null) {
+        System.out.println("Invalid account.");
+        return;
+    }
+    if (!account.isActive()) {
+        System.out.println("Account inactive.");
+        return;
+    }
+    if (account.getBalance() < amount) {
+        System.out.println("Insufficient funds.");
+        return;
+    }
+
+    account.deduct(amount);
+    System.out.println("Payment successful.");
+}
+```
+
+---
+
+### Pattern 2: Functional `Optional` Chains (Java 8+)
+
+Nested null checks can be replaced entirely using `java.util.Optional`.
+
+```java
+// Legacy Nested Null Checks
+public String getCity(User user) {
+    if (user != null) {
+        Address address = user.getAddress();
+        if (address != null) {
+            String city = address.getCity();
+            if (city != null) {
+                return city;
+            }
+        }
+    }
+    return "UNKNOWN";
+}
+
+// Refactored Functional Pipeline
+public String getCityFunctional(User user) {
+    return Optional.ofNullable(user)
+            .map(User::getAddress)
+            .map(Address::getCity)
+            .orElse("UNKNOWN");
+}
+```
+
+---
+
+## Common Mistakes and Code Smells
+
+### Mistake 1: The Arrow Anti-Pattern (Pyramid of Doom)
+
+Deeply nested structures that shape like an arrow (`>`) make code hard to read, maintain, and unit test.
+
+```java
+// Code Smell: Excessive Cyclomatic Complexity
+if (cond1) {
+    if (cond2) {
+        if (cond3) {
+            if (cond4) {
+                // Hard to track variable state and control flow
+            }
+        }
+    }
+}
+```
+
+**Rule of Thumb:** Limit nesting depth to **maximum 2 levels**. Beyond 2 levels, apply guard clauses, logical operators (`&&`), or extract sub-routines into helper methods.
+
+### Mistake 2: Missing Side-Effect Awareness in Short-Circuit Checks
+
+When outer conditions evaluate to `false`, inner statements containing pre-increments or state modifications do **not** execute.
+
+```java
+int attemptCounter = 0;
+boolean isSystemReady = false;
+
+// If isSystemReady is false, attemptCounter ++ IS NEVER EXECUTED
+if (isSystemReady) {
+    if (++attemptCounter > 3) {
+        System.out.println("System locked.");
     }
 }
 ```
 
 ---
 
-## Common Mistakes and Errors
+## Technical Interview Questions & Answers
 
-### Mistake 1: Using Variable Expressions in Case Labels
+### Q1: How does the Java compiler resolve the "Dangling Else" problem at the syntax tree level?
 
-Case labels cannot depend on runtime variables. They must strictly be literals, enum constants, or expressions containing only `final` variables initialized with constant expressions.
+**Answer:**
+The Java compiler resolves dangling `else` clauses during the syntactic analysis phase using a deterministic context-free grammar rule. An `else` token is greedily associated with the innermost, nearest open `if` statement that does not already have an associated `else` clause at the same block nesting level. To bind an `else` to an outer `if`, explicit block scope braces `{}` must be used to close the inner `if` scope.
+
+---
+
+### Q2: What is the relationship between nested `if` statements and Cyclomatic Complexity?
+
+**Answer:**
+Cyclomatic Complexity $V(G)$ measures the number of linearly independent paths through a program's source code:
+
+$$V(G) = E - N + 2P$$
+
+Where $E$ is the number of edges, $N$ is the number of nodes, and $P$ is the number of connected components in the Control Flow Graph.
+
+Each nested `if` or `else-if` branch adds $+1$ to $V(G)$. High cyclomatic complexity ($V(G) > 10$) drastically increases the number of required unit test scenarios to achieve 100% decision coverage. Refactoring nested `if` statements into guard clauses or dynamic strategy patterns reduces $V(G)$ and simplifies unit testing.
+
+---
+
+### Q3: How do modern Java features (Java 16+ Pattern Matching for `instanceof`) eliminate nested type checks?
+
+**Answer:**
+Traditionally, downcasting required nested type checks and manual casts:
 
 ```java
-// Incorrect: Using runtime variables in case labels
-int x = 2;
-int y = 1;
+// Traditional Nested Cast
+if (obj instanceof String) {
+    String s = (String) obj;
+    if (!s.isEmpty()) {
+        System.out.println(s.toUpperCase());
+    }
+}
 
-switch (x) {
-    case 1:
-        System.out.println("One");
-        break;
-    case x + y: // Compilation Error!
-        System.out.println("Three");
-        break;
+// Modern Pattern Matching (Java 16+)
+if (obj instanceof String s && !s.isEmpty()) {
+    System.out.println(s.toUpperCase());
 }
 ```
 
-### Compiler Error Output
+Pattern matching combines type checking, variable binding, and conditional evaluation into a single flat expression.
 
-```text
-./GFG.java:16: error: constant expression required
-          case x+y:
-                ^
-1 error
-```
+---
 
-### Mistake 2: Using Unsupported Primitive Types (`long`, `float`, `double`, `boolean`)
+## Exercises and Complete Solutions
 
-Passing primitive `long`, `float`, `double`, or `boolean` types to a `switch` statement causes a compilation failure.
+File naming convention: Use descriptive, PascalCase class names (e.g., `RolePermissionCheck.java`).
+
+### Exercise 1: User Role and Permission Checker
 
 ```java
-// Incorrect: Primitive long is not supported
-long value = 100L;
+public class RolePermissionCheck {
+    public static void main(String[] args) {
+        boolean isLoggedIn = true;
+        String userRole = "ADMIN";
 
-switch (value) { // Compilation Error!
-    case 100L:
-        System.out.println("Hundred");
-        break;
+        if (isLoggedIn) {
+            if ("ADMIN".equalsIgnoreCase(userRole)) {
+                System.out.println("Access Granted: Admin Control Center.");
+            } else {
+                System.out.println("Access Granted: Standard User Dashboard.");
+            }
+        } else {
+            System.out.println("Access Denied: Please log in first.");
+        }
+    }
 }
 ```
 
-### Compiler Error Output
+#### Output
 
 ```text
-Error: incompatible types: possible lossy conversion from long to int
-```
-
-### Mistake 3: Duplicate Case Labels
-
-Defining two identical `case` values within the same `switch` scope causes a compilation error.
-
-```java
-int code = 200;
-
-switch (code) {
-    case 200:
-        System.out.println("OK");
-        break;
-    case 200: // Compilation Error!
-        System.out.println("Duplicate OK");
-        break;
-}
-```
-
-### Compiler Error Output
-
-```text
-Error: duplicate case label
+Access Granted: Admin Control Center.
 ```
 
 ---
 
-## Exercises
+### Exercise 2: E-Commerce Discount Eligibility
 
-File naming convention: Use descriptive, PascalCase class names (for example, `TrafficLightController.java`).
+```java
+public class DiscountEligibility {
+    public static void main(String[] args) {
+        boolean isPremiumMember = true;
+        double purchaseAmount = 145.50;
 
-### Exercise 1: Traffic Light State Machine
+        if (isPremiumMember) {
+            if (purchaseAmount >= 100.0) {
+                System.out.println("20% Discount Applied.");
+            } else {
+                System.out.println("10% Discount Applied.");
+            }
+        } else {
+            System.out.println("No Discount Available.");
+        }
+    }
+}
+```
 
-Create an enum called `Signal` with constants `RED`, `YELLOW`, and `GREEN`. Write a class named `TrafficLightController` that uses a `switch` statement to print actionable driver instructions (e.g., `"Stop"`, `"Caution"`, `"Go"`) based on an assigned `Signal` variable.
+#### Output
 
-### Exercise 2: Month Day Counter with Fall-Through
+```text
+20% Discount Applied.
+```
 
-Write a class called `MonthDayCalculator` with an integer variable `month` (1 through 12). Use a grouped `switch` statement leveraging fall-through behavior to output whether the month contains `30 days`, `31 days`, or `28/29 days` (for February).
+---
 
-### Exercise 3: Simple Arithmetic Calculator
+### Exercise 3: University Course Enrollment Guard
 
-Write a class named `SimpleCalculator` that accepts two `double` numbers and a `char` operator (`'+'`, `'-'`, `'*'`, `'/'`). Use a `switch` statement operating on the `char` operator to perform and print the arithmetic result. Include a `default` case to handle invalid operator characters.
+```java
+public class CourseEnrollment {
+    public static void main(String[] args) {
+        boolean hasPrerequisite = true;
+        double gpa = 3.4;
+        int seatsAvailable = 5;
+
+        if (hasPrerequisite) {
+            if (gpa >= 3.0) {
+                if (seatsAvailable > 0) {
+                    System.out.println("Enrollment Successful!");
+                } else {
+                    System.out.println("Enrollment Failed: Course section is full.");
+                }
+            } else {
+                System.out.println("Enrollment Failed: Minimum GPA requirement (3.0) not met.");
+            }
+        } else {
+            System.out.println("Enrollment Failed: Prerequisite course not completed.");
+        }
+    }
+}
+```
+
+#### Output
+
+```text
+Enrollment Successful!
+```
 
 ---
 
 ## Quick Reference
 
-| Concept | Syntax / Pattern | Description |
+| Pattern / Concept | Syntax Example | Key Characteristic |
 | --- | --- | --- |
-| Standard `switch` | `switch (expr) { case val: ... break; }` | Branches execution to matching constant label; halts at `break` |
-| Fall-Through | `case 1: case 2: statement; break;` | Omits `break` statements to execute shared logic for multiple cases |
-| Default Case | `default: statement;` | Optional fallback path executed when no explicit case values match |
-| Enum Switch | `switch (enumVar) { case CONSTANT: ... }` | Evaluates enum constants without qualifying the enum class name |
-| Constant Requirement | `case CONST_VAL:` | Case labels must be compile-time literal values or constant expressions |
+| Nested `if` | `if (c1) { if (c2) { ... } }` | Sequential execution; inner block runs only if outer is `true` |
+| Dangling Else | `if (c1) if (c2) s1; else s2;` | `else` binds to `c2` (nearest unmatched `if`); resolve with `{}` |
+| Guard Clause | `if (!c1) return;` | Flattens code hierarchy by returning early on precondition failure |
+| Logical Combination | `if (c1 && c2)` | Combines dependent boolean conditions into a single flat check |
+| Functional `Optional` | `Optional.ofNullable(x).map(...)` | Eliminates nested null checks in object graphs |
 
 ---
 
 ## Related Topics
 
-- [Java if-else-if Ladder](../if_else_if_ladder/if_else_if_ladder.md)
-- [Java Enums](../../06_oop/enums/enums.md)
-- [Java Control Flow: Break and Continue](../break_continue/break_continue.md)
+* [if Statement](../if_statement/if_statement.md)
+* [if-else Statement](../if_else_statement/if_else_statement.md)
+* [if-else-if Ladder](../if_else_if_ladder/if_else_if_ladder.md)
+* [Switch Statement](../switch/switch.md)
 
 ---
 
 ## Why This Matters
 
-The `switch` statement is a critical branching construct for building readable multi-way decision workflows. Beyond clean syntax, the Java compiler optimizes `switch` statements using bytecode instructions (`tableswitch` or `lookupswitch`), allowing constant-time $O(1)$ or logarithmic $O(\log n)$ jump-table performance compared to sequential linear evaluation $O(n)$ in `if-else-if` ladders.
+Mastering nested decision structures and their refactoring patterns is essential for enterprise software development. Deeply nested logic increases **Cyclomatic Complexity** $V(G)$, leading to brittle codebases, elevated bug rates, and difficult unit testing.
+
+By applying guard clauses, logical operator combinations, and modern Java features (`Optional`, pattern matching), developers reduce cognitive load, improve CPU branch prediction efficiency, and write clean, maintainable code suitable for production environments.
 
 ---
 
 ## Additional Resources
 
-- [Oracle Java Documentation: The switch Statement](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
-- [GeeksforGeeks: Switch Statement in Java](https://www.geeksforgeeks.org/switch-statement-in-java/)
-
----
-
-*Last Updated : May 16, 2026*
+* [Oracle Java Documentation: Control Flow Statements](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
+* [GeeksforGeeks: Java Nested if Statement](https://www.google.com/search?q=https://www.geeksforgeeks.org/nested-if-statement-in-java-with-examples/)
+* [Refactoring Guru: Replace Nested Conditional with Guard Clauses](https://refactoring.guru/replace-nested-conditional-with-guard-clauses)
 
 ---
 
 ## Key Takeaways
 
-- Supported selector types include `byte`, `short`, `char`, `int`, `String`, `enum`, and wrapper classes (`Byte`, `Short`, `Character`, `Integer`).
-- Primitive `long`, `float`, `double`, and `boolean` types are not supported in standard switch statements.
-- `case` labels require strictly compile-time constant expressions or literals.
-- Omitted `break` statements cause execution to fall through sequentially into following cases.
-- The `default` case evaluates only after all explicit `case` comparisons fail, regardless of where `default` is positionally placed.
+* Nested `if` statements execute inner logic conditionally based on outer evaluation results.
+* According to JLS rules, an `else` statement always binds to the nearest unmatched `if` unless explicit braces `{}` are provided.
+* Deep nesting creates the "Arrow Anti-Pattern", increasing Cyclomatic Complexity and reducing maintainability.
+* Use Guard Clauses (early returns) and logical `&&` operators to flatten nested conditional trees.
+* Modern Java constructs like `Optional` pipelines and Pattern Matching for `instanceof` clean up traditional nested null and type checks.
+
+---
+
+*Last Modified : October 17, 2026*
