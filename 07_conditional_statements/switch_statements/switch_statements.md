@@ -1,8 +1,8 @@
-# Java Decision Making: The switch Statement
+# Switch Statement in Java
 
 ## Overview
 
-The `switch` statement in Java is a multi-way decision-making structure that executes a specific block of code based on the value of an expression. It provides a cleaner, more readable, and structured alternative to long `if-else-if` ladders when evaluating a single variable against multiple discrete constant values.
+The `switch` statement in Java programming language is a multi-way decision-making structure that executes a specific block of code based on the value of an expression. It provides a cleaner, more readable, and structured alternative to long `if-else-if` ladders when evaluating a single variable against multiple discrete constant values.
 
 This guide covers:
 
@@ -279,6 +279,8 @@ public class WrapperSwitchExample {
 The `default` clause executes when none of the defined `case` values match the expression. While typically placed at the end of a `switch` block, `default` can legally appear anywhere within the structure.
 
 > **Note:** Regardless of where `default` is placed positionally, Java evaluates all explicit `case` labels **first**. The `default` block is only entered if no explicit case matches. However, if `default` lacks a `break` statement, execution will fall through into whatever case physically follows it.
+>
+> 
 
 ### Placement Example (Default at Beginning)
 
@@ -367,9 +369,9 @@ switch (x) {
 ### Compiler Error Output
 
 ```text
-./GFG.java:16: error: constant expression required
-          case x+y:
-                ^
+switch_statement.java:11: error: constant expression required
+            case x + y: // Compilation Error!
+                   ^
 1 error
 ```
 
@@ -391,7 +393,11 @@ switch (value) { // Compilation Error!
 ### Compiler Error Output
 
 ```text
-Error: incompatible types: possible lossy conversion from long to int
+switch_statement.java:6: error: primitive patterns are a preview feature and are disabled by default.
+        switch (value) { // Compilation Error!
+               ^
+  (use --enable-preview to enable primitive patterns)
+1 error
 ```
 
 ### Mistake 3: Duplicate Case Labels
@@ -414,7 +420,10 @@ switch (code) {
 ### Compiler Error Output
 
 ```text
-Error: duplicate case label
+switch_statement.java:9: error: duplicate case label
+            case 200: // Compilation Error!
+            ^
+1 error
 ```
 
 ---
@@ -459,6 +468,7 @@ Write a class named `SimpleCalculator` that accepts two `double` numbers and a `
 
 - [if-else-if Ladder](../if_else_if_ladder/if_else_if_ladder.md)
 - [if-else Statement](../if_else_statement/if_else_statements.md)
+- [Nested if Statements](../nested_if_statements/nested_if_statements.md)
 
 ---
 
