@@ -509,9 +509,8 @@ By applying guard clauses, logical operator combinations, and modern Java featur
 
 ## Additional Resources
 
-* [Oracle Java Documentation: Control Flow Statements](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
-* [GeeksforGeeks: Java Nested if Statement](https://www.google.com/search?q=https://www.geeksforgeeks.org/nested-if-statement-in-java-with-examples/)
-* [Refactoring Guru: Replace Nested Conditional with Guard Clauses](https://refactoring.guru/replace-nested-conditional-with-guard-clauses)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/java/nested-if-in-java/)
+* [Refactoring Guru](https://refactoring.guru/replace-nested-conditional-with-guard-clauses)
 
 ---
 
