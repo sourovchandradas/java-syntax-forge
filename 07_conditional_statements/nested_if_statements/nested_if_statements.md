@@ -336,145 +336,58 @@ if (isSystemReady) {
 
 ---
 
-## Technical Interview Questions & Answers
-
-### Q1: How does the Java compiler resolve the "Dangling Else" problem at the syntax tree level?
-
-**Answer:**
-The Java compiler resolves dangling `else` clauses during the syntactic analysis phase using a deterministic context-free grammar rule. An `else` token is greedily associated with the innermost, nearest open `if` statement that does not already have an associated `else` clause at the same block nesting level. To bind an `else` to an outer `if`, explicit block scope braces `{}` must be used to close the inner `if` scope.
-
----
-
-### Q2: What is the relationship between nested `if` statements and Cyclomatic Complexity?
-
-**Answer:**
-Cyclomatic Complexity $V(G)$ measures the number of linearly independent paths through a program's source code:
-
-$$V(G) = E - N + 2P$$
-
-Where $E$ is the number of edges, $N$ is the number of nodes, and $P$ is the number of connected components in the Control Flow Graph.
-
-Each nested `if` or `else-if` branch adds $+1$ to $V(G)$. High cyclomatic complexity ($V(G) > 10$) drastically increases the number of required unit test scenarios to achieve 100% decision coverage. Refactoring nested `if` statements into guard clauses or dynamic strategy patterns reduces $V(G)$ and simplifies unit testing.
-
----
-
-### Q3: How do modern Java features (Java 16+ Pattern Matching for `instanceof`) eliminate nested type checks?
-
-**Answer:**
-Traditionally, downcasting required nested type checks and manual casts:
-
-```java
-// Traditional Nested Cast
-if (obj instanceof String) {
-    String s = (String) obj;
-    if (!s.isEmpty()) {
-        System.out.println(s.toUpperCase());
-    }
-}
-
-// Modern Pattern Matching (Java 16+)
-if (obj instanceof String s && !s.isEmpty()) {
-    System.out.println(s.toUpperCase());
-}
-```
-
-Pattern matching combines type checking, variable binding, and conditional evaluation into a single flat expression.
-
----
-
-## Exercises and Complete Solutions
-
-File naming convention: Use descriptive, PascalCase class names (e.g., `RolePermissionCheck.java`).
+## Exercises
 
 ### Exercise 1: User Role and Permission Checker
 
-```java
-public class RolePermissionCheck {
-    public static void main(String[] args) {
-        boolean isLoggedIn = true;
-        String userRole = "ADMIN";
+Write a Java program in a file named `RolePermissionCheck.java` that declares a `boolean` variable `isLoggedIn` and a `String` variable `userRole`.
 
-        if (isLoggedIn) {
-            if ("ADMIN".equalsIgnoreCase(userRole)) {
-                System.out.println("Access Granted: Admin Control Center.");
-            } else {
-                System.out.println("Access Granted: Standard User Dashboard.");
-            }
-        } else {
-            System.out.println("Access Denied: Please log in first.");
-        }
-    }
-}
-```
+Using a **nested `if-else**` structure, perform the following checks:
 
-#### Output
+1. If `isLoggedIn` is `true`, check the `userRole`:
+* If `userRole` is `"ADMIN"` (case-insensitive), print `"Access Granted: Admin Control Center."`
+* Otherwise, print `"Access Granted: Standard User Dashboard."`
 
-```text
-Access Granted: Admin Control Center.
-```
+
+2. If `isLoggedIn` is `false`, print `"Access Denied: Please log in first."`
+
+* **Solution:** [Exercise 01: User Role and Permission Checker](labs/exercise-01.user_role_and_permission_checker.java)
 
 ---
 
 ### Exercise 2: E-Commerce Discount Eligibility
 
-```java
-public class DiscountEligibility {
-    public static void main(String[] args) {
-        boolean isPremiumMember = true;
-        double purchaseAmount = 145.50;
+Write a Java program in a file named `DiscountEligibility.java` with a `boolean` variable `isPremiumMember` and a `double` variable `purchaseAmount`.
 
-        if (isPremiumMember) {
-            if (purchaseAmount >= 100.0) {
-                System.out.println("20% Discount Applied.");
-            } else {
-                System.out.println("10% Discount Applied.");
-            }
-        } else {
-            System.out.println("No Discount Available.");
-        }
-    }
-}
-```
+Using a **nested `if-else**` structure, implement the following logic:
 
-#### Output
+* If the customer is a premium member (`isPremiumMember == true`):
+* If `purchaseAmount` is `$100.0` or more, print `"20% Discount Applied."`
+* Otherwise, print `"10% Discount Applied."`
 
-```text
-20% Discount Applied.
-```
+
+* If the customer is not a premium member, print `"No Discount Available."`
+
+* **Solution:** [Exercise 02: E-commerce Discount Eligibility](labs/exercise-02.e-commarce-discount-eligibility.java)
 
 ---
 
 ### Exercise 3: University Course Enrollment Guard
 
-```java
-public class CourseEnrollment {
-    public static void main(String[] args) {
-        boolean hasPrerequisite = true;
-        double gpa = 3.4;
-        int seatsAvailable = 5;
+Write a Java program in a file named `CourseEnrollment.java` with three variables:
 
-        if (hasPrerequisite) {
-            if (gpa >= 3.0) {
-                if (seatsAvailable > 0) {
-                    System.out.println("Enrollment Successful!");
-                } else {
-                    System.out.println("Enrollment Failed: Course section is full.");
-                }
-            } else {
-                System.out.println("Enrollment Failed: Minimum GPA requirement (3.0) not met.");
-            }
-        } else {
-            System.out.println("Enrollment Failed: Prerequisite course not completed.");
-        }
-    }
-}
-```
+* `boolean hasPrerequisite`
+* `double gpa`
+* `int seatsAvailable`
 
-#### Output
+Using a **3-level nested `if-else**` structure, evaluate course enrollment eligibility step-by-step:
 
-```text
-Enrollment Successful!
-```
+1. First, check if `hasPrerequisite` is `true`. If `false`, print `"Enrollment Failed: Prerequisite course not completed."`
+2. Next, check if `gpa` is `3.0` or higher. If `false`, print `"Enrollment Failed: Minimum GPA requirement (3.0) not met."`
+3. Finally, check if `seatsAvailable` is greater than `0`. If `false`, print `"Enrollment Failed: Course section is full."`
+4. If all three conditions are satisfied, print `"Enrollment Successful!"`
+
+* **Solution:** [Exercise 03: University Course Enrollment Guard](labs/university_course_enrollment_guard.java)
 
 ---
 
@@ -495,7 +408,7 @@ Enrollment Successful!
 * [if Statement](../if_statement/if_statement.md)
 * [if-else Statement](../if_else_statement/if_else_statement.md)
 * [if-else-if Ladder](../if_else_if_ladder/if_else_if_ladder.md)
-* [Switch Statement](../switch/switch.md)
+* [Switch Statement](../switch_statement/switch_statement.md)
 
 ---
 
