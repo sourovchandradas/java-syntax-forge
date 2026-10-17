@@ -25,7 +25,7 @@ This guide covers:
 5. [Refactoring Nested Logic & Modern Java Alternatives](#refactoring-nested-logic--modern-java-alternatives)
 6. [Common Mistakes and Code Smells](#common-mistakes-and-code-smells)
 7. [Technical Interview Questions & Answers](#technical-interview-questions--answers)
-8. [Exercises and Complete Solutions](#exercises-and-complete-solutions)
+8. [Exercises](#exercises)
 9. [Quick Reference](#quick-reference)
 10. [Related Topics](#related-topics)
 11. [Why This Matters](#why-this-matters)
