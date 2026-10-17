@@ -1,5 +1,4 @@
 // Exercise 02: Tax Bracket Calculator
-
 public class TaxCalculator {
     public static void main(String[] args){
         double income = 20942019;
