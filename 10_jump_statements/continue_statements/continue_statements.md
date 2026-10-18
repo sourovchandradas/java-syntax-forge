@@ -279,7 +279,7 @@ for (int i = 0; i < 5; i++) {
 
 Write a program named `EvenNumberPrinter` that loops from 1 to 10 and uses `continue` to print only even numbers.
 
-* **Solution:** [Exercise 01: Skipping Odd Numbers](labs/skipping_odd_numbers.java)
+* **Solution:** [Exercise 01: Skipping Odd Numbers](labs/exercise-01.skipping_odd_numbers.java)
 
 ---
 
