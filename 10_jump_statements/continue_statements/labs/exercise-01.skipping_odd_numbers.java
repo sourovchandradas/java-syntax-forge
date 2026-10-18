@@ -1,4 +1,4 @@
-// Exercise 01: Even Number Printer
+// Exercise 01: Skipping Odd Numbers
 public class EvenNumberPrinter {
     public static void main(String[] args) {
         for (int i = 1; i <= 10; i++) {
