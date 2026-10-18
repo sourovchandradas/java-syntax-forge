@@ -327,7 +327,6 @@ The `continue` statement provides fine-grained control over loop execution paths
 * `continue` skips the remaining body statements of the current iteration and jumps directly to the next cycle.
 * In `for` loops, control transfers to the update statement; in `while`/`do-while` loops, control transfers to the boolean condition check.
 * Always update loop counter variables before calling `continue` in `while` or `do-while` loops to avoid infinite loops.
-* `break` exits the loop completely, whereas `continue` skips only the current iteration cycle.
 * `finally` blocks in `try-catch-finally` structures always execute, even if a `continue` is triggered within the `try` or `catch` block.
 
 ---
