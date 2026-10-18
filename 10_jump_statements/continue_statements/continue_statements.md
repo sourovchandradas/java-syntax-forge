@@ -17,19 +17,16 @@ This guide covers:
 
 ## Table of Contents
 
-1. [Basic Syntax and Control Transfer Mechanics](https://www.google.com/search?q=%23basic-syntax-and-control-transfer-mechanics)
-2. [Execution Flow Across Loop Types](https://www.google.com/search?q=%23execution-flow-across-loop-types)
-3. [Foundational Usage Examples](https://www.google.com/search?q=%23foundational-usage-examples)
-4. [Nested Loops and Labeled continue](https://www.google.com/search?q=%23nested-loops-and-labeled-continue)
-5. [Break vs. Continue Comparison](https://www.google.com/search?q=%23break-vs-continue-comparison)
-6. [Enterprise Implementation Examples](https://www.google.com/search?q=%23enterprise-implementation-examples)
-7. [Common Mistakes and Code Smells](https://www.google.com/search?q=%23common-mistakes-and-code-smells)
-8. [Technical Interview Questions & Answers](https://www.google.com/search?q=%23technical-interview-questions--answers)
-9. [Exercises and Complete Solutions](https://www.google.com/search?q=%23exercises-and-complete-solutions)
-10. [Quick Reference](https://www.google.com/search?q=%23quick-reference)
-11. [Related Topics](https://www.google.com/search?q=%23related-topics)
-12. [Why This Matters](https://www.google.com/search?q=%23why-this-matters)
-13. [Additional Resources](https://www.google.com/search?q=%23additional-resources)
+1. [Basic Syntax and Control Transfer Mechanics](#basic-syntax-and-control-transfer-mechanics)
+2. [Execution Flow Across Loop Types](#execution-flow-across-loop-types)
+3. [Foundational Usage Examples](#foundational-usage-examples)
+4. [Nested Loops and Labeled continue](#nested-loops-and-labeled-continue)
+5. [Common Mistakes](#common-mistakes)
+6. [Exercises](#exercises)
+7. [Quick Reference](#quick-reference)
+8. [Related Topics](#related-topics)
+9. [Why This Matters](#why-this-matters)
+10. [Additional Resources](#additional-resources)
 
 ---
 
