@@ -21,7 +21,7 @@ This guide covers:
 
 1. [Basic Syntax and Structural Hierarchy](#basic-syntax-and-structural-hierarchy)
 2. [Execution Flow Mechanics and Bytecode Analysis](#execution-flow-mechanics-and-bytecode-analysis)
-3. [Foundational Usage Examples](https://www.google.com/search?q=%23foundational-usage-examples)
+3. [Foundational Usage Examples](#foundational-usage-examples)
 4. [Return in Exception Handling (Try-Catch-Finally)](#return-in-exception-handling-try-catch-finally)
 5. [Refactoring with Guard Clauses (Early Return Pattern)](#refactoring-with-guard-clauses-early-return-pattern)
 6. [Covariant Return Types and Reference Handling](#covariant-return-types-and-reference-handling)
