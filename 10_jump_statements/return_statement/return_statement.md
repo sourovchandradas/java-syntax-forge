@@ -48,7 +48,6 @@ return;
 
 // Syntax 2: Return a value from a non-void method
 return expression;
-
 ```
 
 ### Language Specification Rules (JLS §14.17)
@@ -102,7 +101,6 @@ Java Bytecode uses type-specific instruction variants to perform returns efficie
 public int computeSquare(int x) {
     return x * x;
 }
-
 ```
 
 When disassembled using `javap -c`:
@@ -112,7 +110,6 @@ When disassembled using `javap -c`:
 1: iload_1         // Load parameter 'x' again
 2: imul            // Multiply both values on operand stack
 3: ireturn         // Return integer result to caller frame
-
 ```
 
 ---
@@ -137,7 +134,6 @@ public class VoidReturnDemo {
         validateAge(25); // Executes fully
     }
 }
-
 ```
 
 #### Output
@@ -145,7 +141,6 @@ public class VoidReturnDemo {
 ```text
 Error: Age cannot be negative.
 Valid age: 25
-
 ```
 
 ---
@@ -167,14 +162,12 @@ public class ValueReturnDemo {
         System.out.println("Maximum value: " + max);
     }
 }
-
 ```
 
 #### Output
 
 ```text
 Maximum value: 42
-
 ```
 
 ---
@@ -211,7 +204,6 @@ public class FinallyReturnTrap {
         System.out.println("Method returned: " + result);
     }
 }
-
 ```
 
 #### Output
@@ -220,7 +212,6 @@ public class FinallyReturnTrap {
 Executing try block...
 Executing finally block...
 Method returned: 30
-
 ```
 
 > **Warning:** Putting a `return` statement inside a `finally` block is an anti-pattern. It suppresses unhandled exceptions and alters expected control flow paths.
@@ -249,7 +240,6 @@ public String processOrder(Order order) {
         return "Error: Null Order";
     }
 }
-
 ```
 
 ### Refactored with Guard Clauses
@@ -264,7 +254,6 @@ public String processOrder(Order order) {
     // Happy Path Execution
     return "Order Processed Successfully";
 }
-
 ```
 
 ---
@@ -286,12 +275,11 @@ class InvoiceDocument extends BaseDocument {
         return new InvoiceDocument();
     }
 }
-
 ```
 
 ---
 
-## Common Mistakes and Code Smells
+## Common Mistakes
 
 ### Mistake 1: Unreachable Code Error
 
@@ -302,7 +290,6 @@ public int calculate() {
     return 100;
     System.out.println("Calculation complete!"); // Compilation Error: Unreachable statement
 }
-
 ```
 
 ### Mistake 2: Missing Return Statement
@@ -317,7 +304,6 @@ public String statusCheck(boolean flag) {
     }
     // Compilation Error: Missing return statement
 }
-
 ```
 
 ### Mistake 3: Exception Swallowing via `finally` Return
@@ -330,54 +316,15 @@ public int parseData(String data) {
         return -1; // BAD PRACTICE: Swallows NumberFormatException completely!
     }
 }
-
 ```
 
 ---
 
-## Technical Interview Questions & Answers
-
-### Q1: Does Java support Tail Call Optimization (TCO)?
-
-**Answer:**
-No. Java does not currently support **Tail Call Optimization (TCO)** at either the `javac` compiler or JVM HotSpot level. In functional languages with TCO, recursive calls in tail position (`return factorial(n - 1, acc * n);`) reuse the existing stack frame, preventing stack overflow errors ($O(1)$ stack depth).
-
-In Java, every recursive invocation creates a new stack frame regardless of whether the return statement is in tail position. Deep recursion in Java risks `StackOverflowError` if stack depth exceeds allocated bounds.
-
----
-
-### Q2: What happens if a reference object is modified inside a `finally` block after being staged in a `try` block `return`?
-
-**Answer:**
-If a `return` statement evaluates an object reference inside a `try` block, the **reference memory address** is staged. If the `finally` block modifies the object's internal state via that reference, the caller **will see the modified state** because both variables point to the same heap object. However, if the `finally` block reassigns the reference variable to a new object, the caller still receives the original object reference staged by `try`.
-
-```java
-public class ReferenceReturnDemo {
-    static class Data { int value = 10; }
-
-    public static Data testReference() {
-        Data d = new Data();
-        try {
-            return d; // Stages reference to 'd'
-        } finally {
-            d.value = 50; // Mutates object on heap
-        }
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Value: " + testReference().value); // Prints 50
-    }
-}
-
-```
-
----
-
-## Exercises and Complete Solutions
+## Exercises
 
 ### Exercise 1: Guard Clause Refactoring Service
 
-**Task:** Refactor `UserRegistrationService` to validate incoming user requests using guard clauses with early returns.
+Refactor `UserRegistrationService` to validate incoming user requests using guard clauses with early returns.
 
 ```java
 public class UserRegistrationService {
@@ -433,7 +380,6 @@ public class UserRegistrationService {
         System.out.println(service.registerUser(validUser));
     }
 }
-
 ```
 
 #### Output
@@ -441,14 +387,13 @@ public class UserRegistrationService {
 ```text
 REGISTRATION_FAILED: Invalid email address.
 REGISTRATION_SUCCESS: Welcome Alice!
-
 ```
 
 ---
 
 ### Exercise 2: Array Search Early Return
 
-**Task:** Write a method `findFirstNegativeIndex` that iterates through an integer array and returns the index of the first negative number. If no negative numbers exist, return `-1`.
+Write a method `findFirstNegativeIndex` that iterates through an integer array and returns the index of the first negative number. If no negative numbers exist, return `-1`.
 
 ```java
 public class FirstNegativeFinder {
@@ -475,7 +420,6 @@ public class FirstNegativeFinder {
         System.out.println("Index in data2: " + findFirstNegativeIndex(data2));
     }
 }
-
 ```
 
 #### Output
