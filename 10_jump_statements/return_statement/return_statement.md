@@ -326,68 +326,7 @@ public int parseData(String data) {
 
 Refactor `UserRegistrationService` to validate incoming user requests using guard clauses with early returns.
 
-```java
-public class UserRegistrationService {
-
-    public static class User {
-        private String username;
-        private String email;
-        private int age;
-
-        public User(String username, String email, int age) {
-            this.username = username;
-            this.email = email;
-            this.age = age;
-        }
-
-        public String getUsername() { return username; }
-        public String getEmail() { return email; }
-        public int getAge() { return age; }
-    }
-
-    public String registerUser(User user) {
-        // Guard Clause 1: Null Check
-        if (user == null) {
-            return "REGISTRATION_FAILED: User object cannot be null.";
-        }
-
-        // Guard Clause 2: Username Validation
-        if (user.getUsername() == null || user.getUsername().trim().isEmpty()) {
-            return "REGISTRATION_FAILED: Username is required.";
-        }
-
-        // Guard Clause 3: Email Validation
-        if (user.getEmail() == null || !user.getEmail().contains("@")) {
-            return "REGISTRATION_FAILED: Invalid email address.";
-        }
-
-        // Guard Clause 4: Age Limit
-        if (user.getAge() < 18) {
-            return "REGISTRATION_FAILED: User must be at least 18 years old.";
-        }
-
-        // Success Path
-        return "REGISTRATION_SUCCESS: Welcome " + user.getUsername() + "!";
-    }
-
-    public static void main(String[] args) {
-        UserRegistrationService service = new UserRegistrationService();
-
-        User invalidUser = new User("John", "john.com", 16);
-        User validUser = new User("Alice", "alice@example.com", 22);
-
-        System.out.println(service.registerUser(invalidUser));
-        System.out.println(service.registerUser(validUser));
-    }
-}
-```
-
-#### Output
-
-```text
-REGISTRATION_FAILED: Invalid email address.
-REGISTRATION_SUCCESS: Welcome Alice!
-```
+* **Solution:** [Exercise 01: Guard Clause Refactoring Service](labs/exercise-01.guard_clause_refactoring_service.java)
 
 ---
 
@@ -395,40 +334,7 @@ REGISTRATION_SUCCESS: Welcome Alice!
 
 Write a method `findFirstNegativeIndex` that iterates through an integer array and returns the index of the first negative number. If no negative numbers exist, return `-1`.
 
-```java
-public class FirstNegativeFinder {
-
-    public static int findFirstNegativeIndex(int[] numbers) {
-        if (numbers == null) {
-            return -1;
-        }
-
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < 0) {
-                return i; // Early exit upon discovery ($O(1)$ best-case)
-            }
-        }
-
-        return -1; // Fallback if no negative value found
-    }
-
-    public static void main(String[] args) {
-        int[] data1 = {10, 25, -4, 18, -30};
-        int[] data2 = {5, 12, 80, 4};
-
-        System.out.println("Index in data1: " + findFirstNegativeIndex(data1));
-        System.out.println("Index in data2: " + findFirstNegativeIndex(data2));
-    }
-}
-```
-
-#### Output
-
-```text
-Index in data1: 2
-Index in data2: -1
-
-```
+* **Solution:** [Exercise 02: Array Search Early Return](labs/exercise-02.array_search_early_return.java)
 
 ---
 
@@ -447,10 +353,8 @@ Index in data2: -1
 
 ## Related Topics
 
-* [Java if-else Statement](https://www.google.com/search?q=../if_else_statement/if_else_statement.md)
-* [Java Break Statement](https://www.google.com/search?q=../break_statement/break_statement.md)
-* [Java Continue Statement](https://www.google.com/search?q=../continue_statement/continue_statement.md)
-* [suspicious link removed]
+* [Break Statement](../break_statement/break_statement.md)
+* [Continue Statement](../continue_statement/continue_statement.md)
 
 ---
 
@@ -462,13 +366,7 @@ The `return` statement is fundamental to method encapsulation, program control f
 
 ## Additional Resources
 
-* [Oracle Java Documentation: Returning a Value from a Method](https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html)
-* [Java Language Specification: JLS §14.17 The return Statement](https://www.google.com/search?q=https://docs.oracle.com/javase/specs/jls/se17/html/jls-14.html%23jls-14.17)
-* [Refactoring Guru: Replace Nested Conditional with Guard Clauses](https://refactoring.guru/replace-nested-conditional-with-guard-clauses)
-
----
-
-*Last Updated : October 18, 2026*
+* [GeeksforGeeks](https://www.geeksforgeeks.org/java/return-keyword-java/)
 
 ---
 
@@ -479,3 +377,7 @@ The `return` statement is fundamental to method encapsulation, program control f
 * At the bytecode level, `return` pops the current JVM Call Stack frame and pushes any return value onto the caller frame's operand stack.
 * The `finally` block **always** executes before a method returns; putting a `return` inside `finally` overwrites previous return values and swallows unhandled exceptions.
 * Refactoring nested logic into early return Guard Clauses flattens code hierarchy and reduces Cyclomatic Complexity.
+
+---
+
+*Last Modified : October 19, 2026*
