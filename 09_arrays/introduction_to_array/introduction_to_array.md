@@ -1,4 +1,4 @@
-# Java Data Structures: Introduction to Arrays
+Introduction to Array in Java
 
 ## Overview
 
