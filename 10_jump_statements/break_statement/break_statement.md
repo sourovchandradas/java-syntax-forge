@@ -370,7 +370,8 @@ Write a program named `AccountLockout` that simulates login attempts using a `wh
 
 ## Related Topics
 
-* [Continue Statement](../continue_statement/continue_statement.md)
+* [continue Statement](../continue_statement/continue_statement.md)
+* [return Statement](../return_statement/return_statement.md)
 
 ---
 
