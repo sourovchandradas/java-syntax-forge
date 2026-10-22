@@ -365,8 +365,6 @@ Write a program that initializes an array of integers. Use an enhanced `for` loo
 | Standard For Loop | `for (int i = 0; i < n; i++) { ... }` | Executes a block a predictable number of times using an index counter | 
 | Enhanced For Loop | `for (Type item : array) { ... }` | Cleanly iterates through all items in arrays/collections | 
 | Infinite For Loop | `for (;;) { ... }` | Omits header arguments; runs indefinitely until broken | 
-| Loop Exiting | `break;` | Terminates the innermost loop immediately | 
-| Iteration Skipping | `continue;` | Skips remaining body code and triggers the update step | 
 
 ---
 
