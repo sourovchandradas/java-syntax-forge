@@ -9,7 +9,6 @@ This guide covers:
 * **Standard `for` loop** - iterating with initialization, condition, and update expressions
 * **Enhanced `for` loop (for-each)** - simplifying array and collection iteration
 * **Nested `for` loops** - handling multi-dimensional structures and patterns
-* **Loop control statements** - altering execution flow with `break` and `continue`
 * **Common mistakes and errors** - preventing infinite loops, off-by-one errors, and scope issues
 
 ---
