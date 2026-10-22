@@ -19,7 +19,7 @@ This guide covers:
 1. [Standard For Loop Syntax](#standard-for-loop-syntax)
 2. [Enhanced For Loop (For-Each)](#enhanced-for-loop-for-each)
 3. [Nested For Loops](#nested-for-loops)
-4. [Loop Control Statements](#loop-control-statements)
+4. [Miscellaneous](#miscellaneous)
 5. [Common Mistakes and Errors](#common-mistakes-and-errors)
 6. [Exercises](#exercises)
 7. [Quick Reference](#quick-reference)
@@ -210,8 +210,32 @@ public class Main {
 
 ---
 
+## Miscellaneous
 
----
+### Infinite for Loop in Java
+An infinite for loop occurs when the loop condition never becomes `false`.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        for (;;) {
+            System.out.println("Infinite Loop!");
+        }
+    }
+}
+```
+### Output
+```text
+Infinite Loop!
+Infinite Loop!
+Infinite Loop!
+Infinite Loop!
+Infinite Loop!
+....
+```
+> **Note:** A **"Time Limit Exceeded"** error occurs when a program runs longer than the time allocated for execution, due to infinite loops.
+>
+> 
 
 ## Common Mistakes and Errors
 
@@ -271,17 +295,44 @@ for (int i = 0; i <= numbers.length; i++) {
 }
 ```
 
+### Mistake 4: Misplaced Semicolon Creating Empty Loop and Scope Error
+Placing a semicolon`;` immediately after the `for` loop header terminates the loop statement prematurely. The loop becomes an isolated block where variable `i` is no longer in scope.
+```java
+// Incorrect: Semicolon creates an empty loop statement
+for(int i = 0; i <= 5; i++){
+    System.out.println(i); // Compilation Error: cannot find symbol 'i'
+}
+```
+### Traceback Error Analysis
+```text
+System.out.println(i); // Compilation Error: cannot find symbol 'i'
+                               ^
+  symbol:   variable i
+  location: class Main
+1 error
+```
+* **Root Cause:** The trailing `;` ends the loop body immediately.
+* **Scope Violation:** The block `{ System.out.println(i); }` is treated as independent code outside the `for` loop where `i` is undefined.
+
+**Correction:** Remove the misplaced semicolon after the loop header:
+```java
+// Correct: Semicolon removed
+for(int i = 0; i <= 5; i++){
+    System.out.println(i);
+}
+```
+
 ---
 
 ## Exercises
 
 File naming convention: Use PascalCase for Java class names (for example, `ForLoopExercises.java`).
 
-### Exercise 1: Multiplication Table Generator
+### Exercise 01: Multiplication Table Generator
 
 Write a program that takes an integer `num` and uses a `for` loop to print its multiplication table from 1 to 10.
 
-### Exercise 2: Right-Angled Star Pyramid
+### Exercise 02: Right-Angled Star Pyramid
 
 Write a program that takes an integer `rows` (e.g., `rows = 5`) and uses nested `for` loops to print a right-angled star pyramid pattern:
 
@@ -293,7 +344,7 @@ Write a program that takes an integer `rows` (e.g., `rows = 5`) and uses nested 
 *****
 ```
 
-### Exercise 3: Array Sum and Even Counter
+### Exercise 03: Array Sum and Even Counter
 
 Write a program that initializes an array of integers. Use an enhanced `for` loop to calculate both the **sum of all elements** and count how many **even numbers** exist in the array.
 
@@ -313,9 +364,9 @@ Write a program that initializes an array of integers. Use an enhanced `for` loo
 
 ## Related Topics
 
-* [While and Do-While Loops](../while_loop/while_loop.md)
-* [Working with Java Arrays](../../03_arrays/working_with_arrays/working_with_arrays.md)
-* [Control Flow Statements](../../02_control_flow/control_flow_overview/control_flow_overview.md)
+* [while Loop](../while_loop/while_loop.md)
+* [do while Loop](../do_while_loop/do_while_loop.md)
+* [break Statements](../../10_jump_statements/break_statements/break_statements.md)
 
 ---
 
@@ -327,12 +378,7 @@ Mastering `for` loops is essential for basic logic execution, traversing arrays,
 
 ## Additional Resources
 
-* [Oracle Java Documentation: The for Statement](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
-* [Baeldung: Guide to Java For Loops](https://www.baeldung.com/java-for-loop)
-
----
-
-*Last Updated : October 22, 2026*
+[GeeksforGeeks](https://www.geeksforgeeks.org/java/java-for-loop-with-examples/)
 
 ---
 
@@ -343,3 +389,7 @@ Mastering `for` loops is essential for basic logic execution, traversing arrays,
 * Nested `for` loops enable execution over multi-dimensional data structures such as matrix grids and nested arrays.
 * `break` exits the loop unconditionally, whereas `continue` bypasses the remaining loop body and triggers the update expression.
 * Pay attention to array bounds (`< array.length`) to prevent `ArrayIndexOutOfBoundsException` at runtime.
+
+---
+
+*Last Modified : October 22, 2026*
