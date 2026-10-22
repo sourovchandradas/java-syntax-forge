@@ -393,8 +393,6 @@ Mastering `for` loops is essential for basic logic execution, traversing arrays,
 * Standard `for` loops consolidate initialization, boolean check, and incremental updates in a single header line.
 * Enhanced `for` loops (for-each) streamline sequential array/collection traversal while eliminating index management errors.
 * Nested `for` loops enable execution over multi-dimensional data structures such as matrix grids and nested arrays.
-* `break` exits the loop unconditionally, whereas `continue` bypasses the remaining loop body and triggers the update expression.
-* Pay attention to array bounds (`< array.length`) to prevent `ArrayIndexOutOfBoundsException` at runtime.
 
 ---
 
