@@ -338,6 +338,8 @@ File naming convention: Use PascalCase for Java class names (for example, `ForLo
 
 Write a program that takes an integer `num` and uses a `for` loop to print its multiplication table from 1 to 10.
 
+* **Solution:**[Exercise 01: Multiplication Table Generator](labs/exercise-01.mutipliction_table_generator.java)
+
 ### Exercise 02: Right-Angled Star Pyramid
 
 Write a program that takes an integer `rows` (e.g., `rows = 5`) and uses nested `for` loops to print a right-angled star pyramid pattern:
