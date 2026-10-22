@@ -89,6 +89,13 @@ Iteration count: 4
 Iteration count: 5
 Loop has ended.
 ```
+
+### Explanation
+* The loop variable i starts from 1.
+* The loop runs as long as i<=5.
+* After each iteration, i is increased by 1.
+* When the condition becomes false, the loop terminates.
+
 ---
 
 ### Implementation For Decrement Update
@@ -116,9 +123,9 @@ Loop has ended.
 ```
 
 ### Explanation
-* The loop variable i starts from 1.
-* The loop runs as long as i<=5.
-* After each iteration, i is increased by 1.
+* The loop variable i starts from 5.
+* The loop runs as long as `i>=1`.
+* After each iteration, i is decreased by 1.
 * When the condition becomes false, the loop terminates.
 
 ---
