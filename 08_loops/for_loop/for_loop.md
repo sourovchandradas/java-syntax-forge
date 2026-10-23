@@ -74,7 +74,7 @@ public class Main {
         for (int i = 1; i <= 5; i++) {
             System.out.println("Iteration count: " + i);
         }
-        System.out.prinln("Loop has ended.");
+        System.out.println("Loop has ended.");
     }
 }
 ```
@@ -146,7 +146,7 @@ public class Main {
 
         // Iterating through an array using for-each
         for (String language : languages) {
-            System.out.println("Language: " + langugage);
+            System.out.println("Language: " + language);
         }
     }
 }
@@ -305,7 +305,7 @@ for (int i = 0; i <= numbers.length; i++) {
 Placing a semicolon`;` immediately after the `for` loop header terminates the loop statement prematurely. The loop becomes an isolated block where variable `i` is no longer in scope.
 ```java
 // Incorrect: Semicolon creates an empty loop statement
-for(int i = 0; i <= 5; i++){
+for (int i = 0; i <= 5; i++); {
     System.out.println(i); // Compilation Error: cannot find symbol 'i'
 }
 ```
