@@ -385,9 +385,13 @@ Write a program that takes an integer `num` and uses a `while` loop to compute a
 
 Write a program that takes an integer `num` (e.g., `num = 54321`) and uses a `while` loop to calculate the sum of all its individual digits ($5 + 4 + 3 + 2 + 1 = 15$).
 
+* **Solution:** [Exercise 02: Sum of Digits](labs/exercise-02.sum_of_digits.java)
+
 ### Exercise 03: GCD Calculator (Euclidean Algorithm)
 
 Write a program that takes two integers `a` and `b` and uses a `while` loop to find their Greatest Common Divisor (GCD) using the Euclidean algorithm ($a \% b$).
+
+* **Solution:** [Exercise 03: GCD Calculator](labs/gcd_calculator.java)
 
 ---
 
@@ -405,7 +409,7 @@ Write a program that takes two integers `a` and `b` and uses a `while` loop to f
 
 - [for Loop](../for_loop/for_loop.md)
 - [do while Loop](../do_while_loop/do_while_loop.md)
-- [break Statements](../../10_jump_statements/break_statements/break_statements.md)
+- [break Statements](../../10_jump_statements/break_statement/break_statement.md)
 
 ---
 
@@ -418,7 +422,6 @@ Mastering `while` loops is critical for handling non-deterministic iterations wh
 ## Additional Resources
 
 - [GeeksforGeeks: Java while Loop with Examples](https://www.geeksforgeeks.org/java-while-loop-with-examples/)
-- [Oracle Java Documentation: The while and do-while Statements](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html)
 
 ---
 
