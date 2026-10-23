@@ -409,7 +409,7 @@ Write a program that takes a starting value `number = 1` and uses a `do-while` l
 
 ## Additional Resources
 
-- [GeeksforGeeks: Java do-while Loop with Examples](https://www.geeksforgeeks.org/java-do-while-loop-with-examples/)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/java-do-while-loop-with-examples/)
 
 ---
 
