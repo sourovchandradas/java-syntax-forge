@@ -391,7 +391,7 @@ Write a program that takes an integer `num` (e.g., `num = 54321`) and uses a `wh
 
 Write a program that takes two integers `a` and `b` and uses a `while` loop to find their Greatest Common Divisor (GCD) using the Euclidean algorithm ($a \% b$).
 
-* **Solution:** [Exercise 03: GCD Calculator](labs/gcd_calculator.java)
+* **Solution:** [Exercise 03: GCD Calculator](labs/exercise-03.gcd_calculator.java)
 
 ---
 
