@@ -397,7 +397,7 @@ Write a program that takes a starting value `number = 1` and uses a `do-while` l
 
 - [for Loop](../for_loop/for_loop.md)
 - [while Loop](../while_loop/while_loop.md)
-- [break Statements](../../10_jump_statements/return_statement/break_statement.md)
+- [break Statements](../../10_jump_statements/return_statement/return_statement.md)
 
 ---
 
