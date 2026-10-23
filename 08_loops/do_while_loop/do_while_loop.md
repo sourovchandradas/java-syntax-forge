@@ -374,11 +374,13 @@ Write a program that takes an integer variable `n` (e.g., $n = 5$) and calculate
 Write a program that simulates processing state steps from $10$ down to $0$ using a `do-while` loop. The program should subtract $3$ during each cycle and terminate as soon as state drops to $0$ or lower.
 
 * **Solution:** [Exercise 02: State Processing Simulation](labs/exercise-02.state_processing_simulation.java)
+
 ### Exercise 03: Sum Until Threshold Reached
 
 Write a program that takes a starting value `number = 1` and uses a `do-while` loop to repeatedly add square values ($1^2 + 2^2 + 3^2 + \dots$) into a `sum` variable until `sum` exceeds $100$.
 
-* **Solution:** [Exercise 03: Sum Until Threshold Reached](labs/exercise-03.sum_until_threshold_reched.java)
+* **Solution:** [Exercise 03: Sum Until Threshold Reached](labs/exercise-03.sum_until_threshold_reached.java)
+
 ---
 
 ## Quick Reference
