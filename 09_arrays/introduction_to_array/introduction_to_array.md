@@ -83,7 +83,6 @@ $$
 The diagram below shows how Java safely processes element access and update requests:
 
 ```mermaid
-graph TD
     Start[Start: Access/Update arr[index]] --> Check{Is 0 <= index < arr.length?}
     Check -- Yes --> Access[Locate Memory Address via Offset]
     Access --> Process[Perform Read / Write Operation]
