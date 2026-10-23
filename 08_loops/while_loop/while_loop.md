@@ -16,7 +16,7 @@ This guide covers:
 ## Table of Contents
 
 1. [Standard While Loop Syntax](#standard-while-loop-syntax)
-2. [Sentinel-Controlled While Loop](#sentinel-controlled-while-loop)
+2. [Flag-Controlled While Loop](#flag-controlled-while-loop)
 3. [Nested While Loops](#nested-while-loops)
 4. [Miscellaneous](#miscellaneous)
 5. [Common Mistakes and Errors](#common-mistakes-and-errors)
