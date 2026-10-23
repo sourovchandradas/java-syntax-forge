@@ -421,7 +421,7 @@ Mastering `while` loops is critical for handling non-deterministic iterations wh
 
 ## Additional Resources
 
-- [GeeksforGeeks: Java while Loop with Examples](https://www.geeksforgeeks.org/java-while-loop-with-examples/)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/java-while-loop-with-examples/)
 
 ---
 
