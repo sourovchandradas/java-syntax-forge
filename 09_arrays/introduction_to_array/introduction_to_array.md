@@ -17,7 +17,7 @@ This guide covers:
 ## Table of Contents
 
 1. [Array Declaration and Initialization](#array-declaration-and-initialization)
-2. [Memory Architecture & Indexing](#memory-architecture-&-indexing)
+2. [Memory Architecture & Indexing](#memory-architecture--indexing)
 3. [Core Array Operations](#core-array-operations)
 4. [Arrays of Objects](#arrays-of-objects)
 5. [Passing and Returning Arrays in Methods](#passing-and-returning-arrays-in-methods)
