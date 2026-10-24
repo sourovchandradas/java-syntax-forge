@@ -18,15 +18,18 @@ This guide covers:
 
 1. [Array Declaration and Initialization](#array-declaration-and-initialization)
 2. [Memory Architecture & Indexing](#memory-architecture--indexing)
-3. [Core Array Operations](#core-array-operations)
-4. [Arrays of Objects](#arrays-of-objects)
-5. [Passing and Returning Arrays in Methods](#passing-and-returning-arrays-in-methods)
-6. [Common Mistakes and Errors](#common-mistakes-and-errors)
-7. [Exercises](#exercises)
-8. [Quick Reference](#quick-reference)
-9. [Related Topics](#related-topics)
-10. [Why This Matters](#why-this-matters)
-11. [Additional Resources](#additional-resources)
+3. [Flowchart for Array Access in Java](#flowchart-for-array-access-in-java)
+4. [Pure Java Code Examples](#pure-java-code-examples)
+   * [Example 1: Primitive & Reference Arrays](#example-1-primitive--reference-arrays)
+   * [Example 2: Core Array Operations](#example-2-core-array-operations)
+   * [Example 3: Array of Objects](#example-3-array-of-objects)
+   * [Example 4: Passing and Returning Arrays from Methods](#example-4-passing-and-returning-arrays-from-methods)
+5. [Common Mistakes and Errors](#common-mistakes-and-errors)
+6. [Exercises](#exercises)
+7. [Quick Reference](#quick-reference)
+8. [Related Topics](#related-topics)
+9. [Why This Matters](#why-this-matters)
+10. [Additional Resources](#additional-resources)
 
 ---
 
@@ -34,7 +37,7 @@ This guide covers:
 
 ### What is an Array?
 
-An array is a object allocated on the **Heap memory** that holds a collection of values of identical type. Elements are stored sequentially in memory, enabling constant-time $O(1)$ direct access using an index integer ranging from `0` to `length - 1`.
+An array is an object allocated on the **Heap memory** that holds a collection of values of identical type. Elements are stored sequentially in memory, enabling constant-time $O(1)$ direct access using an index integer ranging from `0` to `length - 1`.
 
 ### Syntax
 
@@ -51,6 +54,8 @@ dataType[] arrayName = new dataType[size];
 // Array literal initialization
 dataType[] arrayName = { element1, element2, element3 };
 ```
+
+---
 
 ## Memory Architecture & Indexing
 
@@ -70,7 +75,7 @@ $$
 
 ---
 
-### Flowchart for Array Access in Java
+## Flowchart for Array Access in Java
 
 ```mermaid
 flowchart TD
@@ -93,44 +98,25 @@ flowchart TD
 
 ---
 
-### Implementation For Primitive Array
+## Pure Java Code Examples
+
+### Example 1: Primitive & Reference Arrays
+
+Demonstrates array initialization for primitive types (`int`) and reference types (`String`).
 
 ```java
-public class Main {
+public class ArrayTypeDemo {
     public static void main(String[] args) {
-        // Primitive array declaration and initialization
+        // Primitive array initialization
         int[] numbers = {10, 20, 30, 40};
-        int length = numbers.length;
 
         System.out.print("Primitive Array -> ");
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
-    }
-}
-```
 
-### Output
-
-```text
-Primitive Array -> 10 20 30 40 
-```
-
-### Explanation
-
-* `int[] numbers` creates an array storing primitive integer values directly in contiguous heap locations.
-* The property `numbers.length` returns the fixed size (`4`).
-* A standard `for` loop traverses indices from `0` to `numbers.length - 1`.
-
----
-
-### Implementation For Non-Primitive Array
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        // Non-primitive (String object references) array
+        // Reference (Object) array initialization
         String[] names = {"Lakshit", "Rahul", "Pankaj"};
 
         System.out.print("Non-Primitive Array -> ");
@@ -142,29 +128,27 @@ public class Main {
 }
 ```
 
-### Output
+#### Output
 
 ```text
+Primitive Array -> 10 20 30 40 
 Non-Primitive Array -> Lakshit Rahul Pankaj 
 ```
 
 ### Explanation
 
-* Non-primitive arrays store references (memory addresses) to heap objects rather than primitive values.
-* Printing `names[i]` dereferences the string reference stored at index `i`.
+- Primitive array `numbers` stores integer values directly in contiguous memory locations on the heap.
+- Non-primitive array `names` stores memory references (pointers) to `String` objects rather than raw primitive data.
+- Both arrays utilize zero-based indexing and the `.length` property to control loop bounds from index `0` to `length - 1`.
 
 ---
 
-## Core Array Operations
+### Example 2: Core Array Operations
 
-### Accessing, Updating, Traversing, and Size
-
-Java programming language provides fundamental operations to manipulate array elements using zero-based indexing and the built-in `.length` property.
-
-### Implementation Example
+Demonstrates accessing, modifying, measuring size, and traversing array elements.
 
 ```java
-public class Main {
+public class ArrayOperationsDemo {
     public static void main(String[] args) {
         int[] arr = {2, 4, 8, 12, 16};
 
@@ -172,15 +156,15 @@ public class Main {
         System.out.println("First element (index 0): " + arr[0]);
         System.out.println("Fourth element (index 3): " + arr[3]);
 
-        // 2. Size of array
-        System.out.println("Size of array: " + arr.length);
+        // 2. Getting Array Size
+        System.out.println("Array Size: " + arr.length);
 
-        // 3. Updating element
+        // 3. Updating an element
         arr[0] = 90;
         System.out.println("Updated first element: " + arr[0]);
 
         // 4. Traversing array
-        System.out.print("Traversed elements: ");
+        System.out.print("Traversed Array: ");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -189,31 +173,28 @@ public class Main {
 }
 ```
 
-### Output
+#### Output
 
 ```text
 First element (index 0): 2
 Fourth element (index 3): 12
-Size of array: 5
+Array Size: 5
 Updated first element: 90
-Traversed elements: 90 4 8 12 16 
+Traversed Array: 90 4 8 12 16 
 ```
 
 ### Explanation
 
-* Elements are accessed using `arr[index]`. Index numbers start at `0`.
-* Assigning `arr[0] = 90` overwrites the original value at index `0`.
-* The built-in property `arr.length` returns the total number of element slots (`5`).
+- **Access:** Elements are retrieved in constant $O(1)$ time by passing the index position inside square brackets (`arr[0]`, `arr[3]`).
+- **Size:** The built-in `.length` property returns total allocated capacity ($5$).
+- **Update:** Assignment operator `=` modifies the element at index `0` from `2` to `90`.
+- **Traversal:** A standard `for` loop accesses each array slot sequentially to print updated values.
 
 ---
 
-## Arrays of Objects
+### Example 3: Array of Objects
 
-### What are Arrays of Objects?
-
-An **array of objects** holds references to class instances. Declaring `Student[] arr = new Student[5]` allocates space for 5 object references (initialized to `null`), which must then be instantiated individually using their constructors.
-
-### Implementation Example
+Demonstrates creating custom class objects inside reference arrays.
 
 ```java
 class Student {
@@ -226,19 +207,19 @@ class Student {
     }
 }
 
-public class Main {
+public class ObjectArrayDemo {
     public static void main(String[] args) {
-        // Declaring and allocating space for 5 Student references
+        // Allocating space for 5 Student references
         Student[] students = new Student[5];
 
-        // Initializing individual object instances
+        // Instantiating objects into array slots
         students[0] = new Student(1, "Aman");
         students[1] = new Student(2, "Vaibhav");
         students[2] = new Student(3, "Shikar");
         students[3] = new Student(4, "Dharmesh");
         students[4] = new Student(5, "Mohit");
 
-        // Traversing object array
+        // Displaying contents
         for (int i = 0; i < students.length; i++) {
             System.out.println("Element at " + i + " : { " 
                                + students[i].rollNo + " " 
@@ -248,44 +229,41 @@ public class Main {
 }
 ```
 
-### Output
+#### Output
 
 ```text
 Element at 0 : { 1 Aman }
 Element at 1 : { 2 Vaibhav }
 Element at 2 : { 3 Shikar }
 Element at 3 : { 4 Dharmesh }
-Element at 4 : { 5 Mohit 
+Element at 4 : { 5 Mohit }
 ```
 
 ### Explanation
 
-* `new Student[5]` allocates memory for 5 object pointers on the heap, all default-set to `null`.
-* Each slot is populated using `students[i] = new Student(...)`.
+- `new Student[5]` allocates memory for 5 reference pointers on the heap, initially populated with `null`.
+- Individual `Student` instances are constructed and assigned to array indices (`students[0] = new Student(...)`).
+- Object properties (`rollNo`, `name`) are accessed by dereferencing each index slot during array traversal (`students[i].rollNo`).
 
 ---
 
-## Passing and Returning Arrays in Methods
+### Example 4: Passing and Returning Arrays from Methods
 
-### Method Operations with Arrays
-
-In Java, arrays are passed by reference value. Any modification made to array elements inside a method affects the original array in memory. Methods can also construct and return new arrays.
-
-### Implementation Example
+Demonstrates passing arrays as arguments and returning array references from methods.
 
 ```java
-public class Main {
+public class MethodArrayDemo {
     public static void main(String[] args) {
         int[] numbers = {3, 1, 2, 5, 4};
 
-        // Passing array to method
+        // Pass array to helper method
         calculateSum(numbers);
 
-        // Receiving array returned from method
-        int[] preset = generatePresetArray();
-        System.out.print("Returned array: ");
-        for (int i = 0; i < preset.length; i++) {
-            System.out.print(preset[i] + " ");
+        // Receive returned array from method
+        int[] generated = generatePresetArray();
+        System.out.print("Returned Array: ");
+        for (int val : generated) {
+            System.out.print(val + " ");
         }
         System.out.println();
     }
@@ -304,17 +282,18 @@ public class Main {
 }
 ```
 
-### Output
+#### Output
 
 ```text
 Sum of array values: 15
-Returned array: 1 2 3 
+Returned Array: 1 2 3 
 ```
 
 ### Explanation
 
-* `calculateSum(numbers)` receives the reference to `numbers` and iterates over elements to compute the total sum.
-* `generatePresetArray()` instantiates an anonymous array `{1, 2, 3}` and returns its memory reference.
+- **Passing Arrays:** The reference variable `numbers` is passed to `calculateSum()`, allowing the method to iterate over and sum all array values.
+- **Returning Arrays:** `generatePresetArray()` instantiates an anonymous array `{1, 2, 3}` on the heap and returns its memory address back to `main()`.
+- An enhanced `for-each` loop traverses the returned array values cleanly without needing index variables.
 
 ---
 
@@ -336,9 +315,9 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out
     at Main.main(Main.java:5)
 ```
 
-* **File and Line Number:** Indicates source location (`Main.java:5`).
-* **Error Description:** `ArrayIndexOutOfBoundsException` specifies that index `5` is invalid for length `4`.
-* **Resolution:** Ensure loop check uses strictly less than (`i < arr.length`) instead of (`i <= arr.length`).
+- **File and Line Number:** Indicates source location (`Main.java:5`).
+- **Error Description:** `ArrayIndexOutOfBoundsException` specifies that index `5` is invalid for length `4`.
+- **Resolution:** Ensure loop check uses strictly less than (`i < arr.length`) instead of (`i <= arr.length`).
 
 ---
 
@@ -355,11 +334,11 @@ System.out.println(students[0].name); // Compilation passes, Runtime Error
 
 ```text
 Exception in thread "main" java.lang.NullPointerException: Cannot read field "name" because "students[0]" is null
-    at Main.main(Main.java:4
+    at Main.main(Main.java:4)
 ```
 
-* **Root Cause:** Allocating `new Student[3]` only creates reference pointers initialized to `null`.
-* **Correction:** Instantiate objects before accessing properties (`students[0] = new Student(1, "Aman");`).
+- **Root Cause:** Allocating `new Student[3]` only creates reference pointers initialized to `null`.
+- **Correction:** Instantiate objects before accessing properties (`students[0] = new Student(1, "Aman");`).
 
 ---
 
@@ -383,8 +362,8 @@ Main.java:4: error: cannot find symbol
 1 error
 ```
 
-* **Root Cause:** Arrays use the built-in final property `.length` without parentheses.
-* **Correction:** Remove the trailing parentheses: `numbers.length`.
+- **Root Cause:** Arrays use the built-in final property `.length` without parentheses.
+- **Correction:** Remove the trailing parentheses: `numbers.length`.
 
 ---
 
@@ -394,19 +373,19 @@ Main.java:4: error: cannot find symbol
 
 Write a program that initializes an integer array (e.g., `{45, 12, 89, 2, 67}`) and uses a single loop to find and print both the smallest and largest values.
 
-* **Solution:** [Exercise 01: Minimum and Maximum Value Finder](labs/exercise-01.minimum_and_maximum_value_finder.java)
+- **Solution:** [Exercise 01: Minimum and Maximum Value Finder](labs/exercise-01.minimum_and_maximum_value_finder.java)
 
 ### Exercise 02: Array Element Reversal
 
 Write a program that takes an integer array (e.g., `{1, 2, 3, 4, 5}`) and reverses its elements in-place using a two-pointer approach without creating a new array.
 
-* **Solution:** [Exercise 02: Array Element Reversal](labs/exercise-02.array_element_reversal.java)
+- **Solution:** [Exercise 02: Array Element Reversal](labs/exercise-02.array_element_reversal.java)
 
 ### Exercise 03: Even and Odd Number Counter
 
 Write a program that traverses an array `{12, 7, 9, 24, 18, 5}` and counts how many numbers are even and how many are odd.
 
-* **Solution:** [Exercise 03: Even and Odd Number Counter](labs/exercise-03.even_and_odd_number_counter.java)
+- **Solution:** [Exercise 03: Even and Odd Number Counter](labs/exercise-03.even_and_odd_number_counter.java)
 
 ---
 
@@ -424,9 +403,9 @@ Write a program that traverses an array `{12, 7, 9, 24, 18, 5}` and counts how m
 
 ## Related Topics
 
-* [for Loop](../../08_loops/for_loop/for_loop.md)
-* [while Loop](../../08_loops/while_loop/while_loop.md)
-* [do-while Loop](../../08_loops/do_while_loop/do_while_loop.md)
+- [for Loop](../../08_loops/for_loop/for_loop.md)
+- [while Loop](../../08_loops/while_loop/while_loop.md)
+- [do-while Loop](../../08_loops/do_while_loop/do_while_loop.md)
 
 ---
 
@@ -438,17 +417,17 @@ Arrays are the primary sequential data structure in Java and form the underlying
 
 ## Additional Resources
 
-* [GeeksforGeeks: Java Arrays](https://www.geeksforgeeks.org/arrays-in-java/)
+- [GeeksforGeeks: Java Arrays](https://www.geeksforgeeks.org/arrays-in-java/)
 
 ---
 
 ## Key Takeaways
 
-* Arrays provide $O(1)$ constant-time random access to elements using zero-based indexing.
-* The size of an array is fixed at the time of creation and cannot be modified dynamically.
-* Primitive arrays store raw values directly, while object arrays store references initialized to `null`.
-* Array bounds are strictly enforced by the JVM, throwing `ArrayIndexOutOfBoundsException` for illegal index access.
-* Array capacity is accessed via the `.length` property, not a `.length()` method call.
+- Arrays provide $O(1)$ constant-time random access to elements using zero-based indexing.
+- The size of an array is fixed at the time of creation and cannot be modified dynamically.
+- Primitive arrays store raw values directly, while object arrays store references initialized to `null`.
+- Array bounds are strictly enforced by the JVM, throwing `ArrayIndexOutOfBoundsException` for illegal index access.
+- Array capacity is accessed via the `.length` property, not a `.length()` method call.
 
 ---
 
