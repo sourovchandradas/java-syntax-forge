@@ -1,5 +1,5 @@
 // Exercise 01: Minimum and Maximum Value Finder
-public class minimumAndMaximumValueFinder {
+public class MinimumAndMaximumValueFinder {
     public static void main(String[] args) {
 
         // Initialize the array
