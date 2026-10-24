@@ -17,15 +17,16 @@ This guide covers:
 ## Table of Contents
 
 1. [Array Declaration and Initialization](#array-declaration-and-initialization)
-2. [Core Array Operations](#core-array-operations)
-3. [Arrays of Objects](#arrays-of-objects)
-4. [Passing and Returning Arrays in Methods](#passing-and-returning-arrays-in-methods)
-5. [Common Mistakes and Errors](#common-mistakes-and-errors)
-6. [Exercises](#exercises)
-7. [Quick Reference](#quick-reference)
-8. [Related Topics](#related-topics)
-9. [Why This Matters](#why-this-matters)
-10. [Additional Resources](#additional-resources)
+2. [Memory Architecture & Indexing](#memory-architecture-&-indexing)
+3. [Core Array Operations](#core-array-operations)
+4. [Arrays of Objects](#arrays-of-objects)
+5. [Passing and Returning Arrays in Methods](#passing-and-returning-arrays-in-methods)
+6. [Common Mistakes and Errors](#common-mistakes-and-errors)
+7. [Exercises](#exercises)
+8. [Quick Reference](#quick-reference)
+9. [Related Topics](#related-topics)
+10. [Why This Matters](#why-this-matters)
+11. [Additional Resources](#additional-resources)
 
 ---
 
@@ -50,6 +51,24 @@ dataType[] arrayName = new dataType[size];
 // Array literal initialization
 dataType[] arrayName = { element1, element2, element3 };
 ```
+
+## Memory Architecture & Indexing
+
+Java arrays utilize **zero-based indexing**. For an array of length $N$, valid index bounds are defined as:
+
+$$
+0 \le \text{index} \le N - 1
+$$
+
+### Address Calculation Formula
+
+The memory offset for accessing element at index $i$ is calculated as:
+
+$$
+\text{Address}(A[i]) = \text{Base Address} + (i \times \text{Size of Data Type})
+$$
+
+---
 
 ### Flowchart for Array Access in Java
 
