@@ -1,5 +1,5 @@
 // Exercise 02: Right-Angled Star Pyramid
-public class Main {
+public class RightAngledStarPyramid {
     public static void main(String[] args) {
 
         // Number of rows
