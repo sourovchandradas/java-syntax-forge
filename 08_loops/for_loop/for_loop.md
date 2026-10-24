@@ -352,9 +352,13 @@ Write a program that takes an integer `rows` (e.g., `rows = 5`) and uses nested 
 *****
 ```
 
+* **Solution:** [Exercise 02: Right-Angled Star Pyramid](labs/exercise-02.right-angled-star-pyramid.java)
+
 ### Exercise 03: Array Sum and Even Counter
 
 Write a program that initializes an array of integers. Use an enhanced `for` loop to calculate both the **sum of all elements** and count how many **even numbers** exist in the array.
+
+* **Solution:** [Exercise 03: Array Sum and Even Counter](labs/exercise-03.array_sum_and_even_counter.java)
 
 ---
 
