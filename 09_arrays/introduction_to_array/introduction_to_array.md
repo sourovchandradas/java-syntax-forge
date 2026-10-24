@@ -1,8 +1,8 @@
-# Arrays in Java
+# Introduction to Array in Java
 
 ## Overview
 
-In Java, an **array** is a foundational linear data structure used to store a fixed-size sequence of elements of the same data type in contiguous memory locations. Arrays allow you to manage multiple related values under a single variable name and retrieve or modify them efficiently using zero-based indexing. Java supports arrays of primitive types (like `int`, `boolean`, `char`) as well as non-primitive reference types (like `String` or custom objects).
+In Java programming language, an **array** is a foundational linear data structure used to store a fixed-size sequence of elements of the same data type in contiguous memory locations. Arrays allow you to manage multiple related values under a single variable name and retrieve or modify them efficiently using zero-based indexing. Java supports arrays of primitive types (like `int`, `boolean`, `char`) as well as non-primitive reference types (like `String` or custom objects).
 
 This guide covers:
 
@@ -49,7 +49,6 @@ dataType[] arrayName = new dataType[size];
 
 // Array literal initialization
 dataType[] arrayName = { element1, element2, element3 };
-
 ```
 
 ### Flowchart for Array Access in Java
@@ -63,7 +62,6 @@ flowchart TD
     Output --> Exit([Exit Operation])
     Cond -- false --> Exception[Throw ArrayIndexOutOfBoundsException]
     Exception --> Terminate([Terminate Execution])
-
 ```
 
 ### How It Works (Execution Steps)
@@ -92,14 +90,12 @@ public class Main {
         System.out.println();
     }
 }
-
 ```
 
 ### Output
 
 ```text
 Primitive Array -> 10 20 30 40 
-
 ```
 
 ### Explanation
@@ -125,14 +121,12 @@ public class Main {
         System.out.println();
     }
 }
-
 ```
 
 ### Output
 
 ```text
 Non-Primitive Array -> Lakshit Rahul Pankaj 
-
 ```
 
 ### Explanation
@@ -146,7 +140,7 @@ Non-Primitive Array -> Lakshit Rahul Pankaj
 
 ### Accessing, Updating, Traversing, and Size
 
-Java provides fundamental operations to manipulate array elements using zero-based indexing and the built-in `.length` property.
+Java programming language provides fundamental operations to manipulate array elements using zero-based indexing and the built-in `.length` property.
 
 ### Implementation Example
 
@@ -174,7 +168,6 @@ public class Main {
         System.out.println();
     }
 }
-
 ```
 
 ### Output
@@ -185,7 +178,6 @@ Fourth element (index 3): 12
 Size of array: 5
 Updated first element: 90
 Traversed elements: 90 4 8 12 16 
-
 ```
 
 ### Explanation
@@ -235,7 +227,6 @@ public class Main {
         }
     }
 }
-
 ```
 
 ### Output
@@ -245,8 +236,7 @@ Element at 0 : { 1 Aman }
 Element at 1 : { 2 Vaibhav }
 Element at 2 : { 3 Shikar }
 Element at 3 : { 4 Dharmesh }
-Element at 4 : { 5 Mohit }
-
+Element at 4 : { 5 Mohit 
 ```
 
 ### Explanation
@@ -293,7 +283,6 @@ public class Main {
         return new int[]{1, 2, 3};
     }
 }
-
 ```
 
 ### Output
@@ -301,7 +290,6 @@ public class Main {
 ```text
 Sum of array values: 15
 Returned array: 1 2 3 
-
 ```
 
 ### Explanation
@@ -320,7 +308,6 @@ Attempting to access an index equal to or greater than `arr.length` causes an `A
 ```java
 int[] numbers = new int[4]; // Valid indices: 0, 1, 2, 3
 System.out.println(numbers[5]); // Error: Index 5 does not exist!
-
 ```
 
 ### Traceback Error Analysis
@@ -328,7 +315,6 @@ System.out.println(numbers[5]); // Error: Index 5 does not exist!
 ```text
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 4
     at Main.main(Main.java:5)
-
 ```
 
 * **File and Line Number:** Indicates source location (`Main.java:5`).
@@ -343,16 +329,14 @@ Accessing fields or methods on an uninstantiated object array slot throws a `Nul
 
 ```java
 Student[] students = new Student[3];
-System.out.println(students[0].name); // Compilation passes, Runtime Error!
-
+System.out.println(students[0].name); // Compilation passes, Runtime Error
 ```
 
 ### Traceback Error Analysis
 
 ```text
 Exception in thread "main" java.lang.NullPointerException: Cannot read field "name" because "students[0]" is null
-    at Main.main(Main.java:4)
-
+    at Main.main(Main.java:4
 ```
 
 * **Root Cause:** Allocating `new Student[3]` only creates reference pointers initialized to `null`.
@@ -367,7 +351,6 @@ Confusing the array field `.length` with the `String` object method `.length()` 
 ```java
 int[] numbers = {10, 20, 30};
 System.out.println(numbers.length()); // Compilation Error!
-
 ```
 
 ### Traceback Error Analysis
@@ -379,7 +362,6 @@ Main.java:4: error: cannot find symbol
   symbol:   method length()
   location: variable numbers of type int[]
 1 error
-
 ```
 
 * **Root Cause:** Arrays use the built-in final property `.length` without parentheses.
@@ -389,19 +371,23 @@ Main.java:4: error: cannot find symbol
 
 ## Exercises
 
-File naming convention: Use PascalCase for Java class names (for example, `ArrayExercises.java`).
-
-### Exercise 1: Minimum and Maximum Value Finder
+### Exercise 01: Minimum and Maximum Value Finder
 
 Write a program that initializes an integer array (e.g., `{45, 12, 89, 2, 67}`) and uses a single loop to find and print both the smallest and largest values.
 
-### Exercise 2: Array Element Reversal
+* **Solution:** [Exercise 01: Minimum and Maximum Value Finder](labs/exercise-01.minimum_and_maximum_value_finder.java)
+
+### Exercise 02: Array Element Reversal
 
 Write a program that takes an integer array (e.g., `{1, 2, 3, 4, 5}`) and reverses its elements in-place using a two-pointer approach without creating a new array.
 
-### Exercise 3: Even and Odd Number Counter
+* **Solution:** [Exercise 02: Array Element Reversal](labs/exercise-02.array_element_reversal.java)
+
+### Exercise 03: Even and Odd Number Counter
 
 Write a program that traverses an array `{12, 7, 9, 24, 18, 5}` and counts how many numbers are even and how many are odd.
+
+* **Solution:** [Exercise 03: Even and Odd Number Counter](labs/exercise-03.even_and_odd_number_counter.java)
 
 ---
 
@@ -419,9 +405,9 @@ Write a program that traverses an array `{12, 7, 9, 24, 18, 5}` and counts how m
 
 ## Related Topics
 
-* [for Loop in Java](https://www.google.com/search?q=../for_loop/for_loop.md)
-* [while Loop in Java](https://www.google.com/search?q=../while_loop/while_loop.md)
-* [do-while Loop in Java](https://www.google.com/search?q=../do_while_loop/do_while_loop.md)
+* [for Loop](../../08_loops/for_loop/for_loop.md)
+* [while Loop](../../08_loops/while_loop/while_loop.md)
+* [do-while Loop](../../08_loops/do_while_loop/do_while_loop.md)
 
 ---
 
@@ -433,12 +419,7 @@ Arrays are the primary sequential data structure in Java and form the underlying
 
 ## Additional Resources
 
-* [Oracle Java Documentation: Arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 * [GeeksforGeeks: Java Arrays](https://www.geeksforgeeks.org/arrays-in-java/)
-
----
-
-*Last Updated : October 23, 2026*
 
 ---
 
@@ -450,3 +431,6 @@ Arrays are the primary sequential data structure in Java and form the underlying
 * Array bounds are strictly enforced by the JVM, throwing `ArrayIndexOutOfBoundsException` for illegal index access.
 * Array capacity is accessed via the `.length` property, not a `.length()` method call.
 
+---
+
+*Last Modified : October 23, 2026*
