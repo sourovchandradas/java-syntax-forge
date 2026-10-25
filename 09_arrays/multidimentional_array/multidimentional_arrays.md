@@ -2,7 +2,7 @@
 
 ## Overview
 
-In Java, a **multi-dimensional array** is essentially an "array of arrays" used to store data in a tabular, grid, or matrix format (rows and columns). While 1D arrays store a single linear sequence of values, 2D and 3D arrays allow developers to represent matrices, board games, image pixels, and spatial data structures efficiently.
+In Java, a **multi-dimensional array** is essentially an **"array of arrays"** used to store data in a tabular, grid, or matrix format (rows and columns). While 1D arrays store a single linear sequence of values, 2D and 3D arrays allow developers to represent matrices, board games, image pixels, and spatial data structures efficiently.
 
 This guide covers:
 
