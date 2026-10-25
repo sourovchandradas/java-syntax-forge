@@ -1,5 +1,5 @@
 // Exercise 02: Matrix Transposition
-public class Main {
+public class MatrixTransposition {
     public static void main(String[] args) {
 
         // Initialize a 2x3 matrix
