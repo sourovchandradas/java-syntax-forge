@@ -70,8 +70,6 @@ For an $N$-dimensional array with dimensions $d_1, d_2, \dots, d_N$, total eleme
 
 $$\text{Total Capacity} = \prod_{k=1}^{N} d_k = d_1 \times d_2 \times \dots \times d_N$$
 
-$$\text{Total Capacity} = ∑{k=1}^{N} d_k = d_1 \times d_2 \times \dots \times d_N$$
-
 For a 2D matrix of $R$ rows and $C$ columns:
 
 $$\text{Total Elements} = R \times C$$
