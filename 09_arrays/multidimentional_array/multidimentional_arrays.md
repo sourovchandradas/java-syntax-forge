@@ -79,7 +79,6 @@ $$\text{Total Elements} = R \times C$$
 ## Flowchart for 2D Array Traversal
 
 ```mermaid
-flowchart TD
     Start([Start Traversal]) --> OuterInit[Set Row Index i = 0]
     OuterInit --> OuterCond{Is i < arr.length?}
     OuterCond -- true --> InnerInit[Set Column Index j = 0]
