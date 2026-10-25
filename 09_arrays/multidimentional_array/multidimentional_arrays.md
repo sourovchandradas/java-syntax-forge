@@ -79,14 +79,15 @@ $$\text{Total Elements} = R \times C$$
 ## Flowchart for 2D Array Traversal
 
 ```mermaid
-    Start([Start Traversal]) --> OuterInit[Set Row Index i = 0]
-    OuterInit --> OuterCond{Is i < arr.length?}
-    OuterCond -- true --> InnerInit[Set Column Index j = 0]
-    InnerInit --> InnerCond{Is j < arr[i].length?}
-    InnerCond -- true --> Action[Access / Process arr[i][j]]
-    Action --> InnerInc[Increment j = j + 1]
+flowchart TD
+    Start([Start Traversal]) --> OuterInit["Set Row Index i = 0"]
+    OuterInit --> OuterCond{"Is i < arr.length?"}
+    OuterCond -- true --> InnerInit["Set Column Index j = 0"]
+    InnerInit --> InnerCond{"Is j < arr[i].length?"}
+    InnerCond -- true --> Action["Access / Process arr[i][j]"]
+    Action --> InnerInc["Increment j = j + 1"]
     InnerInc --> InnerCond
-    InnerCond -- false --> OuterInc[Increment i = i + 1]
+    InnerCond -- false --> OuterInc["Increment i = i + 1"]
     OuterInc --> OuterCond
     OuterCond -- false --> End([End Traversal])
 ```
