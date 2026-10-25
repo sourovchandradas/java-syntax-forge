@@ -2,7 +2,7 @@
 
 ## Overview
 
-In Java, a **multi-dimensional array** is essentially an **"array of arrays"** used to store data in a tabular, grid, or matrix format (rows and columns). While 1D arrays store a single linear sequence of values, 2D and 3D arrays allow developers to represent matrices, board games, image pixels, and spatial data structures efficiently.
+In Java programming language, a **multi-dimensional array** is essentially an **"array of arrays"** used to store data in a tabular, grid, or matrix format (rows and columns). While 1D arrays store a single linear sequence of values, 2D and 3D arrays allow developers to represent matrices, board games, image pixels, and spatial data structures efficiently.
 
 This guide covers:
 
@@ -370,19 +370,19 @@ Exception in thread "main" java.lang.NullPointerException: Cannot store to int a
 
 Write a program that initializes a square $3 \times 3$ integer matrix and calculates the sum of both the primary diagonal and secondary diagonal elements.
 
-* **Solution:** [Exercise 01: Matrix Diagonal Sum](https://www.google.com/search?q=labs/exercise-01.matrix_diagonal_sum.java)
+* **Solution:** [Exercise 01: Matrix Diagonal Sum](labs/exercise-01.matrix_diagonal_sum.java)
 
 ### Exercise 02: Matrix Transposition
 
 Write a program that takes a $2 \times 3$ matrix and creates its transpose ($3 \times 2$ matrix), swapping row indices with column indices.
 
-* **Solution:** [Exercise 02: Matrix Transposition](https://www.google.com/search?q=labs/exercise-02.matrix_transposition.java)
+* **Solution:** [Exercise 02: Matrix Transposition](labs/exercise-02.matrix_transposition.java)
 
 ### Exercise 03: Row-Wise Maximum Value Finder
 
 Write a program that traverses a 2D matrix and prints the maximum value contained in each row.
 
-* **Solution:** [Exercise 03: Row-Wise Maximum Value Finder](https://www.google.com/search?q=labs/exercise-03.row_wise_maximum_value_finder.java)
+* **Solution:** [Exercise 03: Row-Wise Maximum Value Finder](labs/exercise-03.row_wise_maximum_value_finder.java)
 
 ---
 
@@ -412,7 +412,7 @@ Multi-dimensional arrays are fundamental for representing structured spatial dat
 
 ## Additional Resources
 
-* [GeeksforGeeks: Multidimensional Arrays in Java](https://www.geeksforgeeks.org/multidimensional-arrays-in-java/)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/multidimensional-arrays-in-java/)
 
 ---
 
