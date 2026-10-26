@@ -32,7 +32,6 @@ In Java, **all code must reside inside a class**. A class serves as a container 
 public class Main {
     // Code goes here
 }
-
 ```
 
 ### Essential Naming Rules
@@ -59,7 +58,6 @@ public class Main {
         // Code inside main is executed sequentially
     }
 }
-
 ```
 
 ### Method Keywords Breakdown
@@ -104,7 +102,6 @@ public class StatementOrder {
         System.out.println("Learning Java is fun!"); // Executed 3rd
     }
 }
-
 ```
 
 ---
@@ -121,7 +118,6 @@ Prints the output and automatically inserts a new line at the end of each call:
 System.out.println("Hello World!");
 System.out.println("I am learning Java.");
 System.out.println("It is awesome!");
-
 ```
 
 **Output:**
@@ -130,7 +126,6 @@ System.out.println("It is awesome!");
 Hello World!
 I am learning Java.
 It is awesome!
-
 ```
 
 ### 2. The `print()` Method
@@ -140,7 +135,6 @@ Similar to `println()`, but it **does not insert a new line** at the end of the 
 ```java
 System.out.print("Hello World! ");
 System.out.print("I will print on the same line.");
-
 ```
 
 **Output:**
@@ -159,7 +153,6 @@ Text strings **must** be wrapped inside double quotation marks `""`. Omitting do
 ```java
 System.out.println("This sentence will work!"); // Correct
 System.out.println(This sentence will produce an error); // Syntax Error
-
 ```
 
 ---
@@ -174,7 +167,6 @@ Unlike text, **numbers do not go inside double quotes**.
 System.out.println(3);
 System.out.println(358);
 System.out.println(50000);
-
 ```
 
 ### Mathematical Calculations
@@ -184,7 +176,6 @@ You can perform mathematical operations directly inside the `println()` method:
 ```java
 System.out.println(3 + 3); // Outputs: 6
 System.out.println(2 * 5); // Outputs: 10
-
 ```
 
 > **Note:** If you place numbers inside double quotes (e.g., `System.out.println("3 + 3");`), Java treats it as literal text and prints `3 + 3` instead of calculating `6`.
@@ -206,7 +197,6 @@ Comments are used to explain Java code, improve readability, and temporarily pre
 System.out.println("Hello World");
 
 System.out.println("Hello World"); // This is a comment at the end of a line
-
 ```
 
 ### 2. Multi-line Comments
@@ -218,7 +208,6 @@ System.out.println("Hello World"); // This is a comment at the end of a line
 /* The code below will print the words Hello World
 to the screen, and it is amazing */
 System.out.println("Hello World");
-
 ```
 
 ### Single vs. Multi-line Usage
@@ -239,7 +228,6 @@ public class CodeBlockDemo {
         System.out.println("Inside main method block");
     }
 }
-
 ```
 
 ---
@@ -264,7 +252,6 @@ Create a file named `OutputDemo.java` that outputs the following using `print()`
 
 ```text
 Item: Apple | Quantity: 5 | Total Cost: 50
-
 ```
 
 *(Hint: Use `2 * 25` or `5 * 10` directly inside `println()` for the total cost).*
@@ -281,7 +268,6 @@ public class DebugPractice {
         System.out.println("5 + 5"); // Change this to output the math result 10
     }
 }
-
 ```
 
 ---
@@ -314,4 +300,4 @@ public class DebugPractice {
 
 ---
 
-*Last Updated: 23 September, 2026*
+*Last Modified : 23 September, 2026*
