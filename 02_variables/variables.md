@@ -2,7 +2,7 @@
 
 ## Overview
 
-In Java, a **variable** is a named location in memory used to store and manipulate data dynamically during execution. Java is a strongly typed language, meaning every variable must be declared with a explicit data type before it can be used. Variables serve as fundamental building blocks for state management, data processing, and object behavior across Java applications.
+In Java programming language, a **variable** is a named location in memory used to store and manipulate data dynamically during execution. Java is a strongly typed language, meaning every variable must be declared with a explicit data type before it can be used. Variables serve as fundamental building blocks for state management, data processing, and object behavior across Java applications.
 
 This guide covers:
 
