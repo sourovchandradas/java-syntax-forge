@@ -404,19 +404,19 @@ IdentifierBug.java:3: error: ';' expected
 
 Write a Java program that declares an `int` for student age, a `String` for student name, and a `boolean` for enrollment status. Print all three variables using descriptive labels.
 
-* **Solution:** [Exercise 01: Student Profile Declaration](https://www.google.com/search?q=labs/exercise-01.student_profile_declaration.java)
+* **Solution:** [Exercise 01: Student Profile Declaration](labs/exercise-01.student_profile_declaration.java)
 
 ### Exercise 02: Full Name Generator
 
 Declare two `String` variables (`firstName` and `lastName`). Construct a third `fullName` variable that concatenates both variables separated by a space, and print the result.
 
-* **Solution:** [Exercise 02: Full Name Generator](https://www.google.com/search?q=labs/exercise-02.full_name_generator.java)
+* **Solution:** [Exercise 02: Full Name Generator](labs/exercise-02.full_name_generator.java)
 
 ### Exercise 03: Circle Metrics Calculator
 
 Write a Java program using a `final double PI = 3.14159;` constant and a dynamic `double radius = 7.5;` variable. Calculate and print the circumference ($2 \times \pi \times r$) and area ($\pi \times r^2$).
 
-* **Solution:** [Exercise 03: Circle Metrics Calculator](https://www.google.com/search?q=labs/exercise-03.circle_metrics_calculator.java)
+* **Solution:** [Exercise 03: Circle Metrics Calculator](labs/exercise-03.circle_metrics_calculator.java)
 
 ---
 
