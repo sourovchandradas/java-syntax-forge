@@ -450,7 +450,7 @@ Variables form the foundation of state management in software applications. Corr
 
 ## Additional Resources
 
-* [GeeksforGeeks: Java Variables](https://www.geeksforgeeks.org/variables-in-java/)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/variables-in-java/)
 
 ---
 
