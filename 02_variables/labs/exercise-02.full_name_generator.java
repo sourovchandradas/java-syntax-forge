@@ -1,5 +1,5 @@
-// Exercise 1: Concatenation
-public class Exercise2 {
+// Exercise 02: Full Name Generator
+public class FullNameGenerator {
     public static void main(String[] args) {
         // Declare first and last name variables
         String first_name = "Sourov";
