@@ -290,11 +290,14 @@ public class DebugPractice {
 
 ## Related Topics
 
-
+* [Variables](../../02_variables/variables.md)
+* [Data Types](../../03_data_types/data_types.md)
+* [Arithmetic Operators](../../04_operators/arithmetic_operators/arithmetic_operators.md)
 
 ---
 
 ## Additional Resources
+
 
 
 
