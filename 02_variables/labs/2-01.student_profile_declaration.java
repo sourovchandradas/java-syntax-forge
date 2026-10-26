@@ -1,5 +1,5 @@
-// Exercise 1: Declare Variables
-public class Exercise1 {
+// Exercise 01: Student Profile Declaration
+public class StudentProfileDeclaration {
     public static void main(String[] args) {
         // Declare a variable to store your name
         String name = "Sourov Chandra Das";
