@@ -2,383 +2,138 @@
 
 ## Overview
 
-Java data types define the type of data a variable can store in a program. They help the compiler allocate memory efficiently and ensure type safety. Java provides two main categories of data types: primitive and non-primitive.
+Java data types specify the nature, memory footprint, range, and allowable operations for variables. As a strongly, statically typed language, Java requires every variable to be declared with an explicit type at compile time to ensure type safety, optimize JVM execution, and prevent runtime memory errors.
 
 This guide covers:
 
-* **Data Types Hierarchy** - A visual structural tree of Java data types
-* **Primitive Data Types** - 8 built-in types for simple values   
-* **Non-Primitive (Reference) Data Types** - User-defined or built-in reference objects   
-* **Key Advantages & Practices** - Memory efficiency and type safety benefits   
+* **Type Hierarchy** - Visualizing Java's type taxonomy using Mermaid diagrams
+* **Primitive Data Types** - Detailed breakdown of Java's 8 built-in types
+* **Reference Data Types** - Objects, Strings, Arrays, and Interfaces
+* **Memory Mechanics** - Stack (primitive) vs. Heap (reference) memory layout via Mermaid
+* **Common Pitfalls** - Floating-point precision loss, integer overflow, and NPEs
+* **Technical Interview Q&A** - Memory alignment and Integer Cache mechanics
+* **Exercises & Solutions** - Production-ready, executable Java code challenges
 
 ---
 
 ## Table of Contents
 
-1. [Java Data Types](#java-data-types)
-2. [Primitive Data Types](#primitive-data-types)
-3. [Non-Primimtive Data Types](#none-primitive-data-types)
-4. [Advantages of Data Types](#advantages-of-data-types)
-5. [Common Mistakes and Errors](#common-mistakes-and-errors)
-6. [Exercise](#exercise)
-7. [Quick Reference](#quick-reference)
-8. [Related Topics](#related-topic)
-9. [Why this matters](#why-this-matters)
-10. [Additional Resources](#additional-resources)
+1. [Data Types Hierarchy](https://www.google.com/search?q=%23data-types-hierarchy)
+2. [Primitive Data Types](https://www.google.com/search?q=%23primitive-data-types)
+3. [Non-Primitive (Reference) Data Types](https://www.google.com/search?q=%23non-primitive-reference-data-types)
+4. [Memory Allocation: Stack vs. Heap](https://www.google.com/search?q=%23memory-allocation-stack-vs-heap)
+5. [Common Mistakes and Code Smells](https://www.google.com/search?q=%23common-mistakes-and-code-smells)
+6. [Technical Interview Questions & Answers](https://www.google.com/search?q=%23technical-interview-questions--answers)
+7. [Exercises and Complete Solutions](https://www.google.com/search?q=%23exercises-and-complete-solutions)
+8. [Quick Reference](https://www.google.com/search?q=%23quick-reference)
+9. [Related Topics](https://www.google.com/search?q=%23related-topics)
+10. [Why This Matters](https://www.google.com/search?q=%23why-this-matters)
+11. [Additional Resources](https://www.google.com/search?q=%23additional-resources)
 
 ---
 
-## Java Data Types
+## Data Types Hierarchy
 
-### What are Data Types?
+Java divides its type system into two primary categories: **Primitive Types** (raw values) and **Reference Types** (pointers to memory objects on the heap).
 
-A data type in Java specifies the type of value a variable can hold and the operations that can be performed on it. Java is a statically typed language, meaning every variable must be declared with a data type at compile time. They help the compiler allocate memory efficiently and ensure type safety.
+```mermaid
+graph TD
+    Root[DATA TYPES IN JAVA] --> Prim[Primitive Types]
+    Root --> Ref[Reference Types]
 
-* Memory allocation determines how much memory is required for each variable
-* Operations support defines what operations can be performed on data
-* Each data type has a default value when not initialized
+    Prim --> BoolType[Boolean Type]
+    Prim --> NumType[Numeric Type]
 
-**Easy Think:**
-Think of data type like a box. The box decides what kind of thing you can put inside. Example: If the box is for numbers, you can’t put text inside.
+    BoolType --> bool[boolean]
 
-**Syntax:**   `dataType variableName = value;`
+    NumType --> CharType[Character Type]
+    NumType --> IntType[Integral Type]
+    NumType --> FloatType[Floating-Point Type]
 
-### Types of Data Types
+    CharType --> char[char]
+    IntType --> byte[byte]
+    IntType --> short[short]
+    IntType --> int[int]
+    IntType --> long[long]
 
-Java data types are broadly divided into two categories:
+    FloatType --> float[float]
+    FloatType --> double[double]
 
-* **Primitive Data Types:** Store simple values directly in memory.
-* **Non-primitive (Reference) Data Types:** Store memory references to objects.  
+    Ref --> Str[String]
+    Ref --> Arr[Array]
+    Ref --> Cls[Classes & Interfaces]
+
 ```
-                    +---------------------------------------------------------------------------------------+
-                    |                                  DATA TYPES IN JAVA                                   |
-                    +---------------------------------------------------------------------------------------+
-                                                                |
-                                       +------------------------+------------------------+
-                                       |                                                 |
-                                       v                                                 v
-                    +-------------------------------------+           +-------------------------------------+
-                    |        Primitive Data Types         |           |      Non-Primitive Data Types       |
-                    +-------------------------------------+           +-------------------------------------+
-                             |                   |                               |         |         |
-                             v                   v                               v         v         v
-                      +--------------+    +--------------+                  +--------+ +-------+ +---------+
-                      | Boolean Type |    | Numeric Type |                  | String | | Array | | Classes |
-                      +--------------+    +--------------+                  +--------+ +-------+ +---------+
-                             |                   |
-                             v          +--------+--------+
-                      +--------------+  |                 |
-                      |   boolean    |  v                 v
-                      +--------------+ +---------+  +----------------+
-                                       | Integer |  | Floating Point |
-                                       +---------+  +----------------+
-                                            |                |
-                                            v                v
-                                      +-----------+    +-----------+
-                                      |   byte    |    |   float   |
-                                      |   short   |    |  double   |
-                                      |    int    |    +-----------+
-                                      |   long    |
-                                      |   char    |
-                                      +-----------+
-```
+
+---
 
 ## Primitive Data Types
-In Java, primitive data types are the most basic types of data. They are predefined by the Java language and store simple values directly in memory, each with a fixed size and range. There are 8 primitive types:
-| Type | Description | Default | Size | Example | Range |
-| :--- | :--- | :---: | :---: | :--- | :--- |
-| `boolean` | Logical values | `false` | Not JVM-defined | `true`, `false` | `true` or `false` |
-| `byte` | 8-bit signed integer | `0` | 1 byte | `10` | -128 to 127 |
-| `char` | 16-bit Unicode character | `'\u0000'` | 2 bytes | `'A'`, `'\u0041'` | 0 to 65,535 |
-| `short` | 16-bit signed integer | `0` | 2 bytes | `2000` | -32,768 to 32,767 |
-| `int` | 32-bit signed integer | `0` | 4 bytes | `1000`, `-500` | -2,147,483,648 to 2,147,483,647 |
-| `long` | 64-bit signed integer | `0L` | 8 bytes | `123456789L` | ±9.22e18 |
-| `float` | 32-bit floating point | `0.0f` | 4 bytes | `3.14f` | ~6–7 digits precision |
-| `double` | 64-bit floating point | `0.0d` | 8 bytes | `3.14159d` | ~15–16 digits precision |
 
----
+Primitive types are predefined by Java and hold raw values directly in memory. They are allocated on the Stack or inline within object fields and cannot be `null`.
 
-### 1. boolean Data Type
+| Type | Size | Default | Range / Value | Typical Use Case |
+| --- | --- | --- | --- | --- |
+| `boolean` | 1/8 bit* | `false` | `true` or `false` | Flag evaluation, logical branching |
+| `byte` | 1 byte | `0` | $[-128, 127]$ | Stream processing, raw binary I/O |
+| `short` | 2 bytes | `0` | $[-32768, 32767]$ | Large numeric arrays in limited memory |
+| `int` | 4 bytes | `0` | $[-2147483648, 2147483647]$ | Default integer choice, loop counters |
+| `long` | 8 bytes | `0L` | $[-2^{63}, 2^{63}-1]$ | Timestamps, database primary keys |
+| `float` | 4 bytes | `0.0f` | IEEE 754 floating point | Graphics, fast scientific approximations |
+| `double` | 8 bytes | `0.0d` | IEEE 754 double precision | Default floating point choice |
+| `char` | 2 bytes | `'\u0000'` | $[0, 65535]$ (Unsigned UTF-16) | Single Unicode character |
 
-In Java, the boolean data type is a primitive type that can hold only two possible values `true` or `false`
+**Note: `boolean` size is not JVM-specified; standalone booleans take 4 bytes (int stack slot), arrays take 1 byte per element.*
 
-* **Usage:** Boolean is mainly used for logical conditions and control statements like `if`, `while`, `for`.
-* **Syntax:** `boolean booleanVar`;
-
-### Implementation Example
-```java
-public class data_types {
-    public static void main(String[] args){
-        boolean isFavoriteCar = true;
-        boolean isFavoriteFood = false;
-        System.out.println("Is Mercedes-Benz your favorite car? " + isFavoriteCar);
-        System.out.println("Is Pizza your favorite food? " + isFavoriteFood);
-    }
-}
-```
-
-**Output**
-```java
-Is Mercedes-Benz your favorite car? true
-Is Pizza your favorite food? false
-```
-
----
-
-### 2. byte Date Type
-
-An 8-bit signed integer used to save memory in large numeric arrays.
-
-* **Usage:** Mainly used when memory saving is important, especially in large arrays. It is
-also useful for working with raw binary data (like file handling, streams).
-
-* **Syntax:** `byte byteVar`
-
-### Implementation Example
-```java
-public class data_types {
-    public static void main(String[] args){
-        byte age = 23;
-        byte temperature = -3;
-        System.out.println("Age: " + age);
-        System.out.println("Temperature: " + temperature);
-    }
-}
-```
-
-**Output:**
-```java
-Age: 23
-Temperature: -3
-```
-
----
-
-### 3. short Data Type
-
-A 16-bit signed integer often used when memory is limited and values are moderate in size.
-
-**Usage:**  Used when memory saving is important, and the range of values is larger than `byte` but smaller than `int`. Often used in large arrays where memory matters.
-
-**Syntax:** `short shortVar;`
-
-### Implementation Example
+### Primitive Implementation Example
 
 ```java
-public class data_types {
-    public static void main(String[] args){
-        short people = 1120;
-        short temperature = -273;
-        System.out.println("Number of people: " + people);
-        System.out.println("Temperature: " + temperature);
-    }
-}
-```
-
-**Output:**
-```java
-Number of people: 1120
-Temperature: -273
-```
-
----
-
-### 4. int Data types
-
-A 32-bit signed integer and the most commonly used numeric data type.
-
-* **Usage:**  Used for storing whole numbers in most programs. It is the default choice for integer values unless memory saving is critical (`byte`/`short`) or very large numbers are needed (`long`).
-* **Syntax:** `int intVar;`
-* **Size:** 4 bytes (32 bits)
-
-### Implementation Example
-```java
-public class data_types {
-    public static void main(String[] args){
-        int population  = 30000000;
-        int distance = 130000000;
-        System.out.println("Population: " + population);
-        System.out.println("Distance: " + distance);
-    }
-}
-```
-
-**Output:**
-```
-Population: 30000000
-Distance: 130000000
-```
-
----
-
-### 5. long Data Type
-
-In Java, the long data type is a primitive integer type used to store very large whole numbers.
-
-* **Usage:** Used when `int` is not enough to store big values, such as population counts, financial calculations, or scientific data.
-* **Syntax:** `long longVar;`
-* **Size:** 8 bytes (64 bits)
-
-### Implementation Example
-```java
-public class data_types {
+public class PrimitiveTypesDemo {
     public static void main(String[] args) {
-        long worldPopulation = 7800000000L;
-        long lightYears = 9460730472580800L;
-        System.out.println("World Population: " + worldPopulation);
-        System.out.println("Light Years: " + lightYears);
-    }
-}
-```
-
-**Output**
-```java
-World Population: 7800000000
-Light Year Distance: 9460730472580800
-```
-
----
-
-### 6. float Data Type
-
-In Java, the float data type is a primitive type used to store decimal numbers (floating‑point values).
-
-* **Usage:** Used when you need fractional numbers but don’t require very high precision. For more precise values, `double` is preferred.
-* **Syntax:** `float floatVar;`
-* **Size:** 4 bytes (32 bits)
-
-### Implementation Example
-```java
-public class data_types {
-    public static void main(String[] args) {
-        float pi = 3.14f;
-        float gravity = 9.81f;
-        System.out.println("Pi: " + pi);
-        System.out.println("Gravity: " + gravity);
-    }
-}
-```
-
-**Output**
-```java
-Value of Pi: 3.14
-Gravity: 9.81
-```
-
----
-
-### 7. double Data Type
-
-In Java, the double data type is a primitive type used to store decimal numbers with higher precision than float.
-
-* **Usage:** Used when you need more accurate decimal values, such as scientific calculations, financial data, or measurements.
-* **Syntax:** `double doubleVar;`
-* **Size:** 8 bytes (64 bits)
-
-### Implementation Example
-```java
-public class data_types {
-    public static void main(String[] args) {
-        double pi = 3.141592653589793;
-        double avogadro = 6.02214076e23;
-        System.out.println("Pi: " + pi);
-        System.out.println("Avogadro's Number: " + avogadro);
-    }
-}
-```
-
-**Output**
-```java
-Value of Pi: 3.141592653589793
-Avogadro's Number: 6.02214076E23
-```
-
----
-
-### 8. char Data Type
-
-A 16-bit Unicode character used to store single symbols or letters.
-
-* **Usage:** Used to represent letters, digits, or symbols. Since Java uses Unicode, `char` can store characters from many languages and special symbols.
-* **Syntax:** `char charVar;`
-* **Size:** 2 bytes (16 bits)
-
- ### Implementation Example
- ```java
-public class Geeks {
-    public static void main(String[] args) {
+        boolean isActive = true;
+        byte level = 5;
+        short rank = 1200;
+        int score = 95000;
+        long timestamp = 1711234567890L;
+        float rate = 4.5f;
+        double balance = 99999.99;
         char grade = 'A';
-        char symbol = '$';
-        System.out.println("Grade: " + grade);
-        System.out.println("Symbol: " + symbol);
+
+        System.out.println("User Rank: " + rank + " | Grade: " + grade);
+        System.out.println("Balance: $" + balance + " | Active: " + isActive);
     }
 }
+
 ```
 
-**Output**
-```java
-Grade: A
-Symbol: $
+#### Output
+
+```text
+User Rank: 1200 | Grade: A
+Balance: $99999.99 | Active: true
+
 ```
 
 ---
-
 
 ## Non-Primitive (Reference) Data Types
 
-Non-primitive data types store references (memory addresses) rather than actual values. They are created by users and include types like String, Class, Object, Interface, and Array.
+Reference types store memory addresses (pointers) targeting object instances allocated on the Heap. They derive from `java.lang.Object` and default to `null`.
 
-**Easy Think**
-Think of non‑primitive types like big boxes that point to other boxes.
-* They don’t hold the value directly, they hold the address of the object.
-* They are more powerful than primitive types because they can store complex data.
+### Primary Reference Types
 
-The main kinds of non‑primitive data types are:
+1. **String:** Immutable character sequence (`java.lang.String`).
+2. **Class:** Custom user-defined structural blueprints containing fields and methods.
+3. **Interface:** Abstract structural contracts defining behaviors.
+4. **Array:** Fixed-capacity, indexed container of homogenous elements.
 
-### 1. String
+### Reference Types Implementation Example
 
-In Java, **String** is a **non‑primitive (reference) data type** that represents a sequence of characters.
-
-* **Class:** [String](../../08_string/string.md) is a class in `java.lang` package.
-* **Immutable:** Once created, a String cannot be changed. Any modification creates a new String object.
-* **Default value:** `null`
-* **Usage:** Used to store text such as words, sentences, or any sequence of characters.
-* **Syntax:** `String str = "Hello!";`
-
-### Implementation Example
 ```java
-public class data_types {
-    public static void main(String[] args){
-        String name = "Sourov";
-        String message = "Welcomme to Java";
-        System.out.println("Name: " + name);
-        System.out.println("Message: " + message);
-    }
+interface Vehicle {
+    void drive();
 }
-```
-**Output**
-```java
-Name: Sourov
-Message: Welcomme to Java
-```
 
-**Explanation:** The example creates two String objects, name and message, and stores text values in them. The println() statements display these values on the console.
-
-**Note**
-```
-String cannot be modified after creation.
-```
-
----
-
-
-### 2. Class
-
-
-
-### Implementation Example
-```java
-class Car {
+class Car implements Vehicle {
     String model;
     int year;
 
@@ -387,188 +142,191 @@ class Car {
         this.year = year;
     }
 
-    void display() {
-        System.out.println(model + " " + year);
+    @Override
+    public void drive() {
+        System.out.println("Driving " + year + " " + model);
     }
 }
 
-public class Geeks {
+public class ReferenceTypesDemo {
     public static void main(String[] args) {
-        Car myCar = new Car("Toyota", 2020);
-        myCar.display(); 
+        // String and Class Instance
+        Vehicle myCar = new Car("Tesla Model 3", 2024);
+        myCar.drive();
+
+        // Array Reference
+        String[] features = {"Autopilot", "Long Range", "AWD"};
+        System.out.println("Primary Feature: " + features[0]);
     }
 }
+
 ```
 
+#### Output
 
-**Output**
-```
-Mercedes-Benz 2019
+```text
+Driving 2024 Tesla Model 3
+Primary Feature: Autopilot
+
 ```
 
 ---
 
-### 3. Object
+## Memory Allocation: Stack vs. Heap
 
+The JVM handles primitives and reference objects using two distinct memory structures:
 
+```mermaid
+graph LR
+    subgraph Stack["Thread Call Stack (main Frame)"]
+        S1["int score = 95000"]
+        S2["double balance = 99999.99"]
+        S3["Vehicle myCar (Memory Handle)"]
+        S4["String[] features (Memory Handle)"]
+    end
 
-### Implementation Example
+    subgraph Heap["JVM Heap Memory"]
+        H1["Car Object Instance<br/>- model: 'Tesla Model 3'<br/>- year: 2024"]
+        H2["String[] Array<br/>['Autopilot', 'Long Range', 'AWD']"]
+    end
+
+    S3 -->|Reference Pointer| H1
+    S4 -->|Reference Pointer| H2
+
 ```
-class Car {
-    String model;
-    int year;
 
-    Car(String model, int year) {
-        this.model = model;
-        this.year = year;
-    }
-}
+* **Stack:** Stores primitive local variables and object reference pointers. Memory is released immediately when method frames finish execution.
+* **Heap:** Stores instantiated objects (`new`) and array structures. Reclaimed automatically by Garbage Collection (GC).
 
-public class Geeks {
+---
+
+## Common Mistakes and Code Smells
+
+### 1. Floating-Point Precision Loss in Financial Calculations
+
+`float` and `double` use IEEE 754 binary fractions, making exact base-10 representations impossible.
+
+```java
+// WRONG: Prints 0.30000000000000004
+System.out.println(0.1 + 0.2);
+
+// CORRECT: Use BigDecimal for exact financial calculations
+BigDecimal b1 = new BigDecimal("0.1");
+BigDecimal b2 = new BigDecimal("0.2");
+System.out.println(b1.add(b2)); // Prints 0.3
+
+```
+
+### 2. Silent Integer Overflow
+
+Primitive integer operations wrap around standard Two's Complement limits without throwing runtime errors.
+
+```java
+int max = Integer.MAX_VALUE; // 2147483647
+int overflow = max + 1; // Wraps to -2147483648
+
+// SAFEGUARD: Use Math.addExact() to throw ArithmeticException on overflow
+int safeSum = Math.addExact(max, 1);
+
+```
+
+### 3. Auto-Unboxing NullPointerException
+
+Unboxing a wrapper object (`Integer`, `Double`) containing a `null` reference causes an NPE.
+
+```java
+Integer count = null;
+int val = count; // Throws NullPointerException
+
+```
+
+---
+
+## Technical Interview Questions & Answers
+
+### Q1: What is the difference between Primitive types and Wrapper classes?
+
+**Answer:**
+Primitives (`int`, `char`) store raw binary values on the Stack, take less memory, and cannot be `null`. Wrapper classes (`Integer`, `Character`) are object types wrapping primitives on the Heap, allowing participation in Java Collections (`List<Integer>`), generics, and utility method processing, but incur memory overhead and auto-unboxing performance costs.
+
+### Q2: How does the Java Integer Cache work?
+
+**Answer:**
+Java caches `Integer` object instances for values between `-128` and `127`. Auto-boxing literals within this range (`Integer a = 100; Integer b = 100;`) returns identical cached objects (`a == b` evaluates to `true`). Values outside this range instantiate new Heap objects (`a == b` evaluates to `false`). Always use `.equals()` to compare wrapper object values.
+
+---
+
+## Exercises and Complete Solutions
+
+### Exercise 1: Safe Financial Calculation Guard
+
+```java
+import java.math.BigDecimal;
+
+public class FinancialGuard {
     public static void main(String[] args) {
-        Car myCar = new Car("Honda", 2021);
-        System.out.println("Model: " + myCar.model);
-        System.out.println("Year: " + myCar.year);
-    }
-}
-```
+        double itemPrice = 19.99;
+        int quantity = 3;
+        double rawTotal = itemPrice * quantity;
 
-**Output**
-```
-Car Model: Honda
-Car Year: 2021
-```
+        BigDecimal precisePrice = new BigDecimal("19.99");
+        BigDecimal preciseTotal = precisePrice.multiply(new BigDecimal(quantity));
 
----
-
-### 4. Interface
-
-
-### Implementation Example
-```
-interface Animal {
-    void sound();
-}
-
-class Dog implements Animal {
-    public void sound() {
-        System.out.println("Woof");
+        System.out.println("Raw Double Calculation  : " + rawTotal);
+        System.out.println("Precise BigDecimal Total: $" + preciseTotal);
     }
 }
 
-public class Geeks {
-    public static void main(String[] args) {
-        Animal dog = new Dog();
-        dog.sound();
-    }
-}
 ```
 
-**Output**
+#### Output
+
+```text
+Raw Double Calculation  : 59.970000000000006
+Precise BigDecimal Total: $59.97
+
 ```
-Woof
-```
-
----
-
-### 5. Array
-
-
-
-### Implementation Example
-```
-public class Geeks {
-    public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5};
-        String[] names = {"Geek1", "Geek2", "Geek3"};
-        System.out.println("First number: " + numbers[0]);
-        System.out.println("Second name: " + names[1]);
-    }
-}
-```
-
-**Output**
-```
-First number: 1
-Second name: Geek2
-```
-
----
-
-## Advantages of Data Types
-
-* **Type Safety:** Ensures variables only hold valid data, reducing runtime bugs.
-* **Memory Efficiency:** Allows precise selection of memory size (e.g., using `byte` vs `long`).
-* **Early Error Detection:** Helps the compiler identify type-mismatch errors during compilation.
-* **Performance Optimization:** Direct use of primitive types boosts execution speed.
-
----
-
-## Common Mistakes
-
-1. a
-2. a
-3. a
-4. a
-5. a
-
----
-
-## Exercise
-
-File naming convention: Use PascalCase matching your public class name(e.g., `DataTypeTest.java`)
-
-### Exercise 1: Primitive Declarations
-
-Create a file named `UserProfile.java` and declare variables for:
-* User ID(`int`)
-* Account Balance(`double`)
-* Gender(`char`)
-* Active Status(`boolean`)
-
-### Exercise 2: Array & String Output
-
-Create a file named `ArrayPractice.java` containing a `String[]` array of three programming languages, and print the second item in the array.
 
 ---
 
 ## Quick Reference
 
-| Type | Description | Default | Size | Example | Range |
-| --- | --- | --- | --- | --- | --- |
-| `boolean` | Logical values | `false` | Not JVM-defined | `true`, `false` | `true` or `false` |
-| `byte` | 8-bit signed integer | `0` | 1 byte | `10` | -128 to 127 |
-| `char` | 16-bit Unicode character | `'\u0000'` | 2 bytes | `'A'`, `'\u0041'` | 0 to 65,535 |
-| `short` | 16-bit signed integer | `0` | 2 bytes | `2000` | -32,768 to 32,767 |
-| `int` | 32-bit signed integer | `0` | 4 bytes | `1000`, `-500` | -2,147,483,648 to 2,147,483,647 |
-| `long` | 64-bit signed integer | `0L` | 8 bytes | `123456789L` | ±9.22e18 |
-| `float` | 32-bit floating point | `0.0f` | 4 bytes | `3.14f` | ~6–7 digits precision |
-| `double` | 64-bit floating point | `0.0d` | 8 bytes | `3.14159d` | ~15–16 digits precision |
+| Type | Classification | Size | Memory Location | Nullable |
+| --- | --- | --- | --- | --- |
+| `boolean`, `byte`, `short`, `int`, `long`, `float`, `double`, `char` | Primitive | Fixed (1-8 bytes) | Stack / Object Frame | No |
+| `String`, `Array`, `Class`, `Interface` | Reference | Pointer (4-8 bytes) | Heap (Pointer on Stack) | Yes |
 
 ---
-
 
 ## Related Topics
 
----
-
-
-## Why this matters
-
-
+* [Java Variables and Variable Scope](variables.md)
+* [Java Type Casting and Type Promotion](https://www.google.com/search?q=type_casting.md)
+* [Java Wrapper Classes and Autoboxing](https://www.google.com/search?q=wrapper_classes.md)
 
 ---
 
+## Why This Matters
+
+Selecting appropriate data types directly influences execution speed, memory alignment, and Garbage Collection overhead. Primitive types maximize memory locality and CPU throughput, while reference types provide structural abstraction. Avoiding floating-point errors and handling overflow correctly is essential for enterprise-grade backend stability.
+
+---
 
 ## Additional Resources
 
-* [GeeksforGeeks](https://www.geeksforgeeks.org/java/java-data-types/)
-* [w3schools](https://www.w3schools.com/java/java_data_types.asp)
+* [Oracle Java Documentation: Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+* [Java Language Specification: Types, Values, and Variables (JLS §4)](https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html)
 
 ---
 
+*Last Updated: October 27, 2026*
 
+---
 
-*Last updated: October 6, 2026*
+## Key Takeaways
 
-
+* Java features **8 primitive types** for raw value storage and **reference types** for heap object pointers.
+* Primitives live on the **Stack**; object instances reside on the **Heap**.
+* Never use `float` or `double` for currency—always use `BigDecimal`.
+* Integer operations wrap around silently on overflow unless checked with `Math.addExact()`.
+* Reference types default to `null`; unboxing `null` wrapper references throws a `NullPointerException`.
